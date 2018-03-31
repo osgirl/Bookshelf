@@ -1,4 +1,0 @@
-ISBN          TITLE                    AUTHOR              GENRE       YEAR PRICE 
-
-9780142424179 The Fault in Our Stars John Green Fiction 2014 5.00
-9780062387240 Divergent Veronica Roth Fiction 2014 8.36

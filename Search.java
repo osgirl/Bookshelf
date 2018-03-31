@@ -3,13 +3,12 @@ import java.io.*;
 
 public class Search {
 
-	
+	private String url = "https://www.barnesandnoble.com/s/";
 	
 	public Search(){
 		
 	}
 	
-	private String url = "https://www.barnesandnoble.com/s/";
 	
 	public void itemSearch(String title) throws IOException, MalformedURLException{
 		//String itemUrl = url + title;

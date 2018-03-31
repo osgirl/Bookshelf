@@ -8,3 +8,4 @@ Bookshelf is used to retrieve information about a books using Barnes and Noble.
   
 <br /><br />
 This project is ongoing and might contain many bugs and redunancy in code. Updates are made on a weekly basis.
+Currently lacking a significant amount of documentation.

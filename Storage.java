@@ -5,11 +5,17 @@ import java.sql.Timestamp;
 import java.util.Hashtable;
 
 public class Storage {
+	
 	Hashtable<String, Book> table;
+	Hashtable<String, String> user;
 	BufferedWriter logFile = null;
 	private int items = 0;
+	private String admin = "Admin";
+	private String adminpass = "pass0000";
 	
 	public Storage(){
+		user = new Hashtable<String, String>();
+		user.put(admin, adminpass);
 		table = new Hashtable<String, Book>();
 		try {
 			logFile = new BufferedWriter(new FileWriter("logFile.txt"));
@@ -50,6 +56,18 @@ public class Storage {
 		return table.get(isbn).getPrice();
 	}
 	
+//	private String getUser(String u){
+//		return user.get(u);
+//	}
+//	
+//	private String getPassword(String p){
+//		return user.get(p);
+//	}
+//	
+//	private String getUserPass(String s){
+//		String p = user.get(s).
+//	}
+	
 	
 	public void storeData(String isbn, String title, String author, String genre, String year, String price){
 		items++;
@@ -89,5 +107,10 @@ public class Storage {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void addUser(String u, String p){
+		if(!user.contains(u)){
+			user.put(u, p);
+		}
+	}
 }

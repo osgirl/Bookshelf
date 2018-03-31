@@ -12,16 +12,17 @@ import java.util.Set;
 public class Driver {
 	
 	static Storage storedBooks = null;
+	static Storage users = null;
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{
-
+		storedBooks = new Storage();
 		processArgs(args);
+		//users = new Storage();
 		
 //		Search newsearch = new Search();
 //		String title = "cats";
 //		newsearch.itemSearch(title);
-
-		GUI gui = new GUI(storedBooks.table);
+		GUI gui = new GUI(storedBooks.table, storedBooks.user);
 
 	}
 	
@@ -33,13 +34,13 @@ public class Driver {
 					System.out.println("Please enter a textfile");
 				}
 				else{
-					//loadInput(args[i+1]);
-					readInputFile(args[i+1]);
+					loadInput(args[i+1]);
+					//readInputFile(args[i+1]);
 					i++;
 				}
 			}
 			else if(args[i].equals("-o")){
-				createOutput(args[i+1]);
+				//createOutput(args[i+1]);
 				i++;
 			}
 			else if(args[i].equals("-p")){
@@ -62,7 +63,7 @@ public class Driver {
 				inputs.add(title);
 			}
 			inputTitle.close();
-			processDataInputs(inputs);
+			//processDataInputs(inputs);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -77,7 +78,6 @@ public class Driver {
 	
 	public static void loadInput(String inputFile){
 		//need to expand on commands
-		storedBooks = new Storage();
 		File inFile = new File(inputFile);
 		String isbn, title, author, genre, year, price, command = null;
 		try {
