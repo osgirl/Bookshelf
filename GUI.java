@@ -114,9 +114,10 @@ public class GUI extends JFrame{
 					passwordFillin.setText("");
 					usernameFillin.requestFocus();
 				}
-
 			}
 		});
 	} //end authenticate 
+	
+	
 	
 }

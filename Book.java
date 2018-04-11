@@ -8,61 +8,61 @@ public class Book {
 	private String year;
 	private String price;
 	
-	public Book(String i, String t, String a, String g, String y, String p){
-		isbn = i;
-		title = t;
-		author = a;
-		genre = g;
-		year = y;
-		price = p;
+	public Book(String isbn, String title, String author, String genre, String year, String price){
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+		this.year = year;
+		this.price = price;
 	}
 	
 	//ISBN
 	public String getIsbn(){
 		return isbn;
 	}
-	public void setIsbn(String i){
-		isbn = i;
+	public void setIsbn(String isbn){
+		this.isbn = isbn;
 	}
 	
 	//Title
 	public String getTitle(){
 		return title;
 	}
-	public void setTitle(String t){
-		title = t;
+	public void setTitle(String title){
+		this.title = title;
 	}
 	
 	//Author
 	public String getAuthor(){
 		return author;
 	}
-	public void setAuthor(String a){
-		author = a;
+	public void setAuthor(String author){
+		this.author = author;
 	}
 	
 	//Genre
 	public String getGenre(){
 		return genre;
 	}
-	public void setGenre(String g){
-		genre = g;
+	public void setGenre(String genre){
+		this.genre = genre;
 	}
 	
 	//Year
 	public String getYear(){
 		return year;
 	}
-	public void setYear(String y){
-		year = y;
+	public void setYear(String year){
+		this.year = year;
 	}
 	
 	//Price
 	public String getPrice(){
 		return price;
 	}
-	public void setPrice(String p){
-		price = p;
+	public void setPrice(String price){
+		this.price = price;
 	}
 }
 

@@ -1,4 +1,5 @@
 import java.net.*;
+import java.util.ArrayList;
 import java.io.*;
 
 public class Search {
@@ -43,6 +44,8 @@ public class Search {
     }
     
     private void parseHtml(String fileToParse){
-    	
+    	ArrayList<String> allResults = new ArrayList<String>();
+    	//<a class="pImageLink "
+    	//<a class="pImageLink([A-Za-z0-9 "'=_\-/();.?<>:,]*)align/>
     }
 }

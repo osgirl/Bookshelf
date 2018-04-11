@@ -19,9 +19,9 @@ public class Driver {
 		processArgs(args);
 		//users = new Storage();
 		
-//		Search newsearch = new Search();
-//		String title = "cats";
-//		newsearch.itemSearch(title);
+		Search newsearch = new Search();
+		String title = "cats";
+		newsearch.itemSearch(title);
 		GUI gui = new GUI(storedBooks.table, storedBooks.user);
 
 	}
