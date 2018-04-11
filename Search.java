@@ -30,6 +30,7 @@ public class Search {
 			writer.write(line + "\n");
 			line = reader.readLine(); 
 		} // while
+		writer.close();
     }
     
     public void titleSearch(String title){
@@ -48,4 +49,58 @@ public class Search {
     	//<a class="pImageLink "
     	//<a class="pImageLink([A-Za-z0-9 "'=_\-/();.?<>:,]*)align/>
     }
+    
+    BufferedWriter writer = null;
+    
+    public void getUrlInfo(ArrayList<String> urls) {
+    	String outputFile = "output.txt";
+		try {
+			writer = new BufferedWriter(new FileWriter(outputFile));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    	for(int i=0; i<urls.size(); i++) {
+    		String[] urlType = urls.get(i).split("\\.");
+    		System.out.println(urlType[urlType.length-1]);
+    		if(urlType[urlType.length-1].equals("html") || urlType[urlType.length-1].equals("htm") || urlType[urlType.length-1].equals("txt")){
+    			readHtml(urls.get(i));
+    		}
+    		else if(urlType[urlType.length-1].equals("pdf")){
+    			//readPdf(urls.get(i));
+    		}
+    		else if(urlType[urlType.length-1].equals("jpg")){
+    			//readImg(urls.get(i));
+    		}
+    	}
+    	try {
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    private void readHtml(String url) {
+    	int numOfLines = 0;
+		try {
+	        // Display the URL address, and information about it.
+	    	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+			String line = reader.readLine();
+			System.out.println(url);
+			writer.write(url + "\n");
+			while (line != null) {
+				writer.write(line + "\n");
+				numOfLines++;
+				line = reader.readLine(); 
+			} // while
+			writer.write(numOfLines + "\n");
+			writer.write("\n\n\n");
+			System.out.println(numOfLines);
+			System.out.print("\n\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+    }
+    
+    
 }

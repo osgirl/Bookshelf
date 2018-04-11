@@ -19,6 +19,11 @@ public class UserStorage {
 		user.put(admin, adminpass);
 	}
 	
+	public Hashtable<String, String> getUsers(){
+		return user;
+	}
+	
+	
 	/**
 	 * @param username - username to add
 	 * @param password - password to add 

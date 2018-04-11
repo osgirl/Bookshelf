@@ -1,0 +1,1478 @@
+http://www.pbs.org/wgbh/aia/home.html
+<HTML>
+
+<HEAD>
+
+<TITLE>Africans in America</TITLE>
+
+</HEAD>
+
+<!--BODY BGCOLOR="FFFFFF" background="images/hbg.gif" TEXT="#CC9999" LINK="#FF9900" VLINK="#CC9966"-->
+<BODY BGCOLOR="FFFFFF" background="images/hbgnav.gif" TEXT="#CC9999" LINK="#FF9900" VLINK="#CC9966">
+<!-- JAWS Header/Localization Delivery -->
+<script>var PBS_CHROME_CONFIG = {'api_key': '0087d141-33da-42a1-9e9f-797eb00e162e'};</script><script type="text/javascript" src="//d2ok2u3bz752mp.cloudfront.net/js/gc.js"></script>
+
+<!-- Google Tag Manager Delivery -->
+<!-- Ad Banners -->
+
+
+
+
+
+
+
+<!-- No Ad Zone defined for this page. -->
+
+
+<!-- Google Tag Manager Delivery -->
+<script type="text/javascript">
+    GTMDataLayer = [];
+</script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TWTDGH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','GTMDataLayer','GTM-TWTDGH');</script>
+
+
+<A HREF="images/htoplayer3.map"><IMG SRC="images/htoplayer3.gif" ALT="Africans in America Home Page" ALIGN=LEFT WIDTH="592" HEIGHT="370" ISMAP USEMAP="#homemap" BORDER="0"></A>
+
+
+<MAP NAME="homemap">
+<AREA SHAPE="RECT" COORDS="0,0,200,52" HREF="part1/title.html" ALT="The Terrible Transformation">
+<AREA SHAPE="RECT" COORDS="98,51,277,92" HREF="part2/title.html" ALT="Revolution">
+<AREA SHAPE="RECT" COORDS="209,91,424,133" HREF="part3/title.html" ALT="Brotherly Love">
+<AREA SHAPE="RECT" COORDS="331,132,546,182" HREF="part4/title.html" ALT="Judgment Day">
+<AREA SHAPE="RECT" COORDS="0,276,78,293" HREF="introduction.html" ALT="Introduction">
+<AREA SHAPE="RECT" COORDS="0,292,133,312" HREF="rb_index.html" ALT="Resource Bank Index">
+<AREA SHAPE="RECT" COORDS="0,311,157,332" HREF="tguide/index.html" ALT="Teacher's Guide Contents">
+<AREA SHAPE="RECT" COORDS="0,331,125,350" HREF="educational/yag/index.html" ALT="Youth Activity Guide">
+<AREA SHAPE="RECT" COORDS="0,349,164,370" HREF="tvandbeyond/index.html" ALT="The TV Series and Beyond">
+<AREA SHAPE="RECT" COORDS="382,333,434,350" HREF="search.html" ALT="Search">
+<AREA SHAPE="RECT" COORDS="434,333,473,350" HREF="shop.html" ALT="Shop">
+<AREA SHAPE="RECT" COORDS="473,333,539,350" HREF="feedback.html" ALT="Feedback">
+<AREA SHAPE="RECT" COORDS="539,333,587,350" HREF="credits.html" ALT="Credits">
+<AREA SHAPE="RECT" COORDS="506,217,592,258" HREF="http://www.pbs.org" ALT="PBS Online">
+<AREA SHAPE="RECT" COORDS="479,257,557,293" HREF="http://main.wgbh.org" ALT="WGBH">
+<AREA SHAPE="DEFAULT" HREF="home.html" ALT="Home">
+</MAP>
+
+
+
+<BR CLEAR=ALL>
+<BR>
+<BR>
+<BR>
+<BR>
+
+
+
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+
+<FONT FACE="Helvetica, Arial" SIZE="-1">
+America's journey through slavery is presented in four parts. For each era, you'll find a historical Narrative, a Resource Bank of images, documents, stories, biographies, and commentaries, and a Teacher's Guide for using the content of the Web site and television series in U.S. history courses.
+<P>
+<B><A HREF="part1/title.html">The Terrible Transformation</A></B>: <A HREF="part1/narrative.html">Narrative</A> | <A HREF="part1/index.html">Resource Bank</A> | <A HREF="tguide/1index.html">Teacher's Guide</A>
+<BR>
+1450-1750
+
+<P>
+
+<B><A HREF="part2/title.html">Revolution</A></B>: <A HREF="part2/narrative.html">Narrative</A> | <A HREF="part2/index.html">Resource Bank</A> | <A HREF="tguide/2index.html">Teacher's Guide</A>
+<BR>
+1750-1805
+<P>
+
+<B><A HREF="part3/title.html">Brotherly Love</A></B>: <A HREF="part3/narrative.html">Narrative</A> | <A HREF="part3/index.html">Resource Bank</A> | <A HREF="tguide/3index.html">Teacher's Guide</A>
+<BR>
+1791-1831
+<P>
+
+<B><A HREF="part4/title.html">Judgment Day</A></B>: <A HREF="part4/narrative.html">Narrative</A> | <A HREF="part4/index.html">Resource Bank</A> | <A HREF="tguide/4index.html">Teacher's Guide</A>
+<BR>
+1831-1865
+<p>
+<BR>
+
+
+<A HREF="introduction.html">Introduction</A> | <A HREF="rb_index.html">Resource Bank Index</A> | <A HREF="tguide/index.html">Teacher's Guide Contents</A> | <A HREF="educational/yag/index.html">Youth Activity Guide</A> | <A HREF="tvandbeyond/index.html">The TV Series and Beyond</A> 
+<p>
+<BR>
+<BR>
+
+<A HREF="search.html">Search</A> | <A HREF="shop.html">Shop</A> | <A HREF="feedback.html">Feedback</A> | <A HREF="credits.html">Credits</A>
+<p>
+<BR>
+
+<BR>
+<BR>
+<BR>
+
+
+
+Major funding for Africans in America is provided by the <A HREF="http://www.neh.gov">National Endowment for the Humanities</A>.<BR><BR>
+
+National sponsorship is provided by <A HREF="http://www.bankerstrust.com">Bankers Trust</A>, the <A HREF="http://www.fanniemaefoundation.org">Fannie Mae Foundation</A>, and <A HREF="http://www.mcdonalds.com">McDonald's</A>.<BR><BR>
+
+Additional funding is provided by the Ford Foundation, The John D. and Catherine T. MacArthur Foundation, The Rockefeller Foundation, Stratford Foundation, the Corporation for Public Broadcasting, and public television viewers.<BR><BR>
+
+Major funding for the Africans in America Web site is provided by the <A HREF="http://www.cpb.org">Corporation for Public Broadcasting</A>.<BR><BR>
+
+<!--Africans in America is a key program in WGBH's community outreach project, <A HREF="http://main.wgbh.org/wgbh/pages/seenandheard/">SEEN & HEARD: Focus on Diversity</A>.
+<BR><BR>-->
+
+The Africans in America Web site <BR>
+is a production of <A HREF="http://main.wgbh.org">WGBH</A> Interactive for <A HREF="http://www.pbs.org">PBS Online.</A><BR>
+<A HREF="copyright.html">&copy; 1998 WGBH Educational Foundation</A>.
+ </FONT>
+
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+</BODY>
+
+</HTML>
+
+134
+
+
+
+http://web.mit.edu/hml/ncfmf.html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>National Committee for Fluid Mechanics Films</title>
+<style type="text/css">
+<!--
+.style3 {font-size: x-small}
+.style11 {font-size: medium; font-family: Arial, Helvetica, sans-serif; }
+.style1 {font-family: Arial, Helvetica, sans-serif}
+.style12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<a name="TOP"></a>
+<p align="center"><img src="images/ncfmf/comphead.jpg" width="712" height="149" align="top"></p>
+<div align="center">
+  <table width="710" border="0" cellpadding="0">
+    <tr>
+      <td width="550" align="left" valign="top"><span class="style11">In 1961, Ascher Shapiro founded the National Committee for Fluid Mechanics Films (NCFMF) in cooperation with the <a href="http://www.edc.org/" target="blank">Education Development Center</a> and released a series of 39 videos and accompanying texts which revolutionized the teaching of fluid mechanics. MIT's <a href="http://web.mit.edu/fluids-modules/www/">iFluids</a> program has made a number of the films from this series available on the web. (<a href="ncfmf/addinfo.html">Download / Purchase information</a>.) </span>
+        <p class="style11">The <a href="http://web.mit.edu/hml/ncfmf.html#preface">preface</a> to<em> Illustrated Experiments in Fluid Mechanics: The NCFMF Book of Film Notes</em> can be found below.       
+	    <p class="style11"><span class="style11"><a href="http://web.mit.edu/hml/notes.html" target="_blank">Complete film notes for the NCFMF movies</a></span>  
+      <p class="style11"><a href="http://web.mit.edu/newsoffice/2004/obit-shapiro.html" target="_blank">Ascher Shapiro's Obituary</a></td>
+      <td width="150" align="center"><a href="ncfmf/Cover.html" target="_blank"><img src="images/ncfmf/tCover.jpg" width="150" height="116" border="0" align="top"></a>      <br>
+        <br>
+        <a href="ncfmf/BackCover.html" target="_blank"><img src="images/ncfmf/tBack.jpg" width="150" height="116" border="0"></a><br>
+      <span class="style3">(Click images to enlarge)</span> </td>
+    </tr>
+    <tr>
+      <td colspan="2"><table width="700" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="58%" align="left" >Aerodynamics Generation of Sound</td>
+          <td width="14%" align="center" scope="col"><a href="http://techtv.mit.edu/collections/ifluids/videos/32592-aerodynamic-generation-of-a-sound" target="_blank">TechTV</a></td>
+          <td width="14%" align="center" scope="col"><a href="http://www.youtube.com/watch?v=mdN8OOkx2ko&list=PL0EC6527BE871ABA3&index=1&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td width="14%" align="center" scope="col"><a href="http://web.mit.edu/hml/ncfmf/20AGS.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td align="left">Boundary Layer Control</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32593-boundary-layer-control">TechTV</a></td>
+          <td align="center">&nbsp;</td>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Cavitation</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32594-cavitation">TechTV</a> </td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=K_w3gcvA87I&list=PL0EC6527BE871ABA3&index=16&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/16CAV.pdf" target="_blank">Film Notes</a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Channel Flow of a Compressible Fluid</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32595-channel-flow-of-a-compressible-fluid">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=JhlEkEk7igs&list=PL0EC6527BE871ABA3&index=8&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/08CFCF.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Deformation of Continuous Media</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32596-deformation-of-a-continuous-media">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=pqWwHxn6LNo&list=PL0EC6527BE871ABA3&index=2&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/02DCM.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Eulerian Lagrangian Description</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32597-eulerian-and-lagrangian-descriptions-in-fluid-mechanics">TechTV</a></td>
+          <td align="center"><a href=https://www.youtube.com/watch?v=mdN8OOkx2ko&list=PL0EC6527BE871ABA3" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/01ELDFM.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Flow Instabilities</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32605-flow-instabilities">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=yutbmcO5g2o&list=PL0EC6527BE871ABA3&index=15&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/15FI.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Flow Visualization</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32598-flow-visualization">TechTV</a> </td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=nuQyKGuXJOs&list=PL0EC6527BE871ABA3&index=5&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/05FV.pdf" target="_blank">Film Notes</a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Fluid Dynamics of Drag Part I</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32599-fluid-dynamics-of-drag-part-1">TechTV</a></td>
+          <td align="center"><a href="">YouTube</a></td>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Fluid Dynamics of Drag Part II</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32601-fluid-dynamics-of-drag-part-2">TechTV</a></td>
+          <td align="center"><a href="https://www.youtube.com/watch?v=Js3i8xJ_S3Y&list=PL0EC6527BE871ABA3&index=14">YouTube</a></td>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Fluid Dynamics of Drag Part III</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32602-fluid-dynamics-of-drag-part-3">TechTV</a></td>
+          <td align="center"><a href="https://www.youtube.com/watch?v=r3hZnKoz1F0&list=PL0EC6527BE871ABA3&index=15">YouTube</a></td>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Fluid Dynamics of Drag Part IV</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32600-fluid-dynamics-of-drag-part-4">TechTV</a></td>
+          <td align="center"><a href="https://www.youtube.com/watch?v=acySDnGYzVM&list=PL0EC6527BE871ABA3&index=16">YouTube</a></td>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Fundamental Boundary Layers</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32603-fundamental-boundary-layers">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=wMxK2GtFFq0&list=PL0EC6527BE871ABA3&index=11&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/10FBL.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Low Reynolds Number Flow</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32604-low-reynolds-number-flow">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=51-6QCJTAjU&list=PL0EC6527BE871ABA3&index=7&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/07LRNF.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Magnetohydrodynamics</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32606-magnetohydrodynamics">TechTV</a> </td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=QArcTylNooQ&list=PL0EC6527BE871ABA3&index=21&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/21MH.pdf" target="_blank">Film Notes</a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Pressure Fields and Fluid Acceleration</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32607-pressure-fields-fluid-acceleration">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=LI9Mi1KhFTs&list=PL0EC6527BE871ABA3&index=6&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/06PFFA.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Rarefied Gas Dynamics</td>m
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32608-rarefied-gas-dynamics">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=T46Wb2d_dV8&list=PL0EC6527BE871ABA3&index=17&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/17RGD.pdf" target="_parent">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Rheological Behavior of Fluids</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32591-rheological-behavior-of-fluids">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=Ol6bBB3zuGc&list=PL0EC6527BE871ABA3&index=3&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/03RBF.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Rotating Flows</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32609-rotating-flows">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=Ans3tnvMyTk&list=PL0EC6527BE871ABA3&index=19&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/19RF.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Secondary Flow</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32610-secondary-flow">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=yDw_7UIGCOo&list=PL0EC6527BE871ABA3&index=13&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/13SC.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Stratified Flow</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32611-stratified-flow">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=9hmjcIfy8wE&list=PL0EC6527BE871ABA3&index=18&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/18SF.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Surface Tension in Fluid Mechanics</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32612-surface-tension-in-fluid-mechanics">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=MUlmkSnrAzM&list=PL0EC6527BE871ABA3&index=4&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/04STFM.pdf" target="_parent">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Turbulence</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32613-turbulence">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=1_oyqLOqwnI&list=PL0EC6527BE871ABA3&index=12&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/11TUR.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Vorticity, Part 1</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32614-vorticity-part-1">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=loCLkcYEWD4&list=PL0EC6527BE871ABA3&index=9&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/09VOR.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Vorticity, Part 2</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32615-vorticity-part-2">TechTV</a></td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=h6bmrRFYFbc&list=PL0EC6527BE871ABA3&index=10&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/09VOR.pdf" target="_blank">Film Notes </a></td>
+        </tr>
+        <tr>
+          <td width="58%" align="left">Waves in Fluids</td>
+          <td align="center"><a href="http://techtv.mit.edu/collections/ifluids/videos/32616-waves-in-fluids">TechTV</a> </td>
+          <td align="center"><a href="http://www.youtube.com/watch?v=MNyebpog_i0&list=PL0EC6527BE871ABA3&index=14&feature=plpp_video" target="_blank">YouTube</a></td>
+          <td align="center"><a href="ncfmf/14WF.pdf" target="_blank">Film Notes</a></td>
+        </tr>
+      </table>  
+	  <a name="preface">    
+        <p align="justify" class="style1 ">
+        <p align="justify" class="style1 ">                
+        <p align="justify" class="style1 "><b>Preface</b>
+        <p align="justify" class="style12">&ldquo;Since things in motion sooner catch the eye than what stirs not.&rdquo; Troilus and Cressida
+        <p align="justify" class="style1">&nbsp;&nbsp;&nbsp;This volume contains text and photographic material related to the sound films prepared under the direction of the National Committee for Fluid Mechanics Films (NCFMF). The films, and the related text material herein, cover nearly all of the fundamental phenomena of fluid motions. <br>
+&nbsp;&nbsp;&nbsp;Each chapter of this volume is based on the script of a particular film. Each is heavily illustrated with experimental scenes from the film. The many photographs of interesting and significant phenomena in fluid mechanics are in themselves highly educative to both beginning and advanced students. In addition, descriptions of experimental phenomena help to develop in students that valuable faculty: a physical intuition, a &ldquo;feel&rdquo; for the diverse ways in which fluids behave. With the &ldquo;film in print,&rdquo; in the form of a chapter of this book, the reader who has seen a film can relive the film, as it were: he can recapture the phenomena, the motion, and the vividness of the film, but he can do so at his own speed, without being pressured by the pace of the film. A student can reflect on what he has seen, and relate it to his classroom and textbook learning. Furthermore, a reading of the appropriate chapter before viewing a film is most helpful in getting the maximum satisfaction and benefit from the film. <br>
+&nbsp;&nbsp;&nbsp;Formed in 1961, the NCFMF functions in collaboration with Educational Development Center, Inc. (EDC) in Newton, Massachusetts, formerly Educational Services Incorporated. The NCFMF, a self-constituted group of eleven university faculty members interested in education and active in various branches of fluid mechanics, was responsible for the general structure of the film program, for the substantive content, and for the creation of this volume. Education Development Center was responsible for film production, for a part of the editing and composition of this book, and also provided administrative and laboratory services. Funding was provided mainly by the National Science Foundation, with some contribution by the Office of Naval Research. The program was completed in 1969. <br>
+&nbsp;&nbsp;&nbsp;The concept that brought the NCFMF into existence was the conviction that films would provide a convenient, economic, and powerful way of filling a serious educational gap. On the one hand are the concrete, experimental, perceptual phenomena of the real world of fluid motion. On the other hand is the abstract, mathematical, conceptual treatment of the subject in textbooks and classroom lectures. <br>
+&nbsp;&nbsp;&nbsp;With the objective of bridging this gap, we shaped the film program along certain policy guidelines that are of course, reflected in the chapters of this book.<br>
+&nbsp;&nbsp;&nbsp;1. First priority was given to the presentation and elucidation of experimental phenomena. The usual kinds of lecture and text material, and of mathematics, are notably absent. The films and the chapters of this book were not designed as substitutes for lectures (although they have be so used!), but rather as teaching aids. Our aim was to use the power of graphical illustration to support the weakest point of the lecture/textbook system.<br>
+&nbsp;&nbsp;&nbsp;2. Out of the extremely large number of experiments and topics available, only those of fundamental and broad nature, and of permanent character, were selected. In each case, an &ldquo;introductory&rdquo; treatment was used: one aimed at the student&rsquo;s first study of a particular topic, whether the topic was elementary or advanced.<br>
+&nbsp;&nbsp;&nbsp;3. Each film, and the related chapter in this book, was designed to show the broad ramifications of fluids mechanics by drawing on examples from many fields. Parochial viewpoints and unnecessary jargon were avoided. As a consequence, we expect them to have a broadening influence, and, further, that they will be useful to other professions than those principally occupied with fluid mechanics, for instance, medicine, oceanography, acoustics, and architecture.<br>
+&nbsp;&nbsp;&nbsp;4. No attempt was made to organize the films, or these related chapters, in an ordered sequence or curriculum. There is too much variation in courses on fluid mechanics for such to be satisfactory. Moreover, the capability of films to range over wide areas in a short time is a stimulating contrast to the slower unfolding of topics in a long series of lectures.<br>
+&nbsp;&nbsp;&nbsp;Out of these governing views grew a virtually new component of scientific and engineering education, certainly one previously untried on a large scale: demonstration-experiment films, and related written material, for a difficult subject having a strong mathematical flavor. In 1961 it was admittedly a speculation whether such films could be effective, and, even if they were, whether they would be widely used. In the intervening years both these speculations have become resounding positive statements. The films have won their share of awards at film festivals, to be sure. But more importantly, they have been widely adopted and used inside and outside the classroom. The remarks of a generation of students, who now take these films for granted as a part of their learning experience, confirm that they produce a deep imprint connected with the other parts of their learning experience in fluid mechanics. Groups attempting similar programs in other scientific and engineering fields have emulated the NCFMF. Journals that regularly review books have stimulated by the NCFMF product to review films as well. In its issue of July 1967, the distinguished Journal of Fluid Mechanics inaugurated its reviews of films with the statement:
+        <p align="justify" class="style1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The work of the U.S. National Committee for Fluid Mechanics Films is now well <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known&hellip;Films on fluid mechanics have been made before now by other people, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but the scale of this programme, the quality of the Committee&rsquo;s work, and the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wide distribution of the products make these films a notable development in the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;academic world. Already the impact on the teaching of fluid mechanics in colleges<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and universities has been considerable, and it is likely that films are here to stay<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as a regular teaching aid. Fluid mechanics is a photogenic subject; and the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Committee have opened our eyes to what can be done by an effective <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;combination of thought and money.
+        <p align="justify" class="style1">&nbsp;&nbsp;&nbsp;We hope that the related written materials presented in this volume will be received with equal pleasure by those already familiar with the films, and, further, that the book will augment the film audience.<br>
+&nbsp;&nbsp;&nbsp;Many different ways of using the films have evolved on university campuses. The sound films are sometimes shown in class hours. More often each films is shown several times each term, in the afternoon or evening, at well-advertised times, open to the entire community. Where a well-equipped audiovisual facility exists, students can schedule a film at their convenience. Sometimes the library will serve a similar function. Complete courses have been built around the films and the film notes as central exhibits. There are obvious ways in which this present volume may be worked into the related program of film showings.<br>
+&nbsp;&nbsp;&nbsp;For convenience of interested readers, the volume also contains brief descriptions of the 133 four-minute silent films produced by the NCFMF. These are single topic films that show a particular experiment or illustrate a particular phenomenon. They are ideal for illustrating a point that arises during the course of a lecture. They can be operated in corridor showcases, or left in the laboratory to be viewed at any time. Many schools have viewing rooms for cartridge projection in the library or audiovisual center. Students can study the cartridge loops at will on recommendation of the instructor, or they may be assigned as homework.<br>
+&nbsp;&nbsp;&nbsp;While the cost of the program, some $3 million, was substantial, no less important were the intellectual and professional contributions so generously made by so many individuals. Mindful that we were acting for a national and international scholarly community, and that a similar effort could not be undertaken for at least a generation, we felt especially conscious of a responsibility for high quality and broad acceptance. An important mechanism for this&mdash;and a highly successful one&mdash;was the Advisory Committee for each film, which was always encouraged to be aggressive and outspoken in establishing and maintaining the highest of standards. As one principal put it, the development of his film was a &ldquo;chastening experience.&rdquo; The chapters of this volume reflect these standards of quality.<br>
+&nbsp;&nbsp;&nbsp;To the members of the Advisory Committee, and most particularly to the principals, the NCFMF offers its thanks. Acknowledgement is made also of the dedicated efforts of the professional staff at EDC, especially to Charles R. Conn II, Bruce Egan, and Benjamin T. Richards for their contributions to the editing of the material of this book.<br>
+&nbsp;&nbsp;&nbsp;Its work completed, the NCFMF remains as an entity only to keep a paternal eye on its product, and to ensure that it survives its youth. While not all we produced was of even quality, the best should survive without growing old.
+        <p align="justify" class="style1">Ascher H. Shapiro<br>
+    for the National Committee for Fluid Mechanics Films <br>
+    Cambridge, Massachusetts<br>
+    February 1972    </td>
+    </tr>
+    <tr>
+      <td colspan="2"><a href="http://web.mit.edu/hml/ncfmf.html#TOP"><br>
+  Back to top</a>
+        <hr width="712" align="left">
+        <TABLE CELLSPACING="10">
+          <TR>
+            <TD><A HREF="http://web.mit.edu/"> <IMG SRC="http://web.mit.edu/interface/mit.gif" ALT="mit" WIDTH="42" HEIGHT="24" ALIGN="LEFT" BORDER="0"></A> </TD>
+            <TD><I> Copyright &copy; 2008 Massachusetts Institute of Technology</I><BR>
+        Send comments and questions to <A HREF="http://web.mit.edu/hml/comments.html">hml-www@mit.edu</A> </TD>
+          </TR>
+      </TABLE></td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+</html>
+246
+
+
+
+http://www.oreilly.com/pub/a/web2/archive/what-is-web-20.html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+
+
+<style type="text/css">
+li.GlobalNavInfo.right { width: 145px; }
+</style>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--chartbeat-->
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+
+	<title>What Is Web 2.0 - O'Reilly Media</title>
+	<meta name="keywords" content="whatis,Web 2.0,next generation web,Web 2.0 Conference,Tim O'Reilly,O'Reilly Media" />
+	<meta name="description" content="Tim O'Reilly attempts to clarify just what is meant by Web 2.0, the term first coined at a conference brainstorming session between O'Reilly Media and MediaLive International, which also spawned the Web 2.0 Conference." />
+	<meta name="date" content="2018-04-11" />
+	<meta name="search_date" content="2005-09-30" />
+	<meta name="search-title" content="What Is Web 2.0" />
+	<meta name="pagename" content="What Is Web 2.0" />
+	<meta name="site" content="O'Reilly" />
+<meta name="target" content="" />
+	<meta name="twitter:title" content="What Is Web 2.0" />
+	<meta name="twitter:description" content="Tim O'Reilly attempts to clarify just what is meant by Web 2.0, the term first coined at a conference brainstorming session between O'Reilly Media and MediaLive International, which also spawned the Web 2.0 Conference." />
+	<meta name="twitter:site" content="@OReillyMedia" />
+	<meta property="og:title" content="What Is Web 2.0" />
+	<meta property="og:type" content="article" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:image" content="http://cdn.oreillystatic.com/oreilly/images/oreilly-social-icon-120.png" />
+	<meta property="og:image" content="http://cdn.oreillystatic.com/oreilly/images/oreilly-social-icon-200.png" />
+
+
+
+
+
+
+
+
+<!-- feed autodiscovery links -->
+<link rel="alternate" type="application/atom+xml" title="New Titles Feed" href="http://feeds.feedburner.com/oreilly/newbooks" />
+<link rel="alternate" type="application/atom+xml" title="Upcoming Titles Feed" href="http://feeds.feedburner.com/oreilly/upcomingbooks" />
+<link rel="alternate" type="application/atom+xml" title="O'Reilly Ebook Deal of the Day Feed" href="http://feeds.feedburner.com/oreilly/ebookdealoftheday" />
+
+
+
+
+
+
+<!--Auto Complete CSS (see footer for autocomplete scripts, including call to autocomplete_data.js file) -->
+<!--<link rel="stylesheet" type="text/css" href="//content.atomz.com/sp10049ed9/publish/autocomplete_styles.css" />-->
+<!--ML Scripts and CSS-->
+<!-- script type="text/javascript" src="//cdn.oreillystatic.com/oreilly/ml/js/jquery-1.4.min.js"></script -->
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.oreillystatic.com/oreilly/ml/css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" media="screen"  href="//cdn.oreillystatic.com/assets/css/nav.css" />
+
+
+
+
+
+<!--MyBUYS Header -->
+<!-- MyBuys libraries and style sheet -->
+<link href="http://t.p.mybuys.com/css/mbstyles.css" type="text/css" rel="stylesheet" id="mybuysstyles" />
+<script type="text/javascript" src="http://t.p.mybuys.com/js/mybuys3.js"></script>
+<script type="text/javascript" src="http://t.p.mybuys.com/clients/OREILLY/js/setup.js"></script>
+<!-- End MyBuys libraries and style sheet -->
+
+
+
+
+
+<!-- common javascript and analytics -->
+<!-- path_info: a//web2/archive/what-is-web-20.html -->
+<!-- analytics.pl -- table: a - ref_id: /web2/archive/what-is-web-20.html -->
+<!-- analytics2.pl -- table: a - ref_id: /web2/archive/what-is-web-20.html -->
+<!-- table: a - ref_id: /web2/archive/what-is-web-20.html - cs_rid: 1 -->
+
+<script language="JavaScript" type="text/javascript"><!--
+var s_account="ororeilly,orglobal"
+//--></script>
+<!-- SiteCatalyst code version: H.20.2. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com  -->
+<script language="JavaScript" type="text/javascript" src="//cdn.oreillystatic.com/assets/js/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName="oreilly:oreilly:what is web 2.0"
+s.channel="oreilly"
+s.prop1="oreilly:oreilly"
+s.prop2="oreilly:oreilly"
+s.prop3="oreilly:oreilly"
+s.prop4="article"
+s.prop5="what is web 2.0"
+s.prop6="n/a/1"
+s.prop24="09/30/2005"
+s.prop21=""
+s.hier1="oreilly,oreilly"
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<!-- End SiteCatalyst code version: H.20.2. -->
+<!-- analytics.pl: 2018/4/11 0:12:06 -->
+
+
+
+
+<link rel="stylesheet" href="//cdn.oreillystatic.com/oreilly/ml/css/all-post-ml.css" type="text/css" />
+
+
+
+<!-- ORM correction to ML styles -->
+<link rel="stylesheet" href="//cdn.oreillystatic.com/oreilly/ml/css/ml.css" type="text/css" />
+<script type="text/javascript" src="//cdn.oreillystatic.com/oreilly/ml/js/ml.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.oreillystatic.com/assets/css/2017_font_face.css" />
+
+<link rel="stylesheet" href="//cdn.oreillystatic.com/styles/oreilly.css" type="text/css" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" rev="stylesheet" href="http://www.oreillynet.com/styles/search.css" />
+<link href="http://www.oreillynet.com/styles/articles.css" rel="stylesheet" type="text/css" />
+<link href="http://www.oreillynet.com/styles/pt-excerpt.css" rel="stylesheet" type="text/css" />
+<link href="http://oreilly.com{file}" rel="canonical" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//www.oreilly.com/favicon.ico" /> 
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+var _gaq = _gaq || []; 
+_gaq.push(['_setAccount', 'UA-4591498-1']);
+_gaq.push(['_setDomainName', 'oreilly.com']);
+_gaq.push(['_addIgnoredRef', 'oreilly.com']);
+_gaq.push(['_setSiteSpeedSampleRate', 50]);
+_gaq.push(['_trackPageview']);
+
+(function() { var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true; ga.src = ('https:' ==
+document.location.protocol ? 'https://ssl' : 'http://www') +
+'.google-analytics.com/ga.js'; var s =
+document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s); })();
+
+</script>
+
+
+<!--Facebook Insights -->
+<meta property="fb:page_id" content="15137500430" />
+
+
+
+<!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=27087,
+settings_tolerance=2000,
+library_tolerance=1500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+
+
+
+
+
+<script src="/account/login-config.js"></script>
+<script src="/account/janrain-settings.js"></script>
+<script src="//cdn.oreillystatic.com/members/js/widgets/login-widget.min.js" id="janrainCaptureScript"></script>
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4V6Z');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="main">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="page">
+<!--header-->
+	<table width="990" border="0" cellpadding="0" cellspacing="0" class="mainLayoutTable">
+		<tr>
+			<td class="navheaderbg">
+				<div> <!--TopNav Start-->
+					<script type="text/javascript">
+					function checkIfDefault(keyword) {
+					var defaultSearchTerm = "Search";
+					if(keyword==defaultSearchTerm) {
+					return '';
+					}
+					else {
+					return keyword;
+					}
+					}
+					</script>
+					<div id="header" style="width:990px;">
+						<div class="logo">
+                                               <a href="http://www.oreilly.com"><img src="//cdn.oreillystatic.com/images/sitewide-headers/ml-header-home-blinking.gif" border=0 alt="O'Reilly Media, Inc."></a>
+                                               
+                                               
+                                              
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+						</div> <!--logo end-->
+						<div class="tools">
+<p><a href="http://members.oreilly.com" class="signInLinkmy">Your Account</a>
+</p>						
+					
+						</div> <!--tools end-->
+                                               
+
+					<div id="search-box" class="yui-skin-sam">
+						<form name="searchform" method="get" id="search-form" action="https://ssearch.oreilly.com/">
+							<div class="search">
+								<fieldset>
+									<span id="search-input">
+										<div class="searchInput">
+											<span id="search-field"><input type="text" value="Search" name="q" maxlength="64" id="q" onfocus="this.value=checkIfDefault(this.value);"></span>			
+										</div>
+										<span id="search-button">
+											<input type="image" value="SEARCH" src="//cdn.oreillystatic.com/images/sitewide-headers/search_btn.gif" border="0" style="float:left" alt="Search" align="top">
+			
+        										
+										</span>
+									</span>
+ <div id="autocomplete"></div>
+								</fieldset>
+							</div><!--search-->
+						</form>
+					</div><!--search-box-->
+
+
+				</div> <!--Header End-->
+
+    <!--[if lt IE 9]>
+  <script>
+    'article aside footer header nav section time'.replace(/\w+/g,function(n){document.createElement(n)})
+  </script>
+<![endif]-->
+
+
+<!-- Nav CSS -->
+<!-- Not Needed for Actual Site -->
+<style type="text/css">
+
+  nav a { text-decoration:none; }
+  nav a:hover { text-decoration:underline; }
+
+  nav p { margin:0 0 10px; }
+  nav .fsl { font-size:16px; }
+  nav .fsxl { font-size:24px; line-height:1.1em; }
+  nav .fwb { font-weight:bold; }
+  nav .fc-highlight { color:#b9002d; }
+  nav .fc-dark { color:#222; }
+  nav .fc-light { color:#fff; }
+  nav .nm { margin:0; }
+  nav .mb { margin-bottom:10px; }
+  nav .mr { margin-right:10px; }
+  nav .floatl { float:left; }
+  nav .clear { clear:both; }
+
+  nav  a.btn-green-arrow { display:block; float:left; padding:5px 10px 5px 22px; line-height:22px; font-size:20px; font-weight:bold; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; border:1px solid #f2ba12; color:#222; background: rgb(247,209,69); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNmN2QxNDUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNmNWM1MTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top,  rgba(247,209,69,1) 50%, rgba(245,197,23,1) 50%); background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(247,209,69,1)), color-stop(50%,rgba(245,197,23,1))); background: -webkit-linear-gradient(top, rgba(247,209,69,1) 50%,rgba(245,197,23,1) 50%); background: -o-linear-gradient(top, rgba(247,209,69,1) 50%,rgba(245,197,23,1) 50%); background: -ms-linear-gradient(top, rgba(247,209,69,1) 50%,rgba(245,197,23,1) 50%); background: linear-gradient(to bottom,  rgba(247,209,69,1) 50%,rgba(245,197,23,1) 50%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7d145', endColorstr='#f5c517',GradientType=0 ); }
+  nav a.btn-green-arrow:hover { text-decoration:none; }
+  nav a.btn-green-arrow .arrow { display:block; min-height:18px; background:transparent url(//cdn.oreillystatic.com/oreilly/images/btn-green-arrow-overlay.png) left center no-repeat; margin:0 0 0 -25px; padding:0 0 0 25px; }
+  nav a.btn-green-arrow.small { font-size:13px; line-height:18px;  padding:5px 10px 5px 22px !important; }
+
+  ul#primarynav, #sf-menu-text-nav { display:none; }
+</style>
+
+<!-- Styles for page -->
+<style type="text/css">
+  /* Reset for browsers that don't automatically set semantic tags to block */
+  article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+
+  nav .self-clear:after { content:""; display:block; clear:both; height:0; }
+
+#globalInclude { text-align:left !important; }
+</style>
+
+
+<!-- Nav Styles -->
+<style type="text/css">
+  nav { font-size:13px; }
+  nav ul { list-style:none; margin:0; padding:0; }
+  nav ul:after { content:''; display:block; clear:both; height:0; width:100%; }
+  nav li { display:block; float:left; border-right:1px solid #ddd; line-height:1.4em; }
+  nav li:last-child { border-right:0; }
+  nav li > a { display:block; padding:8px 15px 7px; }
+  nav li > a:hover { text-decoration:none; }
+  nav li > a.category { font-size:16px; color:#b9002d !important; }
+
+  nav ul#global-nav {
+    display:block;
+    background:#eee;
+    background:-moz-linear-gradient(top, #fbfbfb 0%, #eeeeee 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#eeeeee));
+    background:-webkit-linear-gradient(top, #fbfbfb 0%,#eeeeee 100%);
+    background:-o-linear-gradient(top, #fbfbfb 0%,#eeeeee 100%);
+    background:-ms-linear-gradient(top, #fbfbfb 0%,#eeeeee 100%);
+    background:linear-gradient(to bottom, #fbfbfb 0%,#eeeeee 100%);
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    height:auto;
+    text-align:left;
+  }
+  nav #global-nav li > a { color:#333; }
+  nav #global-nav li > a.current { color:#b9002d; background:#fff; border-bottom:1px solid #fff; margin-bottom:-1px; }
+  /* Social Icons in Primary Nav */
+  nav #global-nav .social { float:right; padding:9px 15px 0 0; border-right:0; height:auto; position:static; margin:0; }
+  nav #global-nav .social .icon { display:block; float:left; padding:0; }
+  nav #global-nav .social .icon:before { content:''; display:block; width:16px; height:16px; background-image:url(//cdn.oreillystatic.com/assets/images/social-icons-16.png); margin:0 0 0 8px; font-size:0; }
+  nav #global-nav .social .icon.twitter:before { background-position:0 0; }
+  nav #global-nav .social .icon.youtube:before { background-position:0 -20px; }
+  nav #global-nav .social .icon.facebook:before { background-position:0 -40px; }
+  nav #global-nav .social .icon.googleplus:before { background-position:0 -60px; }
+  nav #global-nav .social .icon.rss:before { background-position:0 -80px; }
+
+
+  nav #contextual-nav { display:block; clear:both; padding:0 7px 0; border-bottom:1px solid #ddd; }
+  nav #contextual-nav > li { padding:8px 0 7px; position:relative; border-right:0; }
+  nav #contextual-nav > li:after { content:''; display:block; top:8px; right:0; position:absolute; height:1.4em; border-right:1px solid #ddd; }
+  nav #contextual-nav > li.no-divider:after { display:none; }
+  nav #contextual-nav > li > a { color:#b9002d; padding:0; margin:0 8px; }
+  nav #contextual-nav > li > a:hover { color:#333; }
+  /* Labels in Secondary Nav */
+  nav #contextual-nav > li.label { margin:0 0 0 8px; color:#999; }
+  nav #contextual-nav > li.label:after { display:none; }
+  /* Contacts in Secondary Nav */
+  nav #contextual-nav li.contact { float:right; padding:9px 0 7px 0; font-weight:bold; font-size:12px; color:#333; }
+  nav #contextual-nav li.contact:after { display:none; }
+  nav #contextual-nav li.contact > a { padding:0; margin:0 8px 0 0; display:inline; color:#333; }
+
+
+  nav li.sub > ul { /*display:none;*/ left:-9999px; top:-9999px; position:absolute; z-index:100; background:#fff; background:rgb(255,255,255); background:rgba(255,255,255,.98); -webkit-box-shadow:1px 1px 1px 0px rgba(0, 0, 0, .3); -moz-box-shadow:1px 1px 1px 0px rgba(0, 0, 0, .3); box-shadow:1px 1px 1px 0px rgba(0, 0, 0, .3); border-left:1px solid #ddd; margin-left:-1px; border:1px solid #ddd\9; border-top:0 solid #ddd\9; margin:0 -1px\9; }
+  nav #global-nav > li.sub:hover > ul, nav #contextual-nav > li.sub:hover > ul { top:auto; left:auto; }
+  nav ul.vertical > li.sub.hover > ul { top:auto; left:auto; }
+
+  nav #contextual-nav ul.vertical > li.sub.hover > a { position:relative; }
+  nav #contextual-nav ul.horizontal > li:hover > a { color:#b9002d; }
+
+  nav #contextual-nav ul.vertical > li.sub.hover > a:after { right:0; border:solid transparent; content:" "; height:0; width:0; position:absolute; pointer-events:none; top:50%; border-color:#fff; border-left-color:#ccc; border-width:6px; margin-top:-6px; }
+  nav #global-nav > li.sub:hover .title { background:rgba(255,255,255,.5); }
+  nav #global-nav li.sub > ul.vertical li:hover > a, nav #contextual-nav ul li:hover > a { color:#b9002d; }
+  nav li.sub > ul.vertical li { clear:both; width:100%; }
+  nav li.sub > ul.vertical li:first-child { border-top:1px solid #ddd; } 
+  nav #global-nav li.sub > ul.vertical li { border-top:1px solid #ddd; }
+  nav li.sub > ul.vertical li:last-child { border-bottom:0; }
+
+  nav #contextual-nav li.sub > ul.vertical { top:100%; border-top:1px solid #ddd; margin-left:-8px; border-left:1 solid #ddd\9; }
+  nav #contextual-nav li.sub > ul.vertical > li { padding: 0; border:0; min-width:210px; max-width:300px; }
+  nav #contextual-nav li.sub > ul.vertical > li > a, nav #contextual-nav li.sub > ul.horizontal > li > a { padding: 4px 15px 4px; margin-right:-2px; }
+  nav #contextual-nav li.sub > ul:before, nav #contextual-nav li.sub > ul:after { content:''; display:block; clear:both; height:7px; }
+
+
+  nav #contextual-nav li.sub > ul.horizontal { min-height:100%; margin-left:0px; border-top:1px solid #ddd; border-left:1 solid #ddd\9; border-top:0 solid #ddd\9; }
+  nav #contextual-nav .vertical > li.sub.hover > ul.horizontal { left:100%; top:-1px; top:0px\9; }
+  nav #contextual-nav li > ul li > a { color:#333; }
+  nav #contextual-nav > li:hover > a { color:#222; }
+
+  nav #contextual-nav ul.horizontal li { float:none; padding: 0; border:0; width:210px; position:relative; z-index:10; }
+</style>
+
+
+<!-- Advertisement Styles -->
+<style type="text/css">
+  nav #contextual-nav ul.horizontal li.ad.data { width:425px; min-height:560px; position:absolute; z-index:-1; top:0; bottom:0; left:0; margin-right:-55px; background:transparent url(//cdn.oreillystatic.com/oreilly/promos/ad-data-bg.png) left bottom no-repeat; }
+
+  nav #contextual-nav ul.horizontal li.ad.photography { width:370px; min-height:560px; position:absolute; z-index:-1; top:0; bottom:0; left:0; background:transparent url(//cdn.oreillystatic.com/oreilly/promos/ad-photography-bg.jpg) left bottom no-repeat; }
+
+  nav #contextual-nav ul.horizontal li.ad.programming { width:425px; min-height:585px; position:absolute; z-index:-1; top:0; bottom:0; left:0; margin-bottom:-25px; background:transparent url(//cdn.oreillystatic.com/oreilly/promos/ad-programming-bg.png) left bottom no-repeat; }
+</style>
+
+
+
+<nav role="navigation">
+  <ul id="global-nav" role="menubar">
+    <li role="menuitem"><a href="http://www.oreilly.com">Home</a></li>
+    <li role="menuitem"><a href="http://shop.oreilly.com">Shop Video Training &amp; Books</a></li>
+    <li role="menuitem"><a href="http://radar.oreilly.com">Radar</a></li>
+    <li role="menuitem"><a href="http://www.safaribooksonline.com/?utm_source=oreilly&utm_medium=referral&utm_campaign=publisher&utm_content=nav">Safari Books Online</a></li>
+    <li role="menuitem"><a href="http://conferences.oreilly.com/">Conferences</a></li>
+    <!-- li role="menuitem"><a href="http://www.oreillyschool.com/">IT Courses &amp; Certificates</a></li -->
+    <li class="social"><a href="http://twitter.com/oreillymedia" class="icon twitter" title="O'Reilly on Twitter"></a><a href="http://www.youtube.com/subscription_center?add_user=oreillymedia" class="icon youtube" title="O'Reilly on YouTube"></a><a href="http://www.facebook.com/OReilly" class="icon facebook" title="O'Reilly on Facebook"></a><a href="https://plus.google.com/+oreillymedia/" class="icon googleplus" title="O'Reilly on Google+"></a><a href="http://oreilly.com/feeds/" class="icon rss" title="Subscribe to Feed"></a></li>
+  </ul>
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+
+</nav>
+  
+			</div> <!--CatNav End-->
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<td>
+
+
+<div id="content-09">
+
+
+
+<div style="float:left;width:760px;padding-right:10px;">
+
+
+<h1>What Is Web 2.0</h1>
+<h2>Design Patterns and Business Models for the Next Generation of Software</h2>
+by <a href="http://www.oreilly.com/pub/au/27" rel="author">Tim O'Reilly</a><br />
+09/30/2005
+<!-- sidebar begins -->
+<!-- don't move sidebars -->
+<!-- sidebar ends -->
+
+<div style="border: 1px solid rgb(119, 119, 119); margin: 5px; padding-left: 8px; padding-top:8px; width:140px; background-color: rgb(240, 240, 240); float: right;clear:right;">
+Read this article in:
+<ul>
+<li><a href="http://www.mazen.com.sa/what-is-web2/page1.htm">Arabic</a></li>
+<li><a href="http://www.enet.com.cn/article/2005/1122/A20051122474593.shtml">Chinese</a></li>
+<li><a href="http://web2rules.blogspot.com/2006/01/what-is-web-20-par-tim-oreilly-version.html">French</a></li>
+<li><a href="http://www.oreilly.de/artikel/web20_trans.html">German</a></li>
+<li><a href="http://www.xyz.reply.it/web20/">Italian</a></li>
+<li><a href="http://japan.cnet.com/column/web20/story/0,2000054679,20090039-5,00.htm">Japanese</a></li>
+<li><a href="http://network.hanbitbook.co.kr/view.php?bi_id=1141">Korean</a></li>
+<li><a href="http://sociedaddelainformacion.telefonica.es/jsp/articulos/detalle.jsp?elem=2146">Spanish</a></li>
+</ul>
+</div>
+
+
+<style type="text/css">
+#newsletter-popup-overlay { display: none; position: absolute; z-index: 200; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); background: none\9; }
+#newsletter-popup-overlay .popup { overflow: hidden; margin: 10% auto 0; background-color: #f9f9f9; text-align: center; width: 740px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3); box-shadow: 0 0 15px rgba(0,0,0,0.3); border: 1px solid #ddd; }
+#newsletter-popup-overlay .popup .popup-header { background-color: #fff; padding: 10px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+#newsletter-popup-overlay .popup.data .popup-header { background: #fff url('//cdn.oreillystatic.com/oreilly/images/data-nl-popup-fish.jpg') -4px center no-repeat; }
+#newsletter-popup-overlay .popup.programming .popup-header { background: #fff url('//cdn.oreillystatic.com/oreilly/images/code-nl-popup-jerboa.jpg') -4px center no-repeat; }
+#newsletter-popup-overlay .popup.solid .popup-header { background: #fff url('//cdn.oreillystatic.com/oreilly/images/code-nl-popup-jerboa.jpg') -4px center no-repeat; }
+#newsletter-popup-overlay .popup.velocity .popup-header { background: #fff url('//cdn.oreillystatic.com/oreilly/images/velocity-nl-popup-greyhound.jpg') -4px bottom no-repeat; }
+#newsletter-popup-overlay .popup .popup-header a.close { font-size: 16px; line-height: 19px; color: #999; display: block; padding-right: 24px; float: right; background: transparent url('//cdn.oreillystatic.com/oreilly/images/close-icon-19x19.png') right 0 no-repeat; }
+#newsletter-popup-overlay .popup .popup-header a.close:hover { color: #666; text-decoration: none; background: transparent url('//cdn.oreillystatic.com/oreilly/images/close-icon-19x19.png') right -100px no-repeat; }
+#newsletter-popup-overlay .popup .popup-header h3 { max-width: 500px; width: 100%; margin: 20px auto 5px auto; padding: 0; font-size: 40px; line-height: 44px; font-weight: normal; }
+#newsletter-popup-overlay .popup .popup-header p { max-width: 500px; width: 100%; margin: 0 auto 10px; padding: 0; font-size: 20px; line-height: 28px; font-weight: normal; }
+#newsletter-popup-overlay .popup-form { margin: 15px auto 0; padding: 10px 10px 5px 10px; text-align: left; }
+#newsletter-popup-overlay #newsletter-popup-frame { display: block; border: none; padding: 0; margin: 0 auto; width: 100%; max-width: 450px; height: 100px; text-align: left; }
+@media screen and (max-width: 950px) {
+  #newsletter-popup-overlay .popup{ width: 96% !important; }
+}
+@media screen and (max-width:740px) {
+  #newsletter-popup-overlay .popup.data .popup-header, #newsletter-popup-overlay .popup.programming .popup-header, #newsletter-popup-overlay .popup.solid .popup-header, #newsletter-popup-overlay .popup.velocity .popup-header { background: #fff; }
+  #newsletter-popup-overlay .popup .popup-header h3 { font-size:30px; line-height:32px; }
+}
+</style>
+
+
+<div id="newsletter-popup-overlay">
+  <div id="newsletter-popup" class="popup web">
+    <div class="popup-header">
+      <a href="#" class="close">close</a>
+      <h3>Get the O&rsquo;Reilly  Web Platform Newsletter</h3>
+      <p>Stay informed. Receive weekly insight from industry insiders&mdash;plus exclusive content and offers.</p>
+    </div>
+    <div class="popup-form">
+      <iframe src="//cdn.oreillystatic.com/oreilly/email/forms/email_signup_widget.html?site=orm&amp;topic=web&amp;loc=overlay&amp;emtype=nl" id="newsletter-popup-frame" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+var showNewsletterPopup = true;
+function checkNLCookie() {
+  //Loop through active cookies to find articlenewsletterpopup
+  var articleCookieArray = document.cookie.split(";");
+  var x,y;
+  for (var i = 0 ; i < articleCookieArray.length; i++) {
+    x = articleCookieArray[i].substr(0, articleCookieArray[i].indexOf("="));
+    y = articleCookieArray[i].substr(articleCookieArray[i].indexOf("=") + 1);
+    x = x.replace(/^\s+|\s+$/g,"");
+    if (x == "articlenewsletterpopup") {
+      if (y == "viewed") {
+        showNewsletterPopup = false;
+      }
+    }
+  }
+}
+function startNLPopup() {
+  var nlPopup = jQuery('#newsletter-popup');
+  if (showNewsletterPopup) {
+    setTimeout("nlShowPopup()", 3000);
+  }
+  jQuery('form').find('input[name*="email_addr"]').each(function() {
+    var defaultValue = jQuery(this).attr('value');
+    jQuery(this).focus(function() {
+      if (jQuery(this).attr('value') == defaultValue) {
+        jQuery(this).attr('value', '');
+      }
+    });
+    jQuery(this).blur(function() {
+      if (jQuery(this).attr('value') == '' || jQuery(this).attr('value') == ' ') {
+        jQuery(this).attr('value', defaultValue);
+      }
+    });
+  });
+  var nlPopupLoad = 0;
+  nlPopup.find('#newsletter-popup-frame').load(function() {
+    if (nlPopupLoad < 2) {
+      nlPopupLoad ++;
+    }
+    else {
+      nlPopup.find('#newsletter-popup-frame').css('opacity',0);
+      jQuery('#newsletter-popup-overlay').animate({ opacity: 0 }, 200, function() {
+        jQuery(this).css('display','none');
+      });
+    }
+  });
+}
+function nlShowPopup() {
+  var nlPopupDate = new Date();
+  nlPopupDate.setTime(nlPopupDate.getTime()+(90*24*60*60*1000));
+  var nlPopupexpires = "; expires="+nlPopupDate.toGMTString();
+  document.cookie = "articlenewsletterpopup=viewed; " + nlPopupexpires + "; path=/";
+  var nlPopupOverlay = jQuery('#newsletter-popup-overlay');
+  var nlPopup = jQuery('#newsletter-popup');
+  var nlPopupClose = nlPopup.find('a.close');
+  nlPopup.css('margin-top', (jQuery(window).scrollTop() + 140) + "px");
+  nlPopupOverlay.prependTo('body').css({'opacity':0, 'display':'block', 'height':jQuery('html').height()}).animate({'opacity':1}, 200);
+  function nlClosePopup() {
+    nlPopupOverlay.animate({'opacity':0}, 200, function() {
+      nlPopupOverlay.css('display','none');
+    });
+  }
+  nlPopupOverlay.click(function() {
+    nlClosePopup();
+  });
+  nlPopupClose.click(function(e) {
+    e.preventDefault();
+    nlClosePopup();
+  });
+  jQuery(document).keydown(function(e) {
+    if (e.which == 27) { //escape key
+      nlClosePopup();
+    }
+  });
+  nlPopup.click(function(event) {
+    event.stopPropagation();
+  });
+}
+jQuery(document).ready(function() {
+  if (jQuery('#newsletter-popup-overlay').length > 0) {
+    checkNLCookie();
+    startNLPopup();
+  }
+});
+-->
+</script>
+
+
+
+<p><i>Oct. 2009: Tim O'Reilly and John Battelle answer the question of "What's next for Web 2.0?" in <a href="http://www.web2summit.com/web2009/public/schedule/detail/10194">Web Squared: Web 2.0 Five Years On</a>.</i></p>
+
+<p>The bursting of the dot-com bubble in the fall of 2001 marked a turning point for the web. Many people concluded that the web was overhyped, when in fact <a href="http://www.carlotaperez.org/">bubbles and consequent shakeouts appear to be a common feature of all technological revolutions</a>. Shakeouts typically mark the point at which an ascendant technology is ready to take its place at center stage. The pretenders are given the bum's rush, the real success stories show their strength, and there begins to be an understanding of what separates one from the other.</p>
+
+<p>The concept of "Web 2.0" began with a conference brainstorming session between O'Reilly and MediaLive International. Dale Dougherty, web pioneer and O'Reilly VP, noted that far from having "crashed", the web was more important than ever, with exciting new applications and sites popping up with surprising regularity. What's more, the companies that had survived the collapse seemed to have some things in common. Could it be that the dot-com collapse marked some kind of turning point for the web, such that a call to action such as "Web 2.0" might make sense? We agreed that it did, and so the <a href="//www.web2con.com">Web 2.0 Conference</a> was born.</p>
+
+<p>In the year and a half since, the term "Web 2.0" has clearly taken hold, with more than 9.5 million citations in Google. But there's still <a href="http://radar.oreilly.com/archives/2005/08/not_20.html">a huge amount of disagreement about just what Web 2.0 means</a>, with some people decrying it as a meaningless marketing buzzword, and others accepting it as the new conventional wisdom.</p>
+
+<p>This article is an attempt to clarify just what we mean by Web 2.0.</p>
+
+<p>In our initial brainstorming, we formulated our sense of Web 2.0 by example:</p>
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th width="200" align="right" scope="col">Web 1.0</th>
+    <th width="59" align="center" scope="col">&nbsp;</th>
+    <th width="241" align="left" scope="col">Web 2.0</th>
+  </tr>
+  <tr>
+    <td align="right">DoubleClick</td>
+    <td align="center">--&gt;</td>
+    <td>Google AdSense </td>
+  </tr>
+  <tr>
+    <td align="right">Ofoto</td>
+    <td align="center">--&gt;</td>
+    <td>Flickr</td>
+  </tr>
+  <tr>
+    <td align="right">Akamai</td>
+    <td align="center">--&gt;</td>
+    <td>BitTorrent</td>
+  </tr>
+  <tr>
+    <td align="right">mp3.com</td>
+    <td align="center">--&gt;</td>
+    <td>Napster</td>
+  </tr>
+  <tr>
+    <td align="right">Britannica Online</td>
+    <td align="center">--&gt;</td>
+    <td>Wikipedia</td>
+  </tr>
+  <tr>
+    <td align="right">personal websites</td>
+    <td align="center">--&gt;</td>
+    <td>blogging</td>
+  </tr>
+  <tr>
+    <td align="right">evite</td>
+    <td align="center">--&gt;</td>
+    <td>upcoming.org and EVDB</td>
+  </tr>
+  <tr>
+    <td align="right">domain name speculation</td>
+    <td align="center">--&gt;</td>
+    <td>search engine optimization</td>
+  </tr>
+  <tr>
+    <td align="right">page views</td>
+    <td align="center">--&gt;</td>
+    <td>cost per click</td>
+  </tr>
+  <tr>
+    <td align="right">screen scraping</td>
+    <td align="center">--&gt;</td>
+    <td>web services</td>
+  </tr>
+  <tr>
+    <td align="right">publishing</td>
+    <td align="center">--&gt;</td>
+    <td>participation</td>
+  </tr>
+  <tr>
+    <td align="right">content management systems</td>
+    <td align="center">--&gt;</td>
+    <td>wikis</td>
+  </tr>
+  <tr>
+    <td align="right">directories (taxonomy)</td>
+    <td align="center">--&gt;</td>
+    <td>tagging ("folksonomy")</td>
+  </tr>
+  <tr>
+    <td align="right">stickiness</td>
+    <td align="center">--&gt;</td>
+    <td>syndication</td>
+  </tr>
+</table>
+
+<p>The list went on and on. But what was it that made us identify one application or approach as "Web 1.0" and another as "Web 2.0"? (The question is particularly urgent because the Web 2.0 meme has become so widespread that companies are now pasting it on as a marketing buzzword, with no real understanding of just what it means. The question is particularly difficult because many of those buzzword-addicted startups are definitely <em>not</em> Web 2.0, while some of the applications we identified as Web 2.0, like Napster and BitTorrent, are not even properly web applications!) We began trying to tease out the principles that are demonstrated in one way or another by the success stories of web 1.0 and by the most interesting of the new applications.</p>
+
+<h3>1. The Web As Platform</h3>
+
+<p>Like many important concepts, Web 2.0 doesn't have a hard boundary, but rather, a gravitational core. You can <a href="#mememap">visualize Web 2.0</a> as a set of principles and practices that tie together a veritable solar system of sites that demonstrate some or all of those principles, at a varying distance from that core.</p>
+
+<a name="mememap" id="mememap"></a>
+<p><img src="http://www.oreillynet.com/oreilly/tim/news/2005/09/30/graphics/figure1.jpg" width="500" height="375" alt="Web2MemeMap" /></p>
+<p>Figure 1 shows a "meme map" of Web 2.0 that was developed at a brainstorming session during FOO Camp, a conference at O'Reilly Media. It's very much a work in progress, but shows the many ideas that radiate out from the Web 2.0 core.</p>
+
+<p>For example, at the first Web 2.0 conference, in October 2004, John Battelle and I listed a preliminary set of principles in our opening talk. The first of those principles was "The web as platform." Yet that was also a rallying cry of Web 1.0 darling Netscape, which went down in flames after a heated battle with Microsoft. What's more, two of our initial Web 1.0 exemplars, DoubleClick and Akamai, were both pioneers in treating the web as a platform. People don't often think of it as "web services", but in fact, ad serving was the first widely deployed web service, and the first widely deployed "mashup" (to use another term that has gained currency of late). Every banner ad is served as a seamless cooperation between two websites, delivering an integrated page to a reader on yet another computer. Akamai also treats the network as the platform, and at a deeper level of the stack, building a transparent caching and content delivery network that eases bandwidth congestion.</p>
+
+<p>Nonetheless, these pioneers provided useful contrasts because later entrants have taken their solution to the same problem even further, understanding something deeper about the nature of the new platform. Both DoubleClick and Akamai were Web 2.0 pioneers, yet we can also see how it's possible to realize more of the possibilities by embracing additional <a href="?page=3#designpatterns">Web 2.0 design patterns</a>.</p>
+
+<p>Let's drill down for a moment into each of these three cases, teasing out some of the essential elements of difference.</p>
+
+<h4>Netscape vs. Google</h4>
+
+<p>If Netscape was the standard bearer for Web 1.0, Google is most certainly the standard bearer for Web 2.0, if only because their respective IPOs were defining events for each era. So let's start with a comparison of these two companies and their positioning.</p>
+
+<p>Netscape framed "the web as platform" in terms of the old software paradigm: their flagship product was the web browser, a desktop application, and their strategy was to use their dominance in the browser market to establish a market for high-priced server products. Control over standards for displaying content and applications in the browser would, in theory, give Netscape the kind of market power enjoyed by Microsoft in the PC market. Much like the "horseless carriage" framed the automobile as an extension of the familiar, Netscape promoted a "webtop" to replace the desktop, and planned to populate that webtop with information updates and applets pushed to the webtop by information providers who would purchase Netscape servers.</p>
+
+<p>In the end, both web browsers and web servers turned out to be commodities, and value moved "up the stack" to services delivered over the web platform.</p>
+
+<p>Google, by contrast, began its life as a native web application, never sold or packaged, but delivered as a service, with customers paying, directly or indirectly, for the use of that service. None of the trappings of the old software industry are present. No scheduled software releases, just continuous improvement. No licensing or sale, just usage. No porting to different platforms so that customers can run the software on their own equipment, just a massively scalable collection of commodity PCs running open source operating systems plus homegrown applications and utilities that no one outside the company ever gets to see.</p>
+
+<p>At bottom, Google requires a competency that Netscape never needed: database management. Google isn't just a collection of software tools, it's a specialized database. Without the data, the tools are useless; without the software, the data is unmanageable. Software licensing and control over APIs--the lever of power in the previous era--is irrelevant because the software never need be distributed but only performed, and also because without the ability to collect and manage the data, the software is of little use. In fact, <em>the value of the software is proportional to the scale and dynamism of the data it helps to manage.</em></p>
+
+<p>Google's service is not a server--though it is delivered by a massive collection of internet servers--nor a browser--though it is experienced by the user within the browser. Nor does its flagship search service even host the content that it enables users to find. Much like a phone call, which happens not just on the phones at either end of the call, but on the network in between, Google happens in the space between browser and search engine and destination content server, as an enabler or middleman between the user and his or her online experience.</p>
+
+<p>While both Netscape and Google could be described as software companies, it's clear that Netscape belonged to the same software world as Lotus, Microsoft, Oracle, SAP, and other companies that got their start in the 1980's software revolution, while Google's fellows are other internet applications like eBay, Amazon, Napster, and yes, DoubleClick and Akamai.</p>
+
+<table id="page-break" width="100%" border="0" cellspacing="0" cellpadding="0" style="clear:left;"><tr><td><p class="secondary">
+Pages: <b>1</b>, <a href="/pub/a/web2/archive/what-is-web-20.html?page=2">2</a>, <a href="/pub/a/web2/archive/what-is-web-20.html?page=3">3</a>, <a href="/pub/a/web2/archive/what-is-web-20.html?page=4">4</a>, <a href="/pub/a/web2/archive/what-is-web-20.html?page=5">5</a>
+</p></td><td><p class="secondary" align="right">
+<a href="/pub/a/web2/archive/what-is-web-20.html?page=2">
+Next Page<img src="/images/arrows-66.gif" border="0" alt="arrow" width="12" height="13" hspace="2" vspace="0" align="baseline"></a></p></td></tr></table>
+
+
+
+
+
+</div>
+<div style="float: right; width: 170px;padding-right:10px;">
+<a class="print" title="Go to a print-friendly version of this page." href="/lpt/a/1">Print</a>
+
+<a class="newsletter" href="http://elists.oreilly.com">Subscribe to Newsletters</a>
+
+<div id="share-options" style="text-align:right;">
+<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=16098316-763b-41fc-a31d-7bbadcfcf894&amp;type=website&amp;embeds=true&amp;style=rotate&amp;send_services=email%2Caim%2Csms&amp;post_services=twitter%2Cfriendfeed%2Cfacebook%2Cdigg%2Cdelicious%2Creddit%2Cslashdot%2Cgoogle_bmarks%2Cblogger%2Ctypepad%2Cstumbleupon%2Cwordpress%2Cwindows_live%2Cnewsvine%2Clinkedin%2Cmyspace%2Ctechnorati"></script>
+</div>
+<br />
+
+<!--
+<div class="sidebar-item">
+<h3>Web 2.0 Courses</h3>
+<div class="sidebar-item-content" style="text-align: left;">
+<a href="http://www.oreillyschool.com/courses/phpsql3" onClick="var s=s_gi(s_account);s.products=';ost-web2-1-phpsql';s.eVar23='ost-web2-1-phpsql';s.events='event5';s.linkTrackVars='eVar23,products,events';s.linkTrackEvents='event5';  s.tl(this,'o','Ad Click');"><img src="http://archive.oreilly.com/images/oreilly/blurbs/OST_140.gif" alt="Online Certification for Your Career" border="0" height="28" width="140" style="width:140px;padding-left:0px;" /></a>
+<br />
+
+<a href="http://www.oreillyschool.com/courses/phpsql3/" onClick="var s=s_gi(s_account);s.products=';ost-web2-2-phpsql';s.eVar23='ost-web2-2-phpsql';s.events='event5';s.linkTrackVars='eVar23,products,events';s.linkTrackEvents='event5';  s.tl(this,'o','Ad Click');"><strong>PHP/SQL 3: Seamless Web 2.0 Integration</strong></a>
+<p>Success in the Web 2.0 world depends on a successful user experience.</p>
+
+<p>Register now to learn advanced User Interface techniques using PHP and SQL. You'll master building a dynamic website using efficient and reusable code and seamlessly integrating Web 2.0 patterns, object-oriented PHP, along with other technologies and techniques.</p>
+<p class="more"><a href="http://www.oreillyschool.com/courses/phpsql3/" onClick="var s=s_gi(s_account);s.products=';ost-web2-3-phpsql';s.eVar23='ost-web2-3-phpsql';s.events='event5';s.linkTrackVars='eVar23,products,events';s.linkTrackEvents='event5';  s.tl(this,'o','Ad Click');">Enroll Today!</a><p>
+</div>
+
+
+<div class="clear"></div>
+</div>
+-->
+
+<br />
+<div class="sidebar-item">
+<h3>Recommended for You</h3>
+<div class="sidebar-item-content" style="text-align: center; padding: 0px;">
+
+<!-- MyBuys Web Recommendation Zone -->
+<div mybuyszone="5"></div>
+<!-- End MyBuys Web Recommendation Zone -->
+
+
+<!-- debug: type: content_item, cs cat: , deli cat:  -->
+<!-- MyBuys Page Parameters -->
+<script type="text/javascript">
+mybuys.setPageType("CONTENT_ITEM");
+mybuys.set("categoryid","");
+</script>
+<!-- End MyBuys Page Parameters -->
+		
+</div>
+</div>
+</div>
+
+<br clear="both" /><br />
+
+
+
+</div>
+
+
+<!--footer -->
+ 
+    <!--  -->
+    </td>
+  </tr>
+  <tr>
+    <td class="eightPixel">&nbsp;</td>
+  </tr>
+  <tr valign="bottom">
+    <td align="center" class="navfooterbg"><!--BottomNav Start-->
+      <table border="0" cellspacing="0" cellpadding="0" class="emailSignUpTable">
+        <tr>
+
+          <td style="text-align:right">
+            <ul class="utility social">
+            <li><a class="twitter" href="http://twitter.com/oreillymedia" target="_blank"><span class="hidden">Twitter</span></a></li>
+            <!--<li><a class="youtube" href="http://youtube.com/oreillymedia" target="_blank"><span class="hidden">YouTube</span></a></li>-->
+            <li><a class="youtube" href="http://www.youtube.com/subscription_center?add_user=oreillymedia" target="_blank"><span class="hidden">YouTube</span></a></li>
+            <li><a class="slideshare" href="http://slideshare.net/oreillymedia" target="_blank"><span class="hidden">Slideshare</span></a></li>
+            <li><a class="facebook" href="http://www.facebook.com/OReilly" target="_blank"><span class="hidden">Facebook</span></a></li>
+            
+            <li><a class="rss" href="http://feeds.feedburner.com/oreilly/news" target="_blank"><span class="hidden">RSS</span></a></li>
+            <li><a class="all-rss" href="http://www.oreilly.com/feeds/index.html">View All RSS Feeds &gt;</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div id="multiColumnFooter">
+        <div id="footer-branding">
+          <p class="copyright">&copy; 2018, O&#8217;Reilly Media, Inc.</p>
+          <p>
+            <span class="phone-number">(707) 827-7019</span>
+            <span class="phone-number">(800) 889-8969</span>
+          </p>
+          <p class="trademarks">All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners.</p>
+        </div>
+        <div class="contentSectionBlock">
+          <div class="contentSectionContainer" >
+            <span id="footerColumn-1" class="contentSection">
+              <h3>About O'Reilly</h3>
+              <ul>
+                <li><a class="footer" href="http://www.oreilly.com/academic/index.html">Academic Solutions</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/jobs/index.html">Jobs</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/about/contact.html">Contacts</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/about/index.html">Corporate Information</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/press/index.html">Press Room</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/privacy.html">Privacy Policy</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/terms/index.html">Terms of Service</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/work-with-us.html">Work with Us</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/about/editorial_independence.html">Editorial Independence</a></li>
+              </ul>
+            </span>
+          </div><!--end contentSectionContainer-->
+          <div class="contentSectionContainer" >
+            <span id="footerColumn-2" class="contentSection">
+              <h3>Community</h3>
+              <ul>
+                <li><a class="footer" href="http://animals.oreilly.com/">Animals</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/authors/index.html">Authors</a></li>
+                                                                <li><a class="footer" href="http://www.oreilly.com/webcasts/index.html">Webcasts</a></li>
+                <li><a class="footer" href="http://oreilly.com/community/">Community &amp; Featured Users</a></li>
+                <li><a class="footer" href="http://forums.oreilly.com/">Forums</a></li>               
+                <li><a class="footer" href="http://post.oreilly.com/form/oreilly/signup">Newsletters</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/feeds/index.html">RSS Feeds</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/ug/index.html">Meetups &amp; User Groups</a></li>
+              </ul>
+            </span>
+          </div><!--end contentSectionContainer-->
+          <div class="contentSectionContainer" >
+            <span id="footerColumn-3" class="contentSection">
+              <h3>Partner Sites</h3>
+              <ul>
+                <li><a class="footer" href="http://makezine.com/">makezine.com</a></li>
+                <li><a class="footer" href="http://makerfaire.com/">makerfaire.com</a></li>
+                <li><a class="footer" href="http://craftzine.com/">craftzine.com</a></li>
+                <li><a class="footer" href="http://blogs.forbes.com/oreillymedia/">O'Reilly Insights on Forbes.com</a></li>
+              </ul>
+            </span>
+          </div><!--end contentSectionContainer-->
+          <div class="contentSectionContainer" >
+            <span id="footerColumn-4" class="contentSection">
+              <h3>Shop O'Reilly</h3>
+              <ul>
+                <li><a class="footer" href="http://shop.oreilly.com/category/customer-service.do">Customer Service</a></li>
+                <li><a class="footer" href="http://shop.oreilly.com/category/customer-service.do">Contact Us</a></li>
+                <li><a class="footer" href="http://shop.oreilly.com/category/customer-service/shipping-information.do">Shipping Information</a></li>
+                <li><a class="footer" href="http://shop.oreilly.com/category/customer-service/ordering-payment.do">Ordering & Payment</a></li>
+                <li><a class="footer" href="http://www.oreilly.com/affiliates/index.html">Affiliate Program</a></li>              
+                <li><a class="footer" href="http://shop.oreilly.com/category/customer-service/oreilly-guarantee.do">The O'Reilly Guarantee</a></li>
+              </ul>
+            </span>
+          </div> <!--end contentSectionContainer-->
+          <div style="clear:both;"></div>
+        </div><!--end contentSectionBlock-->
+      </div><!--end multiColumnFooter-->
+    </td><!--BottomNav End-->
+           </tr>
+</table>
+
+</div> <!-- / content-09-->
+</div> <!-- / page-->
+
+<script type="text/javascript" src="//cdn.oreillystatic.com/oreilly/ml/js/footerScripts.js"></script>
+
+
+
+
+           <!--  -->
+            <!-- MyBuys Page Initialization -->
+            <script type="text/javascript">
+              mybuys.initPage();
+            </script>
+            <style type="text/css">
+            .mbzone2 {width: 232px !important;}
+            .mbzone2 .mbitem { width: 190px; !important;}
+            </style>
+
+
+
+<!-- autocomplete scripts - autocomplete_data.js updated 8/23/12 -cp -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/utilities/utilities.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/autocomplete/autocomplete-min.js"></script>
+<script type="text/javascript" src="//content.atomz.com/sp10049ed9/publish/autocomplete_data.js"></script>  
+
+
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>  
+
+
+<!-- sc/2109 -->
+<script type="text/javascript">
+var cbjspath = "static.chartbeat.com/js/chartbeat.js?uid=1632&domain=oreilly.com";
+var cbjsprotocol = (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://");
+document.write(unescape("%3Cscript src='"+cbjsprotocol+cbjspath+"' type='text/javascript'%3E%3C/script%3E"))
+</script>
+
+<!-- also crazyegg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6381.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- #sc/2109 -->
+
+
+
+
+
+<!-- crazyegg code -->
+<script type="text/javascript">
+setTimeout(function()
+{var a=document.createElement("script"); var b=document.getElementsByTagName("script")[0]; a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6381.js?"+Math.floor(new Date().getTime()/3600000); a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}
+, 1);
+</script>
+<!-- crazyegg code -->
+
+</body>
+
+</html>
+960
+
+
+
+http://more2.starfall.com/n/level-b/index/load.htm
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+<head>
+<title>It's Fun to Read!</title><META http-equiv="expires" content="0">
+<meta charset="windows-1252" />
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<link href="/gi/_css/content-15.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+html {height:100%;}
+body {width:100%; height:100%; font-family: Trebuchet MS, Verdana, sans-serif; background:#9F6;}
+object {width:100%;height:100%;}
+#helpIMG {
+	width:159px; 
+	padding-top:5px;
+	float:left;
+}
+.notloading {position:fixed; bottom:7px; left:0px; display:block; height:30px}
+</style>
+</head>
+<body>  
+<div id="navigation">
+
+<div id="triangle-topleft" class="
+ 	triangle-main
+
+"></div>
+
+<a href="
+ 	/index.htm?
+
+
+"><img src="/gi/back.png" id="back"></a>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+function changeTitle(str,isIndex) { 
+
+document.title = str; 
+
+if(isIndex)
+
+{
+
+ var newHTML = 'block';
+
+	}
+
+else{
+
+var newHTML = 'none';
+
+	}
+
+document.getElementById('navigation').style.display = newHTML;
+
+}
+
+</script>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="100%" id="FlashContent" align="middle" tabindex="1">
+  <param name="movie" value="/nmi/level-b/index/fun-to-read-index_F10.swf?datestamp=123456">
+  <param name="quality" value="high">
+  <param name="wmode" value="transparent">
+  <param name="scale" value="showall">
+  <param name="allowFullScreen" value="true">
+  <object type="application/x-shockwave-flash" data="/nmi/level-b/index/fun-to-read-index_F10.swf?datestamp=123456" width="100%" height="100%">
+        <param name="movie" value="/nmi/level-b/index/fun-to-read-index_F10.swf?datestamp=123456">
+        <param name="quality" value="high">
+  		<param name="wmode" value="transparent">
+        <param name="scale" value="showall">
+        <param name="allowFullScreen" value="true">
+  </object>
+</object>
+<div class="notloading">
+<a href="/browsers/browserinstructions.php"><img id="helpIMG" src="/gi/hereshelp-2017.png"/></a> 
+</div>
+<div class="logoInfoShare">
+<img src="/gi/starfall-2017.png" id="logo"/>
+<!--NO Additional info-->
+<!--No Sharing-->
+</div>
+<script type="text/javascript">
+var platformName = navigator.platform;
+if(platformName == "Nintendo Wii")
+location.href=("/browsers/not-available.php");
+</script>
+</body>
+<script type="text/javascript">
+var activity = document.getElementById('FlashContent');
+window.onload = function() {
+	// console.log('loaded');
+    // if (activity) console.log('activity found');
+    activity.tabindex = 1;
+    activity.focus();
+    // console.log('in focus:', document.activeElement)
+}
+</script>
+</html><! I 
+>
+
+<!
+ OLD->
+<! enow , gr5>
+<!
+ 
+VERSION=19.40 20161017
+ - b - mxp>
+<!
+ IslgOK 0>
+<! isMP=[0],  isMA=[1] >
+<! IFDEF tag statis: [,,,1]
+>
+<! 0.000 >
+<! UxT : 0.001 >
+118
+
+
+

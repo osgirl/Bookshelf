@@ -11,18 +11,19 @@ import java.util.Set;
 
 public class Driver {
 	
-	static Storage storedBooks = null;
-	static Storage users = null;
+	static BookStorage storedBooks = null;
+	static UserStorage users = null;
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{
-		storedBooks = new Storage();
+		storedBooks = new BookStorage();
+		users = new UserStorage();
 		processArgs(args);
 		//users = new Storage();
 		
 		Search newsearch = new Search();
 		String title = "cats";
-		newsearch.itemSearch(title);
-		GUI gui = new GUI(storedBooks.table, storedBooks.user);
+		//newsearch.itemSearch(title);
+		//GUI gui = new GUI(storedBooks.getBooks(), users.getUsers());
 
 	}
 	
@@ -34,8 +35,9 @@ public class Driver {
 					System.out.println("Please enter a textfile");
 				}
 				else{
-					loadInput(args[i+1]);
+					//loadInput(args[i+1]);
 					//readInputFile(args[i+1]);
+					readUrls(args[i+1]);
 					i++;
 				}
 			}
@@ -113,6 +115,22 @@ public class Driver {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static void readUrls(String inputFile){
+		File inFile = new File(inputFile);
+		ArrayList<String> urls = new ArrayList<String>();
+		try {
+			Scanner url = new Scanner(inFile);
+			while(url.hasNext()){
+				urls.add(url.next());
+			}
+			url.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		Search urlSearch = new Search();
+		urlSearch.getUrlInfo(urls);
 	}
 	
 	public static void createOutput(String outputFile){

@@ -1,5 +1,5 @@
 import java.awt.BorderLayout;
-import java.awt.Container;
+import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,6 +16,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 public class GUI extends JFrame{
 	private Hashtable<String, Book> table = null;
@@ -26,7 +28,8 @@ public class GUI extends JFrame{
 	public GUI(Hashtable<String, Book> table, Hashtable<String, String> users) {
 		this.table = table;
 		this.users = users;
-		login();
+		//login();
+		runGUI();
 	}
 	
 	JFrame listGUI = null;
@@ -68,13 +71,34 @@ public class GUI extends JFrame{
 	       rows[i][4] = data.get(str).getYear();
 	       rows[i][5] = data.get(str).getPrice();
 	       i++;
-	    }
-		JTable table = new JTable(rows, cols);
+	    } 
+	    
+	    //cannot edit table values
+		JTable table = new JTable(rows, cols){
+	    	public boolean isCellEditable(int row, int column) {return false;}
+	    };
+
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        //resize column widths
+        for (int j = 0; j < table.getColumnCount(); j++) {
+            DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
+            TableColumn col = colModel.getColumn(j);
+            int width = 0;
+
+            TableCellRenderer renderer = col.getHeaderRenderer();
+            for (int r = 0; r < table.getRowCount(); r++) {
+              renderer = table.getCellRenderer(r, j);
+              Component comp = renderer.getTableCellRendererComponent(table, table.getValueAt(r, j),
+                  false, false, r, j);
+              width = Math.max(width, comp.getPreferredSize().width);
+            }
+            col.setPreferredWidth(width + 2);
+          }
 	    return table;
 	}
 	
     JTextField usernameFillin = new JTextField(20); 
-    JTextField passwordFillin = new JTextField(20);
+    JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
     JButton btnLogin = new JButton("Login");
     JFrame signin = null;
     
@@ -116,8 +140,5 @@ public class GUI extends JFrame{
 				}
 			}
 		});
-	} //end authenticate 
-	
-	
-	
+	} //end authenticate 	
 }

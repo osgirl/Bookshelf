@@ -19,7 +19,7 @@ public class BookStorage {
 		}
 	}
 	
-	private Hashtable<String, Book> queryAllStored(String isbn){
+	public Hashtable<String, Book> getBooks(){
 		return table;
 	}
 	
