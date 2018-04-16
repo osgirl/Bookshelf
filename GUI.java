@@ -21,29 +21,86 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 public class GUI extends JFrame{
-	private Hashtable<String, Book> table = null;
-	private Hashtable<String, String> users = null;
-	private String currentUser = null;
+	private Hashtable<String, Book> currentUserBooks = null;
+	private Hashtable<String, User> users = null;
+	private User currentUser = null;
+	private boolean signedIn = false;
+	private String[] input = null;
 	
-	public GUI(Hashtable<String, Book> table, Hashtable<String, String> users) {
-		this.table = table;
+	public GUI(String[] input, Hashtable<String, User> users) {
+		this.input = input;
 		this.users = users;
-		//login();
-		runGUI();
+		login();
+	}
+	
+    JTextField usernameFillin = new JTextField(20); 
+    JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
+    JButton btnLogin = new JButton("Login");
+    JFrame signin = null;
+    
+	private void login(){
+		signin = new JFrame();
+		signin.setTitle("Login");
+		signin.setSize(300, 200);
+		signin.setLocation(500, 280);
+		signin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel();
+        JLabel username = new JLabel("Username:");   
+        JLabel password = new JLabel("Password:");
+        panel.add(username);
+        panel.add(usernameFillin);
+        panel.add(password);
+        panel.add(passwordFillin);  
+        panel.add(btnLogin);
+        signin.getContentPane().add(BorderLayout.CENTER, panel);
+        signin.setVisible(true);
+        btnLogin.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				String user = usernameFillin.getText();
+				String pass = passwordFillin.getText();
+				if(users.containsKey(user) && users.get(user).getPassword().equals(pass)) {
+					currentUser = users.get(user);
+					signedIn = true;
+					System.out.println(signedIn);
+					signin.dispose();
+					bootUp();
+				} 
+				else {
+					JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+					usernameFillin.setText("");
+					passwordFillin.setText("");
+					usernameFillin.requestFocus();
+				}
+			}
+		});
+	} //end login
+	
+	public void authenticate(){
+		
+	} //end authenticate 
+	
+	private void bootUp(){
+		if(signedIn){
+			System.out.println("hey");
+			processingMethods inputs = new processingMethods(currentUser.getBookStorage());
+			inputs.processArgs(input);
+			currentUserBooks = currentUser.getBookStorage().getBooks();
+			//runGUI();
+		}
 	}
 	
 	JFrame listGUI = null;
 	JTable inputData = null;
 	
-	private void runGUI(){
+	public void runGUI(){
 		listGUI = new JFrame();
 		listGUI.setTitle("Bookshelf");
 		listGUI.setSize(500, 500);
 		listGUI.setLocation(200, 300);
 		listGUI.setLayout(new FlowLayout());
-		Label results = new Label("Results");  // construct the Label component
+		Label results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
 	    listGUI.add(results);  
-		inputData = buildGui(table);
+		inputData = buildGui(currentUserBooks);
 	    JScrollPane scrollPane = new JScrollPane(inputData);
 	    listGUI.getContentPane().setLayout(new FlowLayout());
         listGUI.getContentPane().add(scrollPane, BorderLayout.CENTER);
@@ -97,48 +154,14 @@ public class GUI extends JFrame{
 	    return table;
 	}
 	
-    JTextField usernameFillin = new JTextField(20); 
-    JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
-    JButton btnLogin = new JButton("Login");
-    JFrame signin = null;
-    
-	public void login(){
-		signin = new JFrame();
-		signin.setTitle("Login");
-		signin.setSize(300, 200);
-		signin.setLocation(500, 280);
-		signin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        JLabel username = new JLabel("Username:");   
-        JLabel password = new JLabel("Password:");
-        panel.add(username);
-        panel.add(usernameFillin);
-        panel.add(password);
-        panel.add(passwordFillin);  
-        panel.add(btnLogin);
-        signin.getContentPane().add(BorderLayout.CENTER, panel);
-        signin.setVisible(true);
-        authenticate();
-	} //end login
+	public boolean getSignedIn(){
+		return signedIn;
+	}
 	
-	public void authenticate(){
-		btnLogin.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent ae) {
-				String user = usernameFillin.getText();
-				String pass = passwordFillin.getText();
-				if(users.containsKey(user) && users.get(user).equals(pass)) {
-					System.out.println("YAYYYY");
-					currentUser = user;
-					signin.dispose();
-					runGUI();
-				} 
-				else {
-					JOptionPane.showMessageDialog(null,"Wrong Password / Username");
-					usernameFillin.setText("");
-					passwordFillin.setText("");
-					usernameFillin.requestFocus();
-				}
-			}
-		});
-	} //end authenticate 	
+	
+	public User getCurrentUser(){
+		return currentUser;
+	}
+	
+	
 }

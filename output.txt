@@ -409,7 +409,7 @@ li.GlobalNavInfo.right { width: 145px; }
 	<title>What Is Web 2.0 - O'Reilly Media</title>
 	<meta name="keywords" content="whatis,Web 2.0,next generation web,Web 2.0 Conference,Tim O'Reilly,O'Reilly Media" />
 	<meta name="description" content="Tim O'Reilly attempts to clarify just what is meant by Web 2.0, the term first coined at a conference brainstorming session between O'Reilly Media and MediaLive International, which also spawned the Web 2.0 Conference." />
-	<meta name="date" content="2018-04-11" />
+	<meta name="date" content="2018-04-15" />
 	<meta name="search_date" content="2005-09-30" />
 	<meta name="search-title" content="What Is Web 2.0" />
 	<meta name="pagename" content="What Is Web 2.0" />
@@ -492,7 +492,7 @@ s.hier1="oreilly,oreilly"
 /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
 var s_code=s.t();if(s_code)document.write(s_code)//--></script>
 <!-- End SiteCatalyst code version: H.20.2. -->
-<!-- analytics.pl: 2018/4/11 0:12:06 -->
+<!-- analytics.pl: 2018/4/15 16:04:35 -->
 
 
 

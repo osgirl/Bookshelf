@@ -7,20 +7,26 @@ import java.util.Hashtable;
  *
  */
 public class UserStorage {
-	Hashtable<String, String> user;
+	Hashtable<String, User> users;
 	private String admin = "Admin";
 	private String adminpass = "pass0000";
+	private String user1 = "Kim";
+	private String pass = "pass";
 	
 	/**
 	 * Constructor
 	 */
 	public UserStorage(){
-		user = new Hashtable<String, String>();
-		user.put(admin, adminpass);
+		User adminUser = new User(admin, adminpass);
+		User regularUser = new User(user1, pass);
+		users = new Hashtable<String, User>();
+		users.put(admin, adminUser);
+		users.put(user1, regularUser);
+		
 	}
 	
-	public Hashtable<String, String> getUsers(){
-		return user;
+	public Hashtable<String, User> getUsers(){
+		return users;
 	}
 	
 	
@@ -29,8 +35,9 @@ public class UserStorage {
 	 * @param password - password to add 
 	 */
 	private void addUser(String username, String password){
-		if(!user.containsKey(username)){
-			user.put(username, password);
+		if(!users.containsKey(username)){
+			User newUser = new User(username, password);
+			users.put(username, newUser);
 		}
 	}
 	
@@ -39,8 +46,8 @@ public class UserStorage {
 	 * @param username - user to remove
 	 */
 	private void deleteUser(String username){
-		if(user.containsKey(username)){
-			user.remove(username);
+		if(users.containsKey(username)){
+			users.remove(username);
 		}
 	}
 	
@@ -60,7 +67,7 @@ public class UserStorage {
 	 * @return true if user exists, false otherwise
 	 */
 	private boolean userExists(String username){
-		if(user.containsKey(username)) return true;
+		if(users.containsKey(username)) return true;
 		else return false;
 	}
 }

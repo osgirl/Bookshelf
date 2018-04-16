@@ -1,6 +1,13 @@
-
+/**
+ * The class is a Book object. A Book objects stores the 
+ * isbn, title, author, genre, year, and price of the book
+ * 
+ * @author Kimberly Lalmansingh
+ *
+ */
 public class Book {
 	
+	//data members of the Book object
 	private String isbn;
 	private String title;
 	private String author;
@@ -8,6 +15,7 @@ public class Book {
 	private String year;
 	private String price;
 	
+	//constructor when creating a new Book object
 	public Book(String isbn, String title, String author, String genre, String year, String price){
 		this.isbn = isbn;
 		this.title = title;
@@ -16,6 +24,8 @@ public class Book {
 		this.year = year;
 		this.price = price;
 	}
+	
+	//Getters and Setters
 	
 	//ISBN
 	public String getIsbn(){
@@ -64,5 +74,5 @@ public class Book {
 	public void setPrice(String price){
 		this.price = price;
 	}
-}
+} // end class Book
 
