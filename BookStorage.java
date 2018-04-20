@@ -43,10 +43,6 @@ public class BookStorage {
 		return table.get(isbn).getGenre();
 	}
 	
-//	private String retrieveYear(String isbn){
-//		return table.get(isbn).getYear();
-//	}
-	
 	private String retrievePrice(String isbn){
 		return table.get(isbn).getPrice();
 	}
@@ -79,12 +75,10 @@ public class BookStorage {
 		table.remove(isbn);
 	}
 	
-	public void modifyPrice(String isbn, String newPrice){
+	public void modifyPrice(String isbn, String field, String modifiedValue){
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        Book bookToModify = queryBook(isbn);
-        bookToModify.setPrice(newPrice);
         try {
-			logFile.write(timestamp + "  " +"MODIFY/"+ isbn + "/" + newPrice + "\n");
+			logFile.write(timestamp + "  " +"MODIFY/"+ isbn + "/" + field + "/" + modifiedValue + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

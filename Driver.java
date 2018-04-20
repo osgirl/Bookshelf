@@ -23,16 +23,7 @@ public class Driver {
 	static UserStorage users = null; //stores all users of the software
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{
-		//storedBooks = new BookStorage();
 		users = new UserStorage();
 		GUI bookShelf = new GUI(args, users.getUsers());
-
-		//Search newsearch = new Search();
-		//String title = "cats";
-		//newsearch.itemSearch(title);
-		//GUI gui = new GUI(storedBooks.getBooks(), users.getUsers());
-
 	}
-	
-
 }

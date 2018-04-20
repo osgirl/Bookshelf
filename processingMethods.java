@@ -24,7 +24,6 @@ public class processingMethods {
 					System.out.println("Please enter a textfile");
 				}
 				else{
-					//loadInput(args[i+1]);
 					readInputFile(args[i+1]);
 					//readUrls(args[i+1]);
 					i++;
@@ -81,7 +80,7 @@ public class processingMethods {
 		titles.parseIndividualItems();
 	}
 	
-	public void loadInput(String inputFile){
+	public void loadLogFile(String inputFile){
 		//need to expand on commands
 		File inFile = new File(inputFile);
 		String isbn, title, author, genre, price, command = null;
@@ -105,7 +104,7 @@ public class processingMethods {
 				else if(command.equalsIgnoreCase("modify")){
 					isbn = data.next();
 					String newPrice = data.next();
-					currentUserStorage.modifyPrice(isbn, newPrice);
+					//currentUserStorage.modifyPrice(isbn, newPrice);
 				}
 			}
 			data.close();

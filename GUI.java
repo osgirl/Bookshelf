@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
@@ -11,7 +12,7 @@ import javax.swing.table.TableColumn;
 
 
 public class GUI extends JFrame{
-	private Hashtable<String, Book> currentUserBooks = null;
+	private BookStorage currentUserBookStorage = null;
 	private Hashtable<String, User> users = null;
 	private User currentUser = null;
 	private boolean signedIn = false;
@@ -61,6 +62,7 @@ public class GUI extends JFrame{
 			currentUser = users.get(user);
 			signedIn = true;
 			signin.dispose();
+			JOptionPane.showMessageDialog(null, "Please wait while signing in! \n Press 'OK' to continue.", "Loading...", JOptionPane.INFORMATION_MESSAGE);
 			bootUp();
 		} 
 		else {
@@ -75,14 +77,15 @@ public class GUI extends JFrame{
 		if(signedIn){
 			processingMethods inputs = new processingMethods(currentUser.getBookStorage());
 			inputs.processArgs(input);
-			currentUserBooks = currentUser.getBookStorage().getBooks();
+			currentUserBookStorage = currentUser.getBookStorage();
+			//currentUserBooks = currentUser.getBookStorage().getBooks();
 			runGUI();
 		}
 	}
 	
 	JFrame listGUI = null;
 	JTable inputData = null;
-	JButton remove, modify, signout;
+	JButton remove, modify, signout, advancedSearch, emailAdmi;
 	Label results;
 	JScrollPane scrollPane;
 	JTable table;
@@ -95,7 +98,7 @@ public class GUI extends JFrame{
 		listGUI.setLayout(new FlowLayout());
 		results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
 	    listGUI.add(results);  
-		inputData = buildGui(currentUserBooks);
+		inputData = buildGui(currentUserBookStorage.getBooks());
 	    scrollPane = new JScrollPane(inputData);
 	    scrollPane.setPreferredSize(new Dimension(600, 300));
 	    listGUI.getContentPane().setLayout(new FlowLayout());
@@ -103,15 +106,94 @@ public class GUI extends JFrame{
         remove = new JButton("Remove Book");
         modify = new JButton("Modify Information");
         signout = new JButton("Sign Out");
+        advancedSearch = new JButton("Advanced Search");
+        listGUI.add(advancedSearch);
         listGUI.add(remove);
         listGUI.add(modify);
         listGUI.add(signout);
 	    listGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		listGUI.setVisible(true);
+        remove.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				removeBook();
+			}
+		});
+        modify.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				if(!currentUser.getUsername().equals("Admin")){
+					JOptionPane.showMessageDialog(null, "You do not have Admin Privledges!", "Error", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else{
+					modify();
+				}
+			}
+		});
+        signout.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				signout();
+			}
+		});
 		
+        advancedSearch.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				advancedSearch();
+			}
+		});
+
+	}
+	
+	private void signout(){
+		try {
+			currentUserBookStorage.logFile.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		currentUser = null;
+		currentUserBookStorage = null;
+		signedIn = false;
+		System.exit(0);
+	}
+	
+	private void removeBook(){
+		int row = inputData.getSelectedRow();
+		if(row == -1) {
+			JOptionPane.showMessageDialog(null, "Please select a book to be removed!", "Error", JOptionPane.INFORMATION_MESSAGE);
+		}
+		String isbn = inputData.getModel().getValueAt(row, 0).toString();
+		currentUserBookStorage.deleteData(isbn);
+		listGUI.dispose();
+		runGUI();
+	}
+	
+	private void modify(){
+		int row = inputData.getSelectedRow();
+		int col = inputData.getSelectedColumn();
+		if(row == -1 || col == -1) {
+			JOptionPane.showMessageDialog(null, "Please select a field from the list of books to be modified!", "Error", JOptionPane.INFORMATION_MESSAGE);
+		}
+		System.out.println(row + " "+ col);
+		String isbn = inputData.getModel().getValueAt(row, 0).toString();
+		String fieldToChange = null;
+		if(col==0) fieldToChange = "isbn";
+		if(col==1) fieldToChange = "title";
+		if(col==2) fieldToChange = "author";
+		if(col==3) fieldToChange = "genre";
+		if(col==4) fieldToChange = "price";
+		String valueToChange = inputData.getModel().getValueAt(row, col).toString();
+		String change = JOptionPane.showInputDialog("Change " +valueToChange+ " from " + fieldToChange + " to: \n");
+		inputData.getModel().setValueAt(change, row, col);
+		String modifiedValue = inputData.getModel().getValueAt(row, col).toString();
+		currentUserBookStorage.modifyPrice(isbn, fieldToChange, modifiedValue);
 		
 	}
 	
+	private void advancedSearch() {
+		
+	}
+	
+	private void emailAdmin() {
+		
+	}
 	
 	
 	
