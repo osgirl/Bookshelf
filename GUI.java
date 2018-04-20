@@ -1,24 +1,14 @@
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Label;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+
 
 public class GUI extends JFrame{
 	private Hashtable<String, Book> currentUserBooks = null;
@@ -33,10 +23,13 @@ public class GUI extends JFrame{
 		login();
 	}
 	
-    JTextField usernameFillin = new JTextField(20); 
-    JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
-    JButton btnLogin = new JButton("Login");
-    JFrame signin = null;
+    private JFrame signin = null;
+	private JPanel panel;
+	private JLabel username, password;
+    private JTextField usernameFillin = new JTextField(20); 
+    private JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
+    private JButton btnLogin = new JButton("Login");
+    private String user, pass;
     
 	private void login(){
 		signin = new JFrame();
@@ -44,9 +37,9 @@ public class GUI extends JFrame{
 		signin.setSize(300, 200);
 		signin.setLocation(500, 280);
 		signin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        JLabel username = new JLabel("Username:");   
-        JLabel password = new JLabel("Password:");
+        panel = new JPanel();
+        username = new JLabel("Username:");   
+        password = new JLabel("Password:");
         panel.add(username);
         panel.add(usernameFillin);
         panel.add(password);
@@ -56,63 +49,76 @@ public class GUI extends JFrame{
         signin.setVisible(true);
         btnLogin.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
-				String user = usernameFillin.getText();
-				String pass = passwordFillin.getText();
-				if(users.containsKey(user) && users.get(user).getPassword().equals(pass)) {
-					currentUser = users.get(user);
-					signedIn = true;
-					System.out.println(signedIn);
-					signin.dispose();
-					bootUp();
-				} 
-				else {
-					JOptionPane.showMessageDialog(null,"Wrong Password / Username");
-					usernameFillin.setText("");
-					passwordFillin.setText("");
-					usernameFillin.requestFocus();
-				}
+				authenticate();
 			}
 		});
 	} //end login
 	
-	public void authenticate(){
-		
-	} //end authenticate 
+	private void authenticate(){
+		user = usernameFillin.getText();
+		pass = passwordFillin.getText();
+		if(users.containsKey(user) && users.get(user).getPassword().equals(pass)) {
+			currentUser = users.get(user);
+			signedIn = true;
+			signin.dispose();
+			bootUp();
+		} 
+		else {
+			JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+			usernameFillin.setText("");
+			passwordFillin.setText("");
+			usernameFillin.requestFocus();
+		}
+	}
 	
 	private void bootUp(){
 		if(signedIn){
-			System.out.println("hey");
 			processingMethods inputs = new processingMethods(currentUser.getBookStorage());
 			inputs.processArgs(input);
 			currentUserBooks = currentUser.getBookStorage().getBooks();
-			//runGUI();
+			runGUI();
 		}
 	}
 	
 	JFrame listGUI = null;
 	JTable inputData = null;
+	JButton remove, modify, signout;
+	Label results;
+	JScrollPane scrollPane;
+	JTable table;
 	
 	public void runGUI(){
 		listGUI = new JFrame();
 		listGUI.setTitle("Bookshelf");
-		listGUI.setSize(500, 500);
+		listGUI.setSize(600, 500);
 		listGUI.setLocation(200, 300);
 		listGUI.setLayout(new FlowLayout());
-		Label results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
+		results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
 	    listGUI.add(results);  
 		inputData = buildGui(currentUserBooks);
-	    JScrollPane scrollPane = new JScrollPane(inputData);
+	    scrollPane = new JScrollPane(inputData);
+	    scrollPane.setPreferredSize(new Dimension(600, 300));
 	    listGUI.getContentPane().setLayout(new FlowLayout());
         listGUI.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        remove = new JButton("Remove Book");
+        modify = new JButton("Modify Information");
+        signout = new JButton("Sign Out");
+        listGUI.add(remove);
+        listGUI.add(modify);
+        listGUI.add(signout);
 	    listGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		listGUI.setVisible(true);
+		
+		
 	}
 	
 	
+	
+	
 	private JTable buildGui(Hashtable<String, Book> data){
-		String[] cols = {"ISBN", "Title", "Author", "Genre", "Year", "Price"};
+		String[] cols = {"ISBN", "Title", "Author", "Genre", "Price"};
 		int numRows = data.size();
-		Object[][] rows = new Object[numRows][6];
+		Object[][] rows = new Object[numRows][5];
 		String str;
 	    Set<String> keys = data.keySet();
 	    
@@ -125,13 +131,12 @@ public class GUI extends JFrame{
 	       rows[i][1] = data.get(str).getAuthor();
 	       rows[i][2] = data.get(str).getTitle();
 	       rows[i][3] = data.get(str).getGenre();
-	       rows[i][4] = data.get(str).getYear();
-	       rows[i][5] = data.get(str).getPrice();
+	       rows[i][4] = data.get(str).getPrice();
 	       i++;
 	    } 
 	    
 	    //cannot edit table values
-		JTable table = new JTable(rows, cols){
+		table = new JTable(rows, cols){
 	    	public boolean isCellEditable(int row, int column) {return false;}
 	    };
 

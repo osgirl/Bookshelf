@@ -25,8 +25,8 @@ public class processingMethods {
 				}
 				else{
 					//loadInput(args[i+1]);
-					//readInputFile(args[i+1]);
-					readUrls(args[i+1]);
+					readInputFile(args[i+1]);
+					//readUrls(args[i+1]);
 					i++;
 				}
 			}
@@ -45,32 +45,46 @@ public class processingMethods {
 	public void readInputFile(String inputFile){
 		//Storage userInputFile = new Storage();
 		ArrayList<String> inputs = new ArrayList<String>();
+		ArrayList<String> titlesToSearch = new ArrayList<String>();
 		File inFile = new File(inputFile);
 		String title;
 		try {
 			Scanner inputTitle = new Scanner(inFile);
 			while(inputTitle.hasNext()){
-				title = inputTitle.next();
+				title = inputTitle.nextLine();
 				inputs.add(title);
 			}
 			inputTitle.close();
-			//processDataInputs(inputs);
+			titlesToSearch = removeWhiteSpace(inputs);
+			processDataInputs(titlesToSearch);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	private ArrayList<String> removeWhiteSpace(ArrayList<String> titles) {
+		ArrayList<String> newTitles = new ArrayList<String>();
+		String newTitle = null;
+		for(int i=0; i<titles.size(); i++){
+			newTitle = titles.get(i).replaceAll("\\s+","+");
+			newTitles.add(newTitle);
+		}
+		System.out.println(newTitles);
+		return newTitles;
+	}
+	
 	public void processDataInputs(ArrayList<String> inputs){
-		Search titles = new Search();
+		Search titles = new Search(currentUserStorage);
 		for(int i=0; i<inputs.size(); i++){
 			titles.titleSearch(inputs.get(i));
 		}
+		titles.parseIndividualItems();
 	}
 	
 	public void loadInput(String inputFile){
 		//need to expand on commands
 		File inFile = new File(inputFile);
-		String isbn, title, author, genre, year, price, command = null;
+		String isbn, title, author, genre, price, command = null;
 		try {
 			Scanner data = new Scanner(inFile);
 			data.useDelimiter("/|\\n");
@@ -81,9 +95,8 @@ public class processingMethods {
 					title = data.next();
 					author = data.next();
 					genre = data.next();
-					year = data.next();
 					price = data.next();
-					currentUserStorage.storeData(isbn, title, author, genre, year, price);
+					currentUserStorage.storeData(isbn, title, author, genre, price);
 				}
 				else if(command.equalsIgnoreCase("delete")){
 					isbn = data.next();
@@ -106,7 +119,7 @@ public class processingMethods {
 		}
 	}
 	
-	private static void readUrls(String inputFile){
+	private void readUrls(String inputFile){
 		File inFile = new File(inputFile);
 		ArrayList<String> urls = new ArrayList<String>();
 		try {
@@ -118,7 +131,7 @@ public class processingMethods {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		Search urlSearch = new Search();
+		Search urlSearch = new Search(currentUserStorage);
 		urlSearch.getUrlInfo(urls);
 	}
 	
@@ -127,7 +140,7 @@ public class processingMethods {
 		String str;
 		try {
 			BufferedWriter outFile = new BufferedWriter(new FileWriter(outputFile));
-			outFile.write("ISBN          " + "TITLE                    " + "AUTHOR              " + "GENRE       " + "YEAR " + "PRICE " + "\n\n");
+			outFile.write("ISBN          " + "TITLE                    " + "AUTHOR              " + "GENRE       " + "PRICE " + "\n\n");
 
 		    Set<String> keys = currentUserStorage.table.keySet();
 		    
@@ -135,7 +148,7 @@ public class processingMethods {
 
 		    while (itr.hasNext()) { 
 		       str = itr.next();
-		       outFile.write(str + " " + currentUserStorage.table.get(str).getTitle()+" "+ currentUserStorage.table.get(str).getAuthor() +" "+ currentUserStorage.table.get(str).getGenre() +" "+ currentUserStorage.table.get(str).getYear() +" "+currentUserStorage.table.get(str).getPrice()+"\n");
+		       outFile.write(str + " " + currentUserStorage.table.get(str).getTitle()+" "+ currentUserStorage.table.get(str).getAuthor() +" "+ currentUserStorage.table.get(str).getGenre() +" "+currentUserStorage.table.get(str).getPrice()+"\n");
 		    }
 		    outFile.close();
 		} catch (IOException e) {

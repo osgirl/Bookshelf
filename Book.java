@@ -12,16 +12,14 @@ public class Book {
 	private String title;
 	private String author;
 	private String genre;
-	private String year;
 	private String price;
 	
 	//constructor when creating a new Book object
-	public Book(String isbn, String title, String author, String genre, String year, String price){
+	public Book(String isbn, String title, String author, String genre, String price){
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;
 		this.genre = genre;
-		this.year = year;
 		this.price = price;
 	}
 	
@@ -57,14 +55,6 @@ public class Book {
 	}
 	public void setGenre(String genre){
 		this.genre = genre;
-	}
-	
-	//Year
-	public String getYear(){
-		return year;
-	}
-	public void setYear(String year){
-		this.year = year;
 	}
 	
 	//Price

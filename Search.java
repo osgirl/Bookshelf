@@ -1,53 +1,118 @@
 import java.net.*;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.*;
+
 
 public class Search {
 
-	private String url = "https://www.barnesandnoble.com/s/";
+	private String url = "";
+	private String itemUrl = "";
+	private String primaryRegex = "";
+	private String isbnRegex = "";
+	private String titleRegex = "";
+	private String authorRegex = "";
+	private String genreRegex = "";
+	private String yearRegex = "";
+	private String priceRegex = "";
+	private ArrayList<String> allTitleHrefResults;
+	private BookStorage bookStorage = null;
+
 	
-	public Search(){
-		
+	public Search(BookStorage bookStorage){
+		this.bookStorage = bookStorage;
+		url = "https://www.barnesandnoble.com/s/";
+		itemUrl = "https://www.barnesandnoble.com/";
+		isbnRegex = "(\\.setTargeting\\('sku', '(.*?)\')";
+		titleRegex = "(\\.setTargeting\\('title', '(.*?)\')";
+		authorRegex = "(\\.setTargeting\\('author', '(.*?)\')";
+		genreRegex = "(\\.setTargeting\\('cat1', '(.*?)\')";
+		priceRegex = "(Current price is (.*?),)";
+		primaryRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?Author?)";
+		allTitleHrefResults = new ArrayList<String>();
 	}
 	
-	
-	public void itemSearch(String title) throws IOException, MalformedURLException{
-		//String itemUrl = url + title;
-		//getinfo(itemUrl);
-		//getinfo("https://www.barnesandnoble.com/w/the-fault-in-our-stars-john-green/1104045488?ean=9780142424179#/");
-		getinfo("https://www.barnesandnoble.com/s/papertowns");
-	}
-	
-    public void getinfo(String itemUrl) throws IOException {
-    	String outputFile = "html.txt";
+    public String getinfo(String itemUrl, String titleUrlFile) throws IOException {
+    	String itemHtml = "";
+    	String outputFile = titleUrlFile;
     	BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
         // Display the URL address, and information about it.
     	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(itemUrl).openStream()));
 		String line = reader.readLine();
 
-		System.out.println(itemUrl);
+		//System.out.println(itemUrl);
 		while (line != null) {
 			writer.write(line + "\n");
+			itemHtml = itemHtml + line;
 			line = reader.readLine(); 
 		} // while
 		writer.close();
+		reader.close();
+		return itemHtml;
     }
     
     public void titleSearch(String title){
     	String titleUrl = url + title;
-    	String titleUrlFile = "html.txt";
+    	String titleUrlFile = title + ".txt";
+    	String itemHtml= "";
     	try {
-			getinfo(titleUrl);
-			parseHtml(titleUrlFile);
+			itemHtml = getinfo(titleUrl, titleUrlFile);
+			parseHtml(itemHtml);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
     
-    private void parseHtml(String fileToParse){
-    	ArrayList<String> allResults = new ArrayList<String>();
-    	//<a class="pImageLink "
-    	//<a class="pImageLink([A-Za-z0-9 "'=_\-/();.?<>:,]*)align/>
+    private void parseHtml(String htmlToParse){ 
+    	allTitleHrefResults.add(patternMatcher(htmlToParse, primaryRegex));
+    	//System.out.println(allTitleHrefResults);
+    }
+    
+    private String patternMatcher(String parse, String regex) {
+    	String info = "";
+    	Pattern pattern = Pattern.compile(regex);
+    	Matcher matcher = pattern.matcher(parse);
+    	if(matcher.find()){
+        	System.out.println(matcher.group(2));
+        	info = matcher.group(2);
+    	}
+    	return info;
+    }
+    
+    public void parseIndividualItems() {
+    	for(int i=0; i<allTitleHrefResults.size(); i++){
+    		getBookInfo(allTitleHrefResults.get(i));
+    	}
+    }
+    
+    private void getBookInfo(String bookUrl) {
+    	String isbn = "", title = "", author = "", genre = "", price = "";
+    	String url = itemUrl + bookUrl;
+    	String bookHtml = "";
+    	System.out.println(url);
+		String line;
+		try {
+	    	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+	    	String outputFile = "book.txt";
+	    	BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+			line = reader.readLine();
+			while (line != null) {
+				bookHtml = bookHtml + line;
+				writer.write(line + "\n");
+				line = reader.readLine(); 
+			} // while
+			writer.close();
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		isbn = patternMatcher(bookHtml, isbnRegex);
+		title = patternMatcher(bookHtml, titleRegex);
+		author = patternMatcher(bookHtml, authorRegex);
+		genre = patternMatcher(bookHtml, genreRegex);
+		price = patternMatcher(bookHtml, priceRegex);
+		bookStorage.storeData(isbn, title, author, genre, price);
     }
     
     BufferedWriter writer = null;

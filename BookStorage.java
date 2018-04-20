@@ -43,22 +43,22 @@ public class BookStorage {
 		return table.get(isbn).getGenre();
 	}
 	
-	private String retrieveYear(String isbn){
-		return table.get(isbn).getYear();
-	}
+//	private String retrieveYear(String isbn){
+//		return table.get(isbn).getYear();
+//	}
 	
 	private String retrievePrice(String isbn){
 		return table.get(isbn).getPrice();
 	}
 	
 	
-	public void storeData(String isbn, String title, String author, String genre, String year, String price){
+	public void storeData(String isbn, String title, String author, String genre, String price){
 		items++;
-		Book newBook = new Book(isbn, title, author, genre, year, price);
+		Book newBook = new Book(isbn, title, author, genre, price);
 		table.put(isbn, newBook);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
-			logFile.write(timestamp + "  " + "INSERT/" + isbn + "/" + title + "/" + author + "/" + genre + "/" + year + "/" + price + "\n");
+			logFile.write(timestamp + "  " + "INSERT/" + isbn + "/" + title + "/" + author + "/" + genre + "/" + price + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -70,7 +70,6 @@ public class BookStorage {
         String title = retrieveTitle(isbn);
         String author = retrieveAuthor(isbn);
         String genre = retrieveGenre(isbn);
-        String year = retrieveYear(isbn);
         String price = retrievePrice(isbn);
         try {
 			logFile.write(timestamp + "  " +"DELETE/"+ isbn + "\n");
