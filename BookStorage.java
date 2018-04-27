@@ -75,12 +75,22 @@ public class BookStorage {
 		table.remove(isbn);
 	}
 	
-	public void modifyPrice(String isbn, String field, String modifiedValue){
+	public void modifyData(String isbn, String field, String modifiedValue){
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
 			logFile.write(timestamp + "  " +"MODIFY/"+ isbn + "/" + field + "/" + modifiedValue + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void modified(String isbn, String field, String modifiedValue) {
+		Book modifiedBook = table.get(isbn);
+		if(field.equals("isbn")) modifiedBook.setIsbn(modifiedValue);
+		else if(field.equals("title")) modifiedBook.setTitle(modifiedValue);
+		else if(field.equals("author")) modifiedBook.setAuthor(modifiedValue);
+		else if(field.equals("genre")) modifiedBook.setGenre(modifiedValue);
+		else if(field.equals("price")) modifiedBook.setPrice(modifiedValue);
+
 	}
 }

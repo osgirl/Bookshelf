@@ -17,6 +17,7 @@ public class GUI extends JFrame{
 	private User currentUser = null;
 	private boolean signedIn = false;
 	private String[] input = null;
+	private processingMethods inputs = null;
 	
 	public GUI(String[] input, Hashtable<String, User> users) {
 		this.input = input;
@@ -66,6 +67,7 @@ public class GUI extends JFrame{
 			bootUp();
 		} 
 		else {
+			java.awt.Toolkit.getDefaultToolkit().beep();
 			JOptionPane.showMessageDialog(null,"Wrong Password / Username");
 			usernameFillin.setText("");
 			passwordFillin.setText("");
@@ -75,7 +77,7 @@ public class GUI extends JFrame{
 	
 	private void bootUp(){
 		if(signedIn){
-			processingMethods inputs = new processingMethods(currentUser.getBookStorage());
+			inputs = new processingMethods(currentUser.getBookStorage());
 			inputs.processArgs(input);
 			currentUserBookStorage = currentUser.getBookStorage();
 			//currentUserBooks = currentUser.getBookStorage().getBooks();
@@ -136,6 +138,7 @@ public class GUI extends JFrame{
 		
         advancedSearch.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
+				listGUI.dispose();
 				advancedSearch();
 			}
 		});
@@ -183,15 +186,55 @@ public class GUI extends JFrame{
 		String change = JOptionPane.showInputDialog("Change " +valueToChange+ " from " + fieldToChange + " to: \n");
 		inputData.getModel().setValueAt(change, row, col);
 		String modifiedValue = inputData.getModel().getValueAt(row, col).toString();
-		currentUserBookStorage.modifyPrice(isbn, fieldToChange, modifiedValue);
+		currentUserBookStorage.modifyData(isbn, fieldToChange, modifiedValue);
 		
 	}
+	
+	private JFrame advancedSearchGui = null;
+	private JPanel panel2=null;
+	private JLabel title=null;
+	private JLabel isbn=null;
+    private JTextField titleFillin = new JTextField(20); 
+    private JTextField isbnFillin = new JTextField(20);
+    private JButton searchButton = new JButton("Search");
+    private JButton cancelButton = new JButton("Cancel");
 	
 	private void advancedSearch() {
-		
+		advancedSearchGui = new JFrame();
+		advancedSearchGui.setTitle("Advanced Search");
+		advancedSearchGui.setSize(300, 200);
+		advancedSearchGui.setLocation(500, 280);
+		advancedSearchGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel2 = new JPanel();
+        title = new JLabel("Title:");   
+        isbn = new JLabel("ISBN:");
+        panel2.add(title);
+        panel2.add(titleFillin);
+        panel2.add(isbn);
+        panel2.add(isbnFillin); 
+        panel2.add(searchButton);
+        panel2.add(cancelButton);
+        advancedSearchGui.getContentPane().add(BorderLayout.CENTER, panel2);
+        advancedSearchGui.setVisible(true);
+        searchButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				String bookTitle = titleFillin.getText();
+				String bookIsbn = isbnFillin.getText();
+				inputs.searchNewBook(bookTitle, bookIsbn);
+				advancedSearchGui.dispose();
+				runGUI();
+
+			}
+		});
+        cancelButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				advancedSearchGui.dispose();
+				runGUI();
+			}
+		});  
 	}
 	
-	private void emailAdmin() {
+	private void generateReceipt() {
 		
 	}
 	

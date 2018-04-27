@@ -14,8 +14,9 @@ public class Search {
 	private String titleRegex = "";
 	private String authorRegex = "";
 	private String genreRegex = "";
-	private String yearRegex = "";
 	private String priceRegex = "";
+	private String advancedSearchRegex = "";
+	
 	private ArrayList<String> allTitleHrefResults;
 	private BookStorage bookStorage = null;
 
@@ -30,6 +31,7 @@ public class Search {
 		genreRegex = "(\\.setTargeting\\('cat1', '(.*?)\')";
 		priceRegex = "(Current price is (.*?),)";
 		primaryRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?Author?)";
+		
 		allTitleHrefResults = new ArrayList<String>();
 	}
 	
@@ -114,6 +116,40 @@ public class Search {
 		price = patternMatcher(bookHtml, priceRegex);
 		bookStorage.storeData(isbn, title, author, genre, price);
     }
+    
+    public void advancedBookSearch(String title, String isbn) {
+    	String titleUrl = url + title;
+    	String titleUrlFile = title + ".txt";
+    	String itemHtml = "";
+    	//String bookLink = "";
+    	try {
+			itemHtml = getinfo(titleUrl, titleUrlFile); //returns webpages with all results
+			//bookLink = patternMatcher(itemHtml, primaryRegex);
+			getAdvancedBookInfo(itemHtml, isbn);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    private void getAdvancedBookInfo(String itemHtml, String isbnAS) {
+		String bookHtmlAS = findCorrectBook(itemHtml, isbnAS);
+		getBookInfo(bookHtmlAS);
+    }
+    
+    private String findCorrectBook(String bookHtml, String isbn){
+    	String info = "";
+		advancedSearchRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?ean=("+isbn+")\">.*?Author?)";
+		//(<a class="pImageLink ".*?href="(.*?);.*?ean=(.*?)">.*?Author?)
+		//(<a class="pImageLink ".*?href="(.*?);.*?ean=(9780142424179)">.*?Author?)
+    	Pattern pattern = Pattern.compile(advancedSearchRegex);
+    	Matcher matcher = pattern.matcher(bookHtml);
+    	if(matcher.find()){
+        	System.out.println(matcher.group(2));
+        	info = matcher.group(2);
+    	}
+    	return info;
+    }
+    
     
     BufferedWriter writer = null;
     

@@ -11,6 +11,7 @@ import java.util.Set;
 public class processingMethods {
 	
 	private BookStorage currentUserStorage = null;
+	private Search titles = null;
 	
 	public processingMethods(BookStorage currentUserStorage){
 		this.currentUserStorage = currentUserStorage;
@@ -73,17 +74,29 @@ public class processingMethods {
 	}
 	
 	public void processDataInputs(ArrayList<String> inputs){
-		Search titles = new Search(currentUserStorage);
+		titles = new Search(currentUserStorage);
 		for(int i=0; i<inputs.size(); i++){
 			titles.titleSearch(inputs.get(i));
 		}
 		titles.parseIndividualItems();
 	}
 	
+	public void searchNewBook(String title, String isbn) {
+		//titles.titleSearch(title);
+		//advanced search
+		//guest account, cannot store data
+		//-p flag no gui
+		//load in log file from admin
+		//image reading
+		title = title.replaceAll("\\s+","+");
+		titles.advancedBookSearch(title, isbn);
+	}
+	
+	
 	public void loadLogFile(String inputFile){
 		//need to expand on commands
 		File inFile = new File(inputFile);
-		String isbn, title, author, genre, price, command = null;
+		String isbn, title, author, genre, price, field, value, command = null;
 		try {
 			Scanner data = new Scanner(inFile);
 			data.useDelimiter("/|\\n");
@@ -103,8 +116,9 @@ public class processingMethods {
 				}
 				else if(command.equalsIgnoreCase("modify")){
 					isbn = data.next();
-					String newPrice = data.next();
-					//currentUserStorage.modifyPrice(isbn, newPrice);
+					field = data.next();
+					value = data.next();
+					currentUserStorage.modified(isbn, field, value);
 				}
 			}
 			data.close();
