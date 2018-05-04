@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -31,6 +32,7 @@ public class GUI extends JFrame{
     private JTextField usernameFillin = new JTextField(20); 
     private JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
     private JButton btnLogin = new JButton("Login");
+    private JButton btnGuest = new JButton("Login as Guest");
     private String user, pass;
     
 	private void login(){
@@ -47,11 +49,21 @@ public class GUI extends JFrame{
         panel.add(password);
         panel.add(passwordFillin);  
         panel.add(btnLogin);
+        panel.add(btnGuest);
         signin.getContentPane().add(BorderLayout.CENTER, panel);
         signin.setVisible(true);
         btnLogin.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
 				authenticate();
+			}
+		});
+        btnGuest.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				currentUser = users.get("Guest");
+				signedIn = true;
+				signin.dispose();
+				JOptionPane.showMessageDialog(null, "Please wait while signing in! \n Press 'OK' to continue.", "Loading...", JOptionPane.INFORMATION_MESSAGE);
+				bootUp();
 			}
 		});
 	} //end login
@@ -87,7 +99,7 @@ public class GUI extends JFrame{
 	
 	JFrame listGUI = null;
 	JTable inputData = null;
-	JButton remove, modify, signout, advancedSearch, emailAdmi;
+	JButton remove, modify, signout, advancedSearch, checkout;
 	Label results;
 	JScrollPane scrollPane;
 	JTable table;
@@ -95,7 +107,7 @@ public class GUI extends JFrame{
 	public void runGUI(){
 		listGUI = new JFrame();
 		listGUI.setTitle("Bookshelf");
-		listGUI.setSize(600, 500);
+		listGUI.setSize(600, 400);
 		listGUI.setLocation(200, 300);
 		listGUI.setLayout(new FlowLayout());
 		results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
@@ -106,12 +118,18 @@ public class GUI extends JFrame{
 	    listGUI.getContentPane().setLayout(new FlowLayout());
         listGUI.getContentPane().add(scrollPane, BorderLayout.CENTER);
         remove = new JButton("Remove Book");
-        modify = new JButton("Modify Information");
         signout = new JButton("Sign Out");
         advancedSearch = new JButton("Advanced Search");
         listGUI.add(advancedSearch);
         listGUI.add(remove);
-        listGUI.add(modify);
+        if(currentUser.getUsername().equals("Admin")){
+            modify = new JButton("Modify Information");
+            listGUI.add(modify);
+        }
+        if(!currentUser.getUsername().equals("Guest")){
+            checkout = new JButton("Checkout");
+            listGUI.add(checkout);
+        }
         listGUI.add(signout);
 	    listGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		listGUI.setVisible(true);
@@ -142,12 +160,19 @@ public class GUI extends JFrame{
 				advancedSearch();
 			}
 		});
-
+        
+        checkout.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				inputs.generateReceipt();
+				JOptionPane.showMessageDialog(null, "Your receipt has been generated!", "Thank you!", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
 	}
 	
 	private void signout(){
 		try {
 			currentUserBookStorage.logFile.close();
+			inputs.receipt.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -233,13 +258,7 @@ public class GUI extends JFrame{
 			}
 		});  
 	}
-	
-	private void generateReceipt() {
-		
-	}
-	
-	
-	
+
 	private JTable buildGui(Hashtable<String, Book> data){
 		String[] cols = {"ISBN", "Title", "Author", "Genre", "Price"};
 		int numRows = data.size();

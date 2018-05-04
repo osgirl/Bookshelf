@@ -68,7 +68,6 @@ public class Search {
     
     private void parseHtml(String htmlToParse){ 
     	allTitleHrefResults.add(patternMatcher(htmlToParse, primaryRegex));
-    	//System.out.println(allTitleHrefResults);
     }
     
     private String patternMatcher(String parse, String regex) {

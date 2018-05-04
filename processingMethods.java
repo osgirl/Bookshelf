@@ -3,7 +3,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
@@ -12,6 +14,7 @@ public class processingMethods {
 	
 	private BookStorage currentUserStorage = null;
 	private Search titles = null;
+	BufferedWriter receipt = null;
 	
 	public processingMethods(BookStorage currentUserStorage){
 		this.currentUserStorage = currentUserStorage;
@@ -34,7 +37,7 @@ public class processingMethods {
 				//createOutput(args[i+1]);
 				i++;
 			}
-			else if(args[i].equals("-p")){
+			else if(args[i].equals("-r")){
 				//no guis
 				//process input file
 				
@@ -83,7 +86,6 @@ public class processingMethods {
 	
 	public void searchNewBook(String title, String isbn) {
 		//titles.titleSearch(title);
-		//advanced search
 		//guest account, cannot store data
 		//-p flag no gui
 		//load in log file from admin
@@ -130,6 +132,43 @@ public class processingMethods {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void generateReceipt() {
+		try {
+		    receipt = new BufferedWriter(new FileWriter("recepit.txt"));
+			receipt.write("BOOKSHELF \n\n");
+	        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			receipt.write(timestamp + " \n\n");
+			double total = 0.0;
+			double tax = 1.0825;
+			String price = "";
+			
+			String str;
+			Hashtable<String, Book> boughtBooks;
+			boughtBooks = currentUserStorage.getBooks();
+		    Set<String> keys = boughtBooks.keySet();
+		    Iterator<String> itr = keys.iterator();
+		    while (itr.hasNext()) { 
+		       str = itr.next();
+		       receipt.write("BOOK: " + boughtBooks.get(str).getTitle() +"\n");
+		       receipt.write("AUTHOR: " + boughtBooks.get(str).getAuthor() +"\n");
+		       receipt.write("ISBN: " + boughtBooks.get(str).getIsbn() +"\n");
+		       receipt.write("GENRE: " + boughtBooks.get(str).getGenre() +"\n");
+		       receipt.write("PRICE: " + boughtBooks.get(str).getPrice()  +"\n");
+		       price = boughtBooks.get(str).getPrice();
+		       price = price.substring(1, price.length());
+		       total = total + Double.parseDouble(price);
+		       receipt.write("------------\n");
+		    }
+		    receipt.write("----------------------------------------------------\n");
+		    receipt.write("SUBTOTAL: " + total);
+		    receipt.write("TAX " + tax);
+		    receipt.write("TOTAL " + (total*tax));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	private void readUrls(String inputFile){
