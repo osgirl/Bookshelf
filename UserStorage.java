@@ -23,14 +23,11 @@ public class UserStorage {
 		User adminUser = new User(admin, adminpass);
 		User regularUser1 = new User(user1, pass1);
 		User regularUser2 = new User(user2, pass2);
-		//User regularUser3 = new User(user3, pass3);
 
 		users = new Hashtable<String, User>();
 		users.put(admin, adminUser);
 		users.put(user1, regularUser1);
-		users.put(user2, regularUser2);
-		//users.put(user3, regularUser3);
-		
+		users.put(user2, regularUser2);		
 	}
 	
 	public Hashtable<String, User> getUsers(){

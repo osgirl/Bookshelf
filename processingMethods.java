@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -15,38 +16,57 @@ public class processingMethods {
 	private BookStorage currentUserStorage = null;
 	private Search titles = null;
 	BufferedWriter receipt = null;
+	BufferedWriter outFile = null;
 	
 	public processingMethods(BookStorage currentUserStorage){
 		this.currentUserStorage = currentUserStorage;
 	}
 	
 	public void processArgs(String[] args){
-		//need to add more flags and add more conditions
+		String inputFile = "";
+		String outputFile = "";
+		boolean input = false;
+		boolean output=false;
 		for(int i=0; i<args.length; i++){
 			if(args[i].equals("-i")){
 				if(args[i+1].startsWith("-")){
-					System.out.println("Please enter a textfile");
+					System.out.println("Please enter a textfile. Exiting software now.");
+					System.exit(0);
 				}
 				else{
-					readInputFile(args[i+1]);
-					//readUrls(args[i+1]);
+					inputFile = args[i+1];
+					input=true;
 					i++;
 				}
 			}
-			else if(args[i].equals("-o")){
-				//createOutput(args[i+1]);
+			else if(args[i].equals("-u")){
+				readUrls(args[i+1]);
 				i++;
 			}
-			else if(args[i].equals("-r")){
+			else if(args[i].equals("-o")){
+				outputFile = args[i+1];
+				output=true;
+				i++;
+			}
+			else if(args[i].equals("-p")){
 				//no guis
 				//process input file
 				
 			}
+			else if(args[i].equals("-l")){
+				loadLogFile("logFile.txt");
+				
+			}
+		}
+		if(output){
+			createOutput(outputFile);
+		}
+		if(input){
+			readInputFile(inputFile);
 		}
 	}
 	
 	public void readInputFile(String inputFile){
-		//Storage userInputFile = new Storage();
 		ArrayList<String> inputs = new ArrayList<String>();
 		ArrayList<String> titlesToSearch = new ArrayList<String>();
 		File inFile = new File(inputFile);
@@ -56,6 +76,11 @@ public class processingMethods {
 			while(inputTitle.hasNext()){
 				title = inputTitle.nextLine();
 				inputs.add(title);
+				try {
+					outFile.write("Added to Searching list: " + title + "\n");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			inputTitle.close();
 			titlesToSearch = removeWhiteSpace(inputs);
@@ -72,26 +97,31 @@ public class processingMethods {
 			newTitle = titles.get(i).replaceAll("\\s+","+");
 			newTitles.add(newTitle);
 		}
-		System.out.println(newTitles);
 		return newTitles;
 	}
 	
 	public void processDataInputs(ArrayList<String> inputs){
 		titles = new Search(currentUserStorage);
 		for(int i=0; i<inputs.size(); i++){
-			titles.titleSearch(inputs.get(i));
+			titles.titleSearch(inputs.get(i), outFile);
 		}
 		titles.parseIndividualItems();
 	}
 	
-	public void searchNewBook(String title, String isbn) {
-		//titles.titleSearch(title);
-		//guest account, cannot store data
-		//-p flag no gui
-		//load in log file from admin
-		//image reading
+	public int searchNewBook(String title, String isbn) {
+		int checkSearch = 0;
+		try {
+			outFile.write("Advanced Search on: Title: " + title + " ISBN: " + isbn + "\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		title = title.replaceAll("\\s+","+");
-		titles.advancedBookSearch(title, isbn);
+		checkSearch = titles.advancedBookSearch(title, isbn);
+		if(checkSearch==1){
+			return 1;
+		}
+		return 0;
+		
 	}
 	
 	
@@ -136,7 +166,7 @@ public class processingMethods {
 	
 	public void generateReceipt() {
 		try {
-		    receipt = new BufferedWriter(new FileWriter("recepit.txt"));
+		    receipt = new BufferedWriter(new FileWriter("receipt.txt"));
 			receipt.write("BOOKSHELF \n\n");
 	        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 			receipt.write(timestamp + " \n\n");
@@ -149,6 +179,7 @@ public class processingMethods {
 			boughtBooks = currentUserStorage.getBooks();
 		    Set<String> keys = boughtBooks.keySet();
 		    Iterator<String> itr = keys.iterator();
+		    String receiptTitle = "";
 		    while (itr.hasNext()) { 
 		       str = itr.next();
 		       receipt.write("BOOK: " + boughtBooks.get(str).getTitle() +"\n");
@@ -162,13 +193,24 @@ public class processingMethods {
 		       receipt.write("------------\n");
 		    }
 		    receipt.write("----------------------------------------------------\n");
-		    receipt.write("SUBTOTAL: " + total);
-		    receipt.write("TAX " + tax);
-		    receipt.write("TOTAL " + (total*tax));
+		    receipt.write("SUBTOTAL: $" + total + "\n");
+		    receipt.write("TAX " + tax + "\n");
+		    DecimalFormat totalInDecimal = new DecimalFormat(".##");
+		    double totalWithTax = total*tax;
+		    String result = "";
+		    result = totalInDecimal.format(totalWithTax);
+		    receipt.write("TOTAL $" + result);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+	}
+	
+	public BufferedWriter getReceipt(){
+		return receipt;
+	}
+	
+	public BufferedWriter getOutFile(){
+		return outFile;
 	}
 	
 	private void readUrls(String inputFile){
@@ -188,21 +230,8 @@ public class processingMethods {
 	}
 	
 	public void createOutput(String outputFile){
-		//need to fix it up
-		String str;
 		try {
-			BufferedWriter outFile = new BufferedWriter(new FileWriter(outputFile));
-			outFile.write("ISBN          " + "TITLE                    " + "AUTHOR              " + "GENRE       " + "PRICE " + "\n\n");
-
-		    Set<String> keys = currentUserStorage.table.keySet();
-		    
-		    Iterator<String> itr = keys.iterator();
-
-		    while (itr.hasNext()) { 
-		       str = itr.next();
-		       outFile.write(str + " " + currentUserStorage.table.get(str).getTitle()+" "+ currentUserStorage.table.get(str).getAuthor() +" "+ currentUserStorage.table.get(str).getGenre() +" "+currentUserStorage.table.get(str).getPrice()+"\n");
-		    }
-		    outFile.close();
+			outFile = new BufferedWriter(new FileWriter(outputFile));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

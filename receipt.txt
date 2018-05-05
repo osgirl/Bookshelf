@@ -1,0 +1,38 @@
+BOOKSHELF 
+
+2018-05-05 14:02:07.512 
+
+BOOK: Night
+AUTHOR: Elie Wiesel
+ISBN: 9780374500016
+GENRE: Books
+PRICE: $6.2
+------------
+BOOK: The Fault in Our Stars
+AUTHOR: John Green
+ISBN: 9780142424179
+GENRE: Teen Books
+PRICE: $8.44
+------------
+BOOK: Paper Towns
+AUTHOR: John Green
+ISBN: 9780147517654
+GENRE: Teen Books
+PRICE: $8.24
+------------
+BOOK: Thirteen Reasons Why 10th Anniversary Edition
+AUTHOR: Jay Asher
+ISBN: 9781595147882
+GENRE: Teen Books
+PRICE: $15.54
+------------
+BOOK: The Getaway BN Exclusive Edition Diary of a Wimpy Kid Series 12
+AUTHOR: Jeff Kinney
+ISBN: 9781419730603
+GENRE: Kids Books
+PRICE: $10.34
+------------
+----------------------------------------------------
+SUBTOTAL: $48.760000000000005
+TAX 1.0825
+TOTAL $52.78

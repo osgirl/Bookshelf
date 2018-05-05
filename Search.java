@@ -43,7 +43,6 @@ public class Search {
     	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(itemUrl).openStream()));
 		String line = reader.readLine();
 
-		//System.out.println(itemUrl);
 		while (line != null) {
 			writer.write(line + "\n");
 			itemHtml = itemHtml + line;
@@ -54,11 +53,16 @@ public class Search {
 		return itemHtml;
     }
     
-    public void titleSearch(String title){
+    public void titleSearch(String title, BufferedWriter outFile){
     	String titleUrl = url + title;
     	String titleUrlFile = title + ".txt";
     	String itemHtml= "";
     	try {
+    		try {
+				outFile.write("Searched Barnes & Noble Url: " + titleUrl + "\n");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			itemHtml = getinfo(titleUrl, titleUrlFile);
 			parseHtml(itemHtml);
 		} catch (IOException e) {
@@ -75,7 +79,6 @@ public class Search {
     	Pattern pattern = Pattern.compile(regex);
     	Matcher matcher = pattern.matcher(parse);
     	if(matcher.find()){
-        	System.out.println(matcher.group(2));
         	info = matcher.group(2);
     	}
     	return info;
@@ -91,7 +94,6 @@ public class Search {
     	String isbn = "", title = "", author = "", genre = "", price = "";
     	String url = itemUrl + bookUrl;
     	String bookHtml = "";
-    	System.out.println(url);
 		String line;
 		try {
 	    	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
@@ -116,35 +118,45 @@ public class Search {
 		bookStorage.storeData(isbn, title, author, genre, price);
     }
     
-    public void advancedBookSearch(String title, String isbn) {
+    public int advancedBookSearch(String title, String isbn) {
     	String titleUrl = url + title;
     	String titleUrlFile = title + ".txt";
     	String itemHtml = "";
-    	//String bookLink = "";
+    	int checkSearch = 0;
     	try {
 			itemHtml = getinfo(titleUrl, titleUrlFile); //returns webpages with all results
-			//bookLink = patternMatcher(itemHtml, primaryRegex);
-			getAdvancedBookInfo(itemHtml, isbn);
+			checkSearch = getAdvancedBookInfo(itemHtml, isbn);
+			if(checkSearch == 1) {
+				return 1;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+    	return 0;
     }
     
-    private void getAdvancedBookInfo(String itemHtml, String isbnAS) {
+    private int getAdvancedBookInfo(String itemHtml, String isbnAS) {
 		String bookHtmlAS = findCorrectBook(itemHtml, isbnAS);
-		getBookInfo(bookHtmlAS);
+		if(bookHtmlAS.equals("no match")){
+			return 1;
+		}
+		else{
+			getBookInfo(bookHtmlAS);
+		}
+		return 0;
     }
     
     private String findCorrectBook(String bookHtml, String isbn){
     	String info = "";
 		advancedSearchRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?ean=("+isbn+")\">.*?Author?)";
-		//(<a class="pImageLink ".*?href="(.*?);.*?ean=(.*?)">.*?Author?)
-		//(<a class="pImageLink ".*?href="(.*?);.*?ean=(9780142424179)">.*?Author?)
+
     	Pattern pattern = Pattern.compile(advancedSearchRegex);
     	Matcher matcher = pattern.matcher(bookHtml);
     	if(matcher.find()){
-        	System.out.println(matcher.group(2));
         	info = matcher.group(2);
+    	}
+    	else{
+    		return "no match";
     	}
     	return info;
     }
@@ -161,15 +173,8 @@ public class Search {
 		}
     	for(int i=0; i<urls.size(); i++) {
     		String[] urlType = urls.get(i).split("\\.");
-    		System.out.println(urlType[urlType.length-1]);
     		if(urlType[urlType.length-1].equals("html") || urlType[urlType.length-1].equals("htm") || urlType[urlType.length-1].equals("txt")){
     			readHtml(urls.get(i));
-    		}
-    		else if(urlType[urlType.length-1].equals("pdf")){
-    			//readPdf(urls.get(i));
-    		}
-    		else if(urlType[urlType.length-1].equals("jpg")){
-    			//readImg(urls.get(i));
     		}
     	}
     	try {
@@ -185,7 +190,6 @@ public class Search {
 	        // Display the URL address, and information about it.
 	    	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
 			String line = reader.readLine();
-			System.out.println(url);
 			writer.write(url + "\n");
 			while (line != null) {
 				writer.write(line + "\n");
@@ -194,8 +198,7 @@ public class Search {
 			} // while
 			writer.write(numOfLines + "\n");
 			writer.write("\n\n\n");
-			System.out.println(numOfLines);
-			System.out.print("\n\n");
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

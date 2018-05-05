@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -31,8 +30,9 @@ public class GUI extends JFrame{
 	private JLabel username, password;
     private JTextField usernameFillin = new JTextField(20); 
     private JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
-    private JButton btnLogin = new JButton("Login");
-    private JButton btnGuest = new JButton("Login as Guest");
+    private JButton btnLogin = null;
+    private JButton btnGuest = null;
+    private JButton btnExit = null;
     private String user, pass;
     
 	private void login(){
@@ -44,12 +44,16 @@ public class GUI extends JFrame{
         panel = new JPanel();
         username = new JLabel("Username:");   
         password = new JLabel("Password:");
+        btnLogin = new JButton("Login");
+        btnGuest = new JButton("Login as Guest");
+        btnExit = new JButton("Exit Software");
         panel.add(username);
         panel.add(usernameFillin);
         panel.add(password);
         panel.add(passwordFillin);  
         panel.add(btnLogin);
         panel.add(btnGuest);
+        panel.add(btnExit);
         signin.getContentPane().add(BorderLayout.CENTER, panel);
         signin.setVisible(true);
         btnLogin.addActionListener(new ActionListener(){
@@ -57,16 +61,28 @@ public class GUI extends JFrame{
 				authenticate();
 			}
 		});
+        
         btnGuest.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
-				currentUser = users.get("Guest");
-				signedIn = true;
-				signin.dispose();
-				JOptionPane.showMessageDialog(null, "Please wait while signing in! \n Press 'OK' to continue.", "Loading...", JOptionPane.INFORMATION_MESSAGE);
-				bootUp();
+				authenticateGuest();
+
+			}
+		});
+        
+        btnExit.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				System.exit(0);
 			}
 		});
 	} //end login
+	
+	private void authenticateGuest(){
+		currentUser = users.get("Guest");
+		signedIn = true;
+		signin.dispose();
+		JOptionPane.showMessageDialog(null, "Please wait while signing in! \n Press 'OK' to continue.", "Loading...", JOptionPane.INFORMATION_MESSAGE);
+		bootUp();
+	}
 	
 	private void authenticate(){
 		user = usernameFillin.getText();
@@ -83,7 +99,7 @@ public class GUI extends JFrame{
 			JOptionPane.showMessageDialog(null,"Wrong Password / Username");
 			usernameFillin.setText("");
 			passwordFillin.setText("");
-			usernameFillin.requestFocus();
+			//usernameFillin.requestFocus();
 		}
 	}
 	
@@ -92,22 +108,25 @@ public class GUI extends JFrame{
 			inputs = new processingMethods(currentUser.getBookStorage());
 			inputs.processArgs(input);
 			currentUserBookStorage = currentUser.getBookStorage();
-			//currentUserBooks = currentUser.getBookStorage().getBooks();
 			runGUI();
 		}
 	}
 	
 	JFrame listGUI = null;
 	JTable inputData = null;
-	JButton remove, modify, signout, advancedSearch, checkout;
-	Label results;
-	JScrollPane scrollPane;
-	JTable table;
+	JButton remove = null;
+	JButton modify = null;
+	JButton signout = null; 
+	JButton advancedSearch = null;
+	JButton checkout = null;
+	Label results = null;
+	JScrollPane scrollPane = null;
+	JTable table = null;
 	
 	public void runGUI(){
 		listGUI = new JFrame();
 		listGUI.setTitle("Bookshelf");
-		listGUI.setSize(600, 400);
+		listGUI.setSize(600, 450);
 		listGUI.setLocation(200, 300);
 		listGUI.setLayout(new FlowLayout());
 		results = new Label("Results for " + currentUser.getUsername());  // construct the Label component
@@ -125,10 +144,21 @@ public class GUI extends JFrame{
         if(currentUser.getUsername().equals("Admin")){
             modify = new JButton("Modify Information");
             listGUI.add(modify);
+            modify.addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent ae) {
+    					modify();
+    			}
+    		});
         }
         if(!currentUser.getUsername().equals("Guest")){
             checkout = new JButton("Checkout");
             listGUI.add(checkout);
+            checkout.addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent ae) {
+    				inputs.generateReceipt();
+    				JOptionPane.showMessageDialog(null, "Your receipt has been generated!", "Thank you!", JOptionPane.INFORMATION_MESSAGE);
+    			}
+    		});
         }
         listGUI.add(signout);
 	    listGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -138,18 +168,10 @@ public class GUI extends JFrame{
 				removeBook();
 			}
 		});
-        modify.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent ae) {
-				if(!currentUser.getUsername().equals("Admin")){
-					JOptionPane.showMessageDialog(null, "You do not have Admin Privledges!", "Error", JOptionPane.INFORMATION_MESSAGE);
-				}
-				else{
-					modify();
-				}
-			}
-		});
+
         signout.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
+				listGUI.dispose();
 				signout();
 			}
 		});
@@ -160,26 +182,23 @@ public class GUI extends JFrame{
 				advancedSearch();
 			}
 		});
-        
-        checkout.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent ae) {
-				inputs.generateReceipt();
-				JOptionPane.showMessageDialog(null, "Your receipt has been generated!", "Thank you!", JOptionPane.INFORMATION_MESSAGE);
-			}
-		});
 	}
 	
 	private void signout(){
 		try {
 			currentUserBookStorage.logFile.close();
-			inputs.receipt.close();
+			inputs.getOutFile().close();
+			if(inputs.receipt != null){
+				inputs.getReceipt().close();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		currentUser = null;
 		currentUserBookStorage = null;
+		inputs = null;
 		signedIn = false;
-		System.exit(0);
+		login();
 	}
 	
 	private void removeBook(){
@@ -189,6 +208,11 @@ public class GUI extends JFrame{
 		}
 		String isbn = inputData.getModel().getValueAt(row, 0).toString();
 		currentUserBookStorage.deleteData(isbn);
+		try {
+			inputs.getOutFile().write("Deleted: " + isbn + "\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		listGUI.dispose();
 		runGUI();
 	}
@@ -196,10 +220,9 @@ public class GUI extends JFrame{
 	private void modify(){
 		int row = inputData.getSelectedRow();
 		int col = inputData.getSelectedColumn();
-		if(row == -1 || col == -1) {
+		if (row == -1 || col == -1) {
 			JOptionPane.showMessageDialog(null, "Please select a field from the list of books to be modified!", "Error", JOptionPane.INFORMATION_MESSAGE);
 		}
-		System.out.println(row + " "+ col);
 		String isbn = inputData.getModel().getValueAt(row, 0).toString();
 		String fieldToChange = null;
 		if(col==0) fieldToChange = "isbn";
@@ -212,17 +235,21 @@ public class GUI extends JFrame{
 		inputData.getModel().setValueAt(change, row, col);
 		String modifiedValue = inputData.getModel().getValueAt(row, col).toString();
 		currentUserBookStorage.modifyData(isbn, fieldToChange, modifiedValue);
-		
+		try {
+			inputs.getOutFile().write("Modified: " + fieldToChange + " to " + change + "\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private JFrame advancedSearchGui = null;
 	private JPanel panel2=null;
 	private JLabel title=null;
 	private JLabel isbn=null;
-    private JTextField titleFillin = new JTextField(20); 
-    private JTextField isbnFillin = new JTextField(20);
-    private JButton searchButton = new JButton("Search");
-    private JButton cancelButton = new JButton("Cancel");
+    private JTextField titleFillin = null;
+    private JTextField isbnFillin = null;
+    private JButton searchButton = null;
+    private JButton cancelButton = null;
 	
 	private void advancedSearch() {
 		advancedSearchGui = new JFrame();
@@ -233,6 +260,10 @@ public class GUI extends JFrame{
         panel2 = new JPanel();
         title = new JLabel("Title:");   
         isbn = new JLabel("ISBN:");
+        titleFillin = new JTextField(20); 
+        isbnFillin = new JTextField(20);
+        searchButton = new JButton("Search");
+        cancelButton = new JButton("Cancel");
         panel2.add(title);
         panel2.add(titleFillin);
         panel2.add(isbn);
@@ -243,14 +274,24 @@ public class GUI extends JFrame{
         advancedSearchGui.setVisible(true);
         searchButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
+				int checkSearch = 0;
 				String bookTitle = titleFillin.getText();
 				String bookIsbn = isbnFillin.getText();
-				inputs.searchNewBook(bookTitle, bookIsbn);
-				advancedSearchGui.dispose();
-				runGUI();
-
+				checkSearch = inputs.searchNewBook(bookTitle, bookIsbn);
+				if(checkSearch==1){
+					java.awt.Toolkit.getDefaultToolkit().beep();
+					JOptionPane.showMessageDialog(null,"No book found!");
+					advancedSearch();
+				}
+				else{
+					titleFillin.setText("");
+					isbnFillin.setText("");
+					advancedSearchGui.dispose();
+					runGUI();
+				}
 			}
 		});
+        
         cancelButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
 				advancedSearchGui.dispose();
@@ -303,12 +344,12 @@ public class GUI extends JFrame{
 	    return table;
 	}
 	
-	public boolean getSignedIn(){
+	public boolean getSignedIn() {
 		return signedIn;
 	}
 	
 	
-	public User getCurrentUser(){
+	public User getCurrentUser() {
 		return currentUser;
 	}
 	
