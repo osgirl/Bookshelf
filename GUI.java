@@ -13,37 +13,48 @@ import javax.swing.table.TableColumn;
 
 public class GUI extends JFrame{
 	private BookStorage currentUserBookStorage = null;
+	private UserStorage currentUsersStorage = null;
 	private Hashtable<String, User> users = null;
 	private User currentUser = null;
 	private boolean signedIn = false;
 	private String[] input = null;
 	private processingMethods inputs = null;
 	
-	public GUI(String[] input, Hashtable<String, User> users) {
+	public GUI(String[] input, UserStorage initialUsers) {
 		this.input = input;
-		this.users = users;
+		this.currentUsersStorage = initialUsers;
+		this.users = initialUsers.getUsers();
 		login();
 	}
 	
     private JFrame signin = null;
-	private JPanel panel;
+	private JPanel panel = null;
+	private JPanel panelAddUser = null;
 	private JLabel username, password;
+	private JLabel uname, pword;
     private JTextField usernameFillin = new JTextField(20); 
-    private JTextField passwordFillin = new JTextField(20); //change to jpasswordfield**
+    private JTextField passwordFillin = new JTextField(20);
+    private JTextField unameFillin = new JTextField(20); 
+    private JTextField pwordFillin = new JTextField(20);
     private JButton btnLogin = null;
     private JButton btnGuest = null;
     private JButton btnExit = null;
+    private JButton btnAddUser = null;
+    private JButton btnCancel = null;
+    private JButton btnAdd = null;
+    
     private String user, pass;
     
 	private void login(){
 		signin = new JFrame();
 		signin.setTitle("Login");
-		signin.setSize(300, 200);
+		signin.setSize(350, 220);
 		signin.setLocation(500, 280);
 		signin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel();
         username = new JLabel("Username:");   
         password = new JLabel("Password:");
+        btnAddUser = new JButton("Create Account");
         btnLogin = new JButton("Login");
         btnGuest = new JButton("Login as Guest");
         btnExit = new JButton("Exit Software");
@@ -53,6 +64,7 @@ public class GUI extends JFrame{
         panel.add(passwordFillin);  
         panel.add(btnLogin);
         panel.add(btnGuest);
+        panel.add(btnAddUser);
         panel.add(btnExit);
         signin.getContentPane().add(BorderLayout.CENTER, panel);
         signin.setVisible(true);
@@ -74,7 +86,61 @@ public class GUI extends JFrame{
 				System.exit(0);
 			}
 		});
+        
+        btnAddUser.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				addUser();
+			}
+		});
 	} //end login
+	
+	
+	
+	private void addUser() {
+		panel.setVisible(false);
+		panelAddUser = new JPanel();
+		uname = new JLabel("Enter a Username: ");
+		pword = new JLabel("Enter a Password: ");
+		btnCancel = new JButton("Cancel");
+		btnAdd = new JButton("Create Account");
+		panelAddUser.add(uname);
+		panelAddUser.add(unameFillin);
+		panelAddUser.add(pword);
+		panelAddUser.add(pwordFillin);
+		panelAddUser.add(btnAdd);
+		panelAddUser.add(btnCancel);
+        signin.getContentPane().add(BorderLayout.CENTER, panelAddUser);
+		panelAddUser.setVisible(true);
+		
+	    btnCancel.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				panelAddUser.setVisible(false);
+				panel.setVisible(true);
+			}
+		});
+	    
+	    btnAdd.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				String newUsername = "";
+				String newPassword = "";
+				newUsername = unameFillin.getText();
+				newPassword = pwordFillin.getText();
+				if(currentUsersStorage.userExists(newUsername)){
+					JOptionPane.showMessageDialog(null, "That user already exists.\n Please enter a different Username.", "Attention!", JOptionPane.INFORMATION_MESSAGE);
+					unameFillin.setText("");
+					pwordFillin.setText("");
+				}
+				else {
+					currentUsersStorage.addUser(newUsername, newPassword);
+					JOptionPane.showMessageDialog(null, "Username Added!", "Attention!", JOptionPane.INFORMATION_MESSAGE);
+					unameFillin.setText("");
+					pwordFillin.setText("");
+					panelAddUser.setVisible(false);
+					panel.setVisible(true);
+				}
+			}
+		});
+	}
 	
 	private void authenticateGuest(){
 		currentUser = users.get("Guest");
@@ -92,6 +158,8 @@ public class GUI extends JFrame{
 			signedIn = true;
 			signin.dispose();
 			JOptionPane.showMessageDialog(null, "Please wait while signing in! \n Press 'OK' to continue.", "Loading...", JOptionPane.INFORMATION_MESSAGE);
+			usernameFillin.setText("");
+			passwordFillin.setText("");
 			bootUp();
 		} 
 		else {
@@ -99,7 +167,6 @@ public class GUI extends JFrame{
 			JOptionPane.showMessageDialog(null,"Wrong Password / Username");
 			usernameFillin.setText("");
 			passwordFillin.setText("");
-			//usernameFillin.requestFocus();
 		}
 	}
 	
@@ -313,8 +380,8 @@ public class GUI extends JFrame{
 	    while (itr.hasNext()) { 
 	       str = itr.next();
 	       rows[i][0] = data.get(str).getIsbn();
-	       rows[i][1] = data.get(str).getAuthor();
-	       rows[i][2] = data.get(str).getTitle();
+	       rows[i][1] = data.get(str).getTitle();
+	       rows[i][2] = data.get(str).getAuthor();
 	       rows[i][3] = data.get(str).getGenre();
 	       rows[i][4] = data.get(str).getPrice();
 	       i++;
@@ -352,6 +419,5 @@ public class GUI extends JFrame{
 	public User getCurrentUser() {
 		return currentUser;
 	}
-	
-	
+
 }

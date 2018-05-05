@@ -167,9 +167,11 @@ public class processingMethods {
 	public void generateReceipt() {
 		try {
 		    receipt = new BufferedWriter(new FileWriter("receipt.txt"));
-			receipt.write("BOOKSHELF \n\n");
+			receipt.write("BOOKSHELF \n");
+			receipt.write("Sold by: Kimberly \n");
+			receipt.write("In partnership with: Barnes & Nobles \n\n");
 	        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-			receipt.write(timestamp + " \n\n");
+			receipt.write("Date and Time: " + timestamp + " \n\n");
 			double total = 0.0;
 			double tax = 1.0825;
 			String price = "";
@@ -179,17 +181,21 @@ public class processingMethods {
 			boughtBooks = currentUserStorage.getBooks();
 		    Set<String> keys = boughtBooks.keySet();
 		    Iterator<String> itr = keys.iterator();
-		    String receiptTitle = "";
 		    while (itr.hasNext()) { 
 		       str = itr.next();
 		       receipt.write("BOOK: " + boughtBooks.get(str).getTitle() +"\n");
 		       receipt.write("AUTHOR: " + boughtBooks.get(str).getAuthor() +"\n");
 		       receipt.write("ISBN: " + boughtBooks.get(str).getIsbn() +"\n");
 		       receipt.write("GENRE: " + boughtBooks.get(str).getGenre() +"\n");
-		       receipt.write("PRICE: " + boughtBooks.get(str).getPrice()  +"\n");
-		       price = boughtBooks.get(str).getPrice();
-		       price = price.substring(1, price.length());
-		       total = total + Double.parseDouble(price);
+		       if(boughtBooks.get(str).getPrice().equals("")){
+			       receipt.write("PRICE: " + "$0.00"  +"\n");
+		       }
+		       else{
+		    	   receipt.write("PRICE: " + boughtBooks.get(str).getPrice()  +"\n");
+		    	   price = boughtBooks.get(str).getPrice();
+			       price = price.substring(1, price.length());
+			       total = total + Double.parseDouble(price);
+		       }
 		       receipt.write("------------\n");
 		    }
 		    receipt.write("----------------------------------------------------\n");

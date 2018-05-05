@@ -1,13 +1,9 @@
 BOOKSHELF 
+Sold by: Kimberly 
+In partnership with: Barnes & Nobles 
 
-2018-05-05 14:02:07.512 
+Date and Time: 2018-05-05 15:45:38.826 
 
-BOOK: Night
-AUTHOR: Elie Wiesel
-ISBN: 9780374500016
-GENRE: Books
-PRICE: $6.2
-------------
 BOOK: The Fault in Our Stars
 AUTHOR: John Green
 ISBN: 9780142424179
@@ -20,19 +16,13 @@ ISBN: 9780147517654
 GENRE: Teen Books
 PRICE: $8.24
 ------------
-BOOK: Thirteen Reasons Why 10th Anniversary Edition
-AUTHOR: Jay Asher
-ISBN: 9781595147882
-GENRE: Teen Books
-PRICE: $15.54
-------------
-BOOK: The Getaway BN Exclusive Edition Diary of a Wimpy Kid Series 12
-AUTHOR: Jeff Kinney
-ISBN: 9781419730603
-GENRE: Kids Books
-PRICE: $10.34
+BOOK: Mine After Dark
+AUTHOR: Marie Force
+ISBN: 2940162092650
+GENRE: Books
+PRICE: $0.00
 ------------
 ----------------------------------------------------
-SUBTOTAL: $48.760000000000005
+SUBTOTAL: $16.68
 TAX 1.0825
-TOTAL $52.78
+TOTAL $18.06

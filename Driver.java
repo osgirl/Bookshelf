@@ -24,6 +24,6 @@ public class Driver {
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{
 		users = new UserStorage();
-		GUI bookShelf = new GUI(args, users.getUsers());
+		GUI bookShelf = new GUI(args, users);
 	}
 }
