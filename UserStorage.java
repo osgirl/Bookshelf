@@ -30,6 +30,10 @@ public class UserStorage {
 		users.put(user2, regularUser2);		
 	}
 	
+	/**
+	 * 
+	 * @return hashtable containing users
+	 */
 	public Hashtable<String, User> getUsers(){
 		return users;
 	}

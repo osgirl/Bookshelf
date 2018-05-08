@@ -11,23 +11,34 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Processing Methods hold functions for processing inputs and outputs of the software
+ * 
+ * @author Kimberly Lalmansingh
+ *
+ */
+
 public class processingMethods {
 	
+	//global data members
 	private BookStorage currentUserStorage = null;
 	private Search titles = null;
 	BufferedWriter receipt = null;
 	BufferedWriter outFile = null;
 	
+	//constructor
 	public processingMethods(BookStorage currentUserStorage){
 		this.currentUserStorage = currentUserStorage;
 	}
 	
+	//process input arguments
 	public void processArgs(String[] args){
 		String inputFile = "";
 		String outputFile = "";
 		boolean input = false;
 		boolean output=false;
 		for(int i=0; i<args.length; i++){
+			//input file
 			if(args[i].equals("-i")){
 				if(args[i+1].startsWith("-")){
 					System.out.println("Please enter a textfile. Exiting software now.");
@@ -39,51 +50,56 @@ public class processingMethods {
 					i++;
 				}
 			}
+			//read a url file
 			else if(args[i].equals("-u")){
 				readUrls(args[i+1]);
 				i++;
 			}
+			//create output
 			else if(args[i].equals("-o")){
 				outputFile = args[i+1];
 				output=true;
 				i++;
 			}
-			else if(args[i].equals("-p")){
-				//no guis
-				//process input file
-				
-			}
+			//load in log file
 			else if(args[i].equals("-l")){
 				loadLogFile("logFile.txt");
+				i++;
 				
 			}
 		}
 		if(output){
-			createOutput(outputFile);
+			createOutput(outputFile); //will create an output file if output flag was present
 		}
 		if(input){
-			readInputFile(inputFile);
+			readInputFile(inputFile); //will read in the inputs if input flag was present
 		}
 	}
 	
+	//process the input file
 	public void readInputFile(String inputFile){
-		ArrayList<String> inputs = new ArrayList<String>();
-		ArrayList<String> titlesToSearch = new ArrayList<String>();
+		ArrayList<String> inputs = new ArrayList<String>(); //stores inputs
+		//will hold the titles that will allow the searching, it cannot have spaces
+		ArrayList<String> titlesToSearch = new ArrayList<String>(); 
 		File inFile = new File(inputFile);
 		String title;
+		//read in from input file and store in array list
 		try {
 			Scanner inputTitle = new Scanner(inFile);
 			while(inputTitle.hasNext()){
 				title = inputTitle.nextLine();
 				inputs.add(title);
 				try {
+					//write to output file
 					outFile.write("Added to Searching list: " + title + "\n");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 			inputTitle.close();
+			//will modify the titles and store them as required to allow searching
 			titlesToSearch = removeWhiteSpace(inputs);
+			//process the titles 
 			processDataInputs(titlesToSearch);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -91,6 +107,7 @@ public class processingMethods {
 	}
 	
 	private ArrayList<String> removeWhiteSpace(ArrayList<String> titles) {
+		//remove white spaces and adds "+" between spaces to allow searching 
 		ArrayList<String> newTitles = new ArrayList<String>();
 		String newTitle = null;
 		for(int i=0; i<titles.size(); i++){
@@ -100,7 +117,8 @@ public class processingMethods {
 		return newTitles;
 	}
 	
-	public void processDataInputs(ArrayList<String> inputs){
+	public void processDataInputs(ArrayList<String> inputs) {
+		//process searching the titles
 		titles = new Search(currentUserStorage);
 		for(int i=0; i<inputs.size(); i++){
 			titles.titleSearch(inputs.get(i), outFile);
@@ -126,14 +144,16 @@ public class processingMethods {
 	
 	
 	public void loadLogFile(String inputFile){
-		//need to expand on commands
+		
 		File inFile = new File(inputFile);
 		String isbn, title, author, genre, price, field, value, command = null;
 		try {
+			//read in each command in log file
 			Scanner data = new Scanner(inFile);
 			data.useDelimiter("/|\\n");
 			while(data.hasNext()){
 				command = data.next();
+				//if something was inserted
 				if(command.equalsIgnoreCase("insert")){
 					isbn = data.next();
 					title = data.next();
@@ -142,23 +162,20 @@ public class processingMethods {
 					price = data.next();
 					currentUserStorage.storeData(isbn, title, author, genre, price);
 				}
+				//if something was deleted
 				else if(command.equalsIgnoreCase("delete")){
 					isbn = data.next();
 					currentUserStorage.deleteData(isbn);
 				}
+				//if something was modified
 				else if(command.equalsIgnoreCase("modify")){
 					isbn = data.next();
 					field = data.next();
 					value = data.next();
-					currentUserStorage.modified(isbn, field, value);
+					currentUserStorage.modifyData(isbn, field, value);
 				}
 			}
 			data.close();
-			try {
-				currentUserStorage.logFile.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -166,6 +183,8 @@ public class processingMethods {
 	
 	public void generateReceipt() {
 		try {
+			//create a receipt with the currently stored book in the 
+			//users storage
 		    receipt = new BufferedWriter(new FileWriter("receipt.txt"));
 			receipt.write("BOOKSHELF \n");
 			receipt.write("Sold by: Kimberly \n");
@@ -181,7 +200,9 @@ public class processingMethods {
 			boughtBooks = currentUserStorage.getBooks();
 		    Set<String> keys = boughtBooks.keySet();
 		    Iterator<String> itr = keys.iterator();
+			receipt.write("Number of items bought: " + currentUserStorage.getItems() + "\n\n");
 		    while (itr.hasNext()) { 
+		    	//write all book information
 		       str = itr.next();
 		       receipt.write("BOOK: " + boughtBooks.get(str).getTitle() +"\n");
 		       receipt.write("AUTHOR: " + boughtBooks.get(str).getAuthor() +"\n");
@@ -191,6 +212,7 @@ public class processingMethods {
 			       receipt.write("PRICE: " + "$0.00"  +"\n");
 		       }
 		       else{
+		    	   //calculate price of all the books in total
 		    	   receipt.write("PRICE: " + boughtBooks.get(str).getPrice()  +"\n");
 		    	   price = boughtBooks.get(str).getPrice();
 			       price = price.substring(1, price.length());
@@ -206,11 +228,14 @@ public class processingMethods {
 		    String result = "";
 		    result = totalInDecimal.format(totalWithTax);
 		    receipt.write("TOTAL $" + result);
+		    
+		    
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	//getters and setters
 	public BufferedWriter getReceipt(){
 		return receipt;
 	}
@@ -219,6 +244,7 @@ public class processingMethods {
 		return outFile;
 	}
 	
+	//read in url information
 	private void readUrls(String inputFile){
 		File inFile = new File(inputFile);
 		ArrayList<String> urls = new ArrayList<String>();
@@ -235,6 +261,7 @@ public class processingMethods {
 		urlSearch.getUrlInfo(urls);
 	}
 	
+	//create an output file if flag was present
 	public void createOutput(String outputFile){
 		try {
 			outFile = new BufferedWriter(new FileWriter(outputFile));

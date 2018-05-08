@@ -1,13 +1,6 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
-import java.util.Set;
+
 
 /**
  * This is the Driver class in which will run the software. 
@@ -19,7 +12,6 @@ import java.util.Set;
 public class Driver {
 	
 	//storage structures for the software
-	//static BookStorage storedBooks = null; //stores books 
 	static UserStorage users = null; //stores all users of the software
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{

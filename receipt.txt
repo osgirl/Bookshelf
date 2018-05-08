@@ -2,7 +2,9 @@ BOOKSHELF
 Sold by: Kimberly 
 In partnership with: Barnes & Nobles 
 
-Date and Time: 2018-05-05 15:45:38.826 
+Date and Time: 2018-05-07 22:44:53.503 
+
+Number of items bought: 2
 
 BOOK: The Fault in Our Stars
 AUTHOR: John Green
@@ -10,19 +12,13 @@ ISBN: 9780142424179
 GENRE: Teen Books
 PRICE: $8.44
 ------------
-BOOK: Paper Towns
-AUTHOR: John Green
-ISBN: 9780147517654
+BOOK: Thirteen Reasons Why 10th Anniversary Edition
+AUTHOR: Jay Asher
+ISBN: 9781595147882
 GENRE: Teen Books
-PRICE: $8.24
-------------
-BOOK: Mine After Dark
-AUTHOR: Marie Force
-ISBN: 2940162092650
-GENRE: Books
-PRICE: $0.00
+PRICE: $15.54
 ------------
 ----------------------------------------------------
-SUBTOTAL: $16.68
+SUBTOTAL: $23.979999999999997
 TAX 1.0825
-TOTAL $18.06
+TOTAL $25.96

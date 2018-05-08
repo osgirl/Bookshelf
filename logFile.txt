@@ -1,3 +1,5 @@
-2018-05-05 17:58:16.531  INSERT/9780142424179/The Fault in Our Stars/John Green/Teen Books/$8.44
-2018-05-05 17:58:18.312  INSERT/9780147517654/Paper Towns/John Green/Teen Books/$8.24
-2018-05-05 17:58:20.825  INSERT/9781595147882/Thirteen Reasons Why 10th Anniversary Edition/Jay Asher/Teen Books/$15.54
+2018-05-08 00:28:13.658  INSERT/9780142424179/The Fault in Our Stars/John Green/Teen Books/$8.44
+2018-05-08 00:28:14.9  INSERT/9780147517654/Paper Towns/John Green/Teen Books/$8.24
+2018-05-08 00:28:16.178  INSERT/9781595147882/Thirteen Reasons Why 10th Anniversary Edition/Jay Asher/Teen Books/$15.54
+2018-05-08 00:28:38.664  MODIFY/9780147517654/title/Paper Cities 
+2018-05-08 00:28:44.912  DELETE/9781595147882

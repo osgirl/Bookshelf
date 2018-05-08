@@ -4,3 +4,5 @@ Added to Searching list: 13 reasons why
 Searched Barnes & Noble Url: https://www.barnesandnoble.com/s/The+fault+in+our+stars
 Searched Barnes & Noble Url: https://www.barnesandnoble.com/s/Paper+towns
 Searched Barnes & Noble Url: https://www.barnesandnoble.com/s/13+reasons+why
+Modified: title to Paper Cities 
+Deleted: 9781595147882
