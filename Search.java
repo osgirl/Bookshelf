@@ -2,6 +2,10 @@ import java.net.*;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
+
+import java.awt.image.BufferedImage;
 import java.io.*;
 
 
@@ -20,6 +24,7 @@ public class Search {
 	
 	private ArrayList<String> allTitleHrefResults;
 	private BookStorage bookStorage = null;
+    BufferedWriter writer = null;
 
 	
 	public Search(BookStorage bookStorage){
@@ -186,8 +191,26 @@ public class Search {
     	return info;
     }
     
+    public BufferedImage featuredItem() {
+    	String imageUrl = "https://prodimage.images-bn.com/pimages/9780785168508_p0_v2_s550x406.jpg";
+    		URL url = null;
+			try {
+				url = new URL(imageUrl);
+			} catch (MalformedURLException e1) {
+				e1.printStackTrace();
+			}
+    		BufferedImage image = null;
+    		File outputImage = new File("Image.jpg");
+			try {
+				image = ImageIO.read(url);
+				//ImageIO.write(image, "jpg", outputImage);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} // catch
+			return image;
+    }
     
-    BufferedWriter writer = null;
+    
     
     public void getUrlInfo(ArrayList<String> urls) {
     	// generates output file for url searching

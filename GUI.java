@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -27,7 +28,7 @@ public class GUI extends JFrame{
 	private User currentUser = null;
 	private boolean signedIn = false;
 	private String[] input = null;
-	private processingMethods inputs = null;
+	private ProcessingMethods inputs = null;
 	
 	//constructor
 	public GUI(String[] input, UserStorage initialUsers) {
@@ -202,7 +203,7 @@ public class GUI extends JFrame{
 	private void bootUp(){
 		//when the user signs in, run main process of software
 		if(signedIn){
-			inputs = new processingMethods(currentUser.getBookStorage());
+			inputs = new ProcessingMethods(currentUser.getBookStorage());
 			//process the flags given by user
 			inputs.processArgs(input);
 			//set the filled storaged after processing inputs
@@ -218,6 +219,7 @@ public class GUI extends JFrame{
 	JButton modify = null;
 	JButton signout = null; 
 	JButton rebuild = null;
+	JButton featuredItem = null;
 	JButton advancedSearch = null;
 	JButton checkout = null;
 	Label results = null;
@@ -244,7 +246,9 @@ public class GUI extends JFrame{
 	    listGUI.getContentPane().setBackground(Color.pink);
         remove = new JButton("Remove Book");
         signout = new JButton("Sign Out");
+        featuredItem = new JButton("Check this out!");
         advancedSearch = new JButton("Advanced Search");
+        listGUI.add(featuredItem);
         listGUI.add(advancedSearch);
         listGUI.add(remove);
         //only admin can modify data
@@ -300,6 +304,19 @@ public class GUI extends JFrame{
 				advancedSearch();
 			}
 		});
+        
+        featuredItem.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				BufferedImage img = inputs.showFeaturedItem();
+				displayFeaturedItem(img);
+			}
+		});
+	}
+	
+	//displays featured item poster
+	private void displayFeaturedItem(BufferedImage img) {
+        ImageIcon icon = new ImageIcon(img);
+        JOptionPane.showMessageDialog(null, "", "Featured Item of 2018", JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 	
 	//method when a user selects to sign out of system
@@ -379,7 +396,9 @@ public class GUI extends JFrame{
 		}
 	}
 	
+	//function to rebuild data from a logfile
 	private void rebuildLog() {
+		//allow the admin to select the log file
 		JFileChooser selectLogFile = new JFileChooser();
 	    FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
 	    selectLogFile.setFileFilter(filter);
@@ -387,6 +406,7 @@ public class GUI extends JFrame{
 	    selectLogFile.setCurrentDirectory(workingDirectory);
 	    int returnVal = selectLogFile.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			//run load log file method and restructure GUI
 			inputs.loadLogFile(selectLogFile.getSelectedFile().getName());
 			listGUI.dispose();
 			runGUI();
@@ -394,6 +414,7 @@ public class GUI extends JFrame{
 		
 	}
 	
+	//advanced GUI data members/ components
 	private JFrame advancedSearchGui = null;
 	private JPanel panel2=null;
 	private JLabel title=null;

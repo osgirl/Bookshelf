@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,7 +19,7 @@ import java.util.Set;
  *
  */
 
-public class processingMethods {
+public class ProcessingMethods {
 	
 	//global data members
 	private BookStorage currentUserStorage = null;
@@ -27,7 +28,7 @@ public class processingMethods {
 	BufferedWriter outFile = null;
 	
 	//constructor
-	public processingMethods(BookStorage currentUserStorage){
+	public ProcessingMethods(BookStorage currentUserStorage){
 		this.currentUserStorage = currentUserStorage;
 	}
 	
@@ -191,7 +192,8 @@ public class processingMethods {
 		try {
 			//create a receipt with the currently stored book in the 
 			//users storage
-		    receipt = new BufferedWriter(new FileWriter("receipt.txt"));
+			FileWriter yourReceipt = new FileWriter("receipt.txt");
+		    receipt = new BufferedWriter(yourReceipt);
 			receipt.write("BOOKSHELF \n");
 			receipt.write("Sold by: Kimberly \n");
 			receipt.write("In partnership with: Barnes & Nobles \n\n");
@@ -233,10 +235,9 @@ public class processingMethods {
 		    double totalWithTax = total*tax;
 		    String result = "";
 		    result = totalInDecimal.format(totalWithTax);
-		    receipt.write("TOTAL $" + result);
+		    receipt.write("TOTAL $" + result + "\n");
 		    receipt.write("----------------------------------------------------\n");
 		    receipt.write("THANK YOU! \n\n");
-   
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -275,5 +276,10 @@ public class processingMethods {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public BufferedImage showFeaturedItem() {
+		BufferedImage img = titles.featuredItem();
+		return img;
 	}
 }

@@ -2,16 +2,10 @@ BOOKSHELF
 Sold by: Kimberly 
 In partnership with: Barnes & Nobles 
 
-Date and Time: 2018-05-08 20:12:28.061 
+Date and Time: 2018-05-08 21:10:59.427 
 
-Number of items bought: 4
+Number of items bought: 3
 
-BOOK: Night
-AUTHOR: Elie Wiesel
-ISBN: 9780374500016
-GENRE: Books
-PRICE: $6.2
-------------
 BOOK: The Fault in Our Stars
 AUTHOR: John Green
 ISBN: 9780142424179
@@ -31,6 +25,9 @@ GENRE: Teen Books
 PRICE: $15.54
 ------------
 ----------------------------------------------------
-SUBTOTAL: $38.42
+SUBTOTAL: $32.22
 TAX 1.0825
-TOTAL $41.59
+TOTAL $34.88
+----------------------------------------------------
+THANK YOU! 
+
