@@ -1,11 +1,13 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
@@ -137,28 +139,32 @@ public class GUI extends JFrame{
 	    
 	    btnAdd.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
-				//user selects to add new account
-				String newUsername = "";
-				String newPassword = "";
-				newUsername = unameFillin.getText();
-				newPassword = pwordFillin.getText();
-				if(currentUsersStorage.userExists(newUsername)){
-					//if this username already exists, inform the user
-					JOptionPane.showMessageDialog(null, "That user already exists.\n Please enter a different Username.", "Attention!", JOptionPane.INFORMATION_MESSAGE);
-					unameFillin.setText("");
-					pwordFillin.setText("");
-				}
-				else {
-					//if the username is valid, add the user to the database so they can loging
-					currentUsersStorage.addUser(newUsername, newPassword);
-					JOptionPane.showMessageDialog(null, "Username Added!", "Attention!", JOptionPane.INFORMATION_MESSAGE);
-					unameFillin.setText("");
-					pwordFillin.setText("");
-					panelAddUser.setVisible(false);
-					panel.setVisible(true);
-				}
+				addUserIntoDB();
 			}
 		});
+	}
+	
+	private void addUserIntoDB() {
+		//user selects to add new account
+		String newUsername = "";
+		String newPassword = "";
+		newUsername = unameFillin.getText();
+		newPassword = pwordFillin.getText();
+		if(currentUsersStorage.userExists(newUsername)){
+			//if this username already exists, inform the user
+			JOptionPane.showMessageDialog(null, "That user already exists.\n Please enter a different Username.", "Attention!", JOptionPane.INFORMATION_MESSAGE);
+			unameFillin.setText("");
+			pwordFillin.setText("");
+		}
+		else {
+			//if the username is valid, add the user to the database so they can loging
+			currentUsersStorage.addUser(newUsername, newPassword);
+			JOptionPane.showMessageDialog(null, "Username Added!", "Attention!", JOptionPane.INFORMATION_MESSAGE);
+			unameFillin.setText("");
+			pwordFillin.setText("");
+			panelAddUser.setVisible(false);
+			panel.setVisible(true);
+		}
 	}
 	
 	private void authenticateGuest(){
@@ -211,6 +217,7 @@ public class GUI extends JFrame{
 	JButton remove = null;
 	JButton modify = null;
 	JButton signout = null; 
+	JButton rebuild = null;
 	JButton advancedSearch = null;
 	JButton checkout = null;
 	Label results = null;
@@ -250,6 +257,15 @@ public class GUI extends JFrame{
     			}
     		});
         }
+        if(currentUser.getUsername().equals("Admin")){
+        	rebuild = new JButton("Rebuild from a Log");            
+        	listGUI.add(rebuild);
+            rebuild.addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent ae) {
+    					rebuildLog();
+    			}
+    		});
+        }
         //Guests cannot checkout books
         if(!currentUser.getUsername().equals("Guest")){
             checkout = new JButton("Checkout");
@@ -260,10 +276,11 @@ public class GUI extends JFrame{
     				JOptionPane.showMessageDialog(null, "Your receipt has been generated!", "Thank you!", JOptionPane.INFORMATION_MESSAGE);
     			}
     		});
-        }
+        } 
         listGUI.add(signout);
 	    listGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		listGUI.setVisible(true);
+		
         remove.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
 				removeBook();
@@ -285,8 +302,10 @@ public class GUI extends JFrame{
 		});
 	}
 	
+	//method when a user selects to sign out of system
 	private void signout(){
 		try {
+			//close all files (log file and receipt file)
 			currentUserBookStorage.logFile.close();
 			inputs.getOutFile().close();
 			if(inputs.receipt != null){
@@ -295,18 +314,23 @@ public class GUI extends JFrame{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//set variables to null
 		currentUser = null;
 		currentUserBookStorage = null;
 		inputs = null;
 		signedIn = false;
+		//go back to login screen
 		login();
 	}
 	
+	//method when a user choses to remove a book 
 	private void removeBook(){
 		int row = inputData.getSelectedRow();
 		if(row == -1) {
+			//an item must be selected for deletion
 			JOptionPane.showMessageDialog(null, "Please select a book to be removed!", "Error", JOptionPane.INFORMATION_MESSAGE);
 		}
+		//get values at indicated spot
 		String isbn = inputData.getModel().getValueAt(row, 0).toString();
 		currentUserBookStorage.deleteData(isbn);
 		try {
@@ -318,33 +342,56 @@ public class GUI extends JFrame{
 		runGUI();
 	}
 	
+	//if admin wants to modify a value in the storage
 	private void modify(){
+		//get selection position
 		int row = inputData.getSelectedRow();
 		int col = inputData.getSelectedColumn();
 		if (row == -1 || col == -1) {
 			JOptionPane.showMessageDialog(null, "Please select a field from the list of books to be modified!", "Error", JOptionPane.INFORMATION_MESSAGE);
 		}
+		//get value of postion
 		String isbn = inputData.getModel().getValueAt(row, 0).toString();
 		String fieldToChange = null;
+		//get field that will be changed
 		if(col==0) fieldToChange = "isbn";
 		if(col==1) fieldToChange = "title";
 		if(col==2) fieldToChange = "author";
 		if(col==3) fieldToChange = "genre";
 		if(col==4) fieldToChange = "price";
 		String valueToChange = inputData.getModel().getValueAt(row, col).toString();
+		//indicate to admin what value previously was and prompt them for change
 		String change = JOptionPane.showInputDialog("Change " +fieldToChange+ " from " + valueToChange + " to: \n");
 		if(!(change==null)) {
+			//if admin does not press on cancel, change the value
 			inputData.getModel().setValueAt(change, row, col);
 			String modifiedValue = inputData.getModel().getValueAt(row, col).toString();
 			currentUserBookStorage.modifyData(isbn, fieldToChange, modifiedValue);
 			try {
+				//write to output file
 				inputs.getOutFile().write("Modified: " + fieldToChange + " to " + change + "\n");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			listGUI.dispose();
+			//rebuild gui with new changes
 			runGUI();
 		}
+	}
+	
+	private void rebuildLog() {
+		JFileChooser selectLogFile = new JFileChooser();
+	    FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+	    selectLogFile.setFileFilter(filter);
+	    File workingDirectory = new File(System.getProperty("user.dir"));
+	    selectLogFile.setCurrentDirectory(workingDirectory);
+	    int returnVal = selectLogFile.showOpenDialog(null);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			inputs.loadLogFile(selectLogFile.getSelectedFile().getName());
+			listGUI.dispose();
+			runGUI();
+		}
+		
 	}
 	
 	private JFrame advancedSearchGui = null;
@@ -360,15 +407,16 @@ public class GUI extends JFrame{
     private JButton searchButton = null;
     private JButton cancelButton = null;
 	
+    //advanced search GUI
 	private void advancedSearch() {
 		advancedSearchGui = new JFrame();
 		advancedSearchGui.setTitle("Advanced Search");
-		advancedSearchGui.setSize(300, 300);
+		advancedSearchGui.setSize(320, 200);
 		advancedSearchGui.setLocation(500, 280);
 		advancedSearchGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel2 = new JPanel();
 		panel2.setBackground(Color.pink);
-        title = new JLabel("Title:");   
+        title = new JLabel("Title*:");   
         isbn = new JLabel("ISBN*:");
         author = new JLabel("Author");
         genre = new JLabel("Genre");
@@ -406,32 +454,47 @@ public class GUI extends JFrame{
 		});  
 	}
 	
+	//function when advanced search request on item is placed
 	private void advancedSearchButton() {
 		int checkSearch = 0;
+		//get inputs user provided
 		String bookTitle = titleFillin.getText();
 		String bookIsbn = isbnFillin.getText();
 		String bookAuthor = authorFillin.getText();
 		String bookGenre = genreFillin.getText();
-		checkSearch = inputs.searchNewBook(bookTitle, bookIsbn);
-		try {
-			inputs.getOutFile().write("Advanced Search on : ISBN=" + bookIsbn + "  " + "\n");
-		} catch (IOException e) {
-			e.printStackTrace();
+		
+		if(bookGenre.equals("")){
+			bookGenre = "N/A";
 		}
+		if(bookAuthor.equals("")){
+			bookAuthor = "N/A";
+		}
+
+		//check search would return 1 if no book is found or
+		//returns 0 if book is found
+		checkSearch = inputs.searchNewBook(bookTitle, bookIsbn, bookAuthor, bookGenre);
 		if(checkSearch==1){
 			java.awt.Toolkit.getDefaultToolkit().beep();
 			JOptionPane.showMessageDialog(null,"No book found!");
-			advancedSearch();
-		}
-		else{
 			titleFillin.setText("");
 			isbnFillin.setText("");
+			authorFillin.setText("");
+			genreFillin.setText("");
+		}
+		else{
+			//reset advanced search textboxes
+			titleFillin.setText("");
+			isbnFillin.setText("");
+			authorFillin.setText("");
+			genreFillin.setText("");
 			advancedSearchGui.dispose();
 			runGUI();
 		}
     }
 
+	//method to build table in main GUI which displays all stored books
 	private JTable buildGui(Hashtable<String, Book> data){
+		//column information
 		String[] cols = {"ISBN", "Title", "Author", "Genre", "Price"};
 		int numRows = data.size();
 		Object[][] rows = new Object[numRows][5];
@@ -440,6 +503,7 @@ public class GUI extends JFrame{
 	    
 	    Iterator<String> itr = keys.iterator();
 	    
+	    //row information
     	int i=0;
 	    while (itr.hasNext()) { 
 	       str = itr.next();
@@ -457,7 +521,7 @@ public class GUI extends JFrame{
 	    };
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        //resize column widths
+        //resize column widths of the table created
         for (int j = 0; j < table.getColumnCount(); j++) {
             DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
             TableColumn col = colModel.getColumn(j);

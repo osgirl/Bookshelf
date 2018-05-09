@@ -68,7 +68,7 @@ public class BookStorage {
 		table.put(isbn, newBook);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
-			logFile.write(timestamp + "  " + "INSERT/" + isbn + "/" + title + "/" + author + "/" + genre + "/" + price + "\n");
+			logFile.write(timestamp + "/" + "INSERT/" + isbn + "/" + title + "/" + author + "/" + genre + "/" + price + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,7 +85,7 @@ public class BookStorage {
         String price = retrievePrice(isbn);
         //write to log file
         try {
-			logFile.write(timestamp + "  " +"DELETE/"+ isbn + "\n");
+			logFile.write(timestamp + "/" +"DELETE/"+ isbn + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -104,7 +104,7 @@ public class BookStorage {
 		else if(field.equals("price")) modifiedBook.setPrice(modifiedValue);
 		//write to log file
         try {
-			logFile.write(timestamp + "  " +"MODIFY/"+ isbn + "/" + field + "/" + modifiedValue + "\n");
+			logFile.write(timestamp + "/" +"MODIFY/"+ isbn + "/" + field + "/" + modifiedValue + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

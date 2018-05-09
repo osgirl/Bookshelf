@@ -64,7 +64,7 @@ public class UserStorage {
 	 * @return true if it is admin, false otherwise
 	 */
 	public boolean isAdmin(String username){
-		if(username==admin) return true;
+		if(username.equals("Admin")) return true;
 		else return false;
 	}
 	

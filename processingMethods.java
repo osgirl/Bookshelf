@@ -61,12 +61,6 @@ public class processingMethods {
 				output=true;
 				i++;
 			}
-			//load in log file
-			else if(args[i].equals("-l")){
-				loadLogFile("logFile.txt");
-				i++;
-				
-			}
 		}
 		if(output){
 			createOutput(outputFile); //will create an output file if output flag was present
@@ -126,16 +120,23 @@ public class processingMethods {
 		titles.parseIndividualItems();
 	}
 	
-	public int searchNewBook(String title, String isbn) {
+	//for advanced search, will check if book is found or return if
+	//book is not found
+	public int searchNewBook(String title, String isbn, String author, String genre) {
 		int checkSearch = 0;
 		try {
-			outFile.write("Advanced Search on: Title: " + title + " ISBN: " + isbn + "\n");
+			outFile.write("Advanced Search on: Title: " + title + " ISBN: " + isbn + " Author: " + author + " Genre: " + genre + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		title = title.replaceAll("\\s+","+");
 		checkSearch = titles.advancedBookSearch(title, isbn);
 		if(checkSearch==1){
+			try {
+				outFile.write("No book found for previous Advanced Search" + "\n");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return 1;
 		}
 		return 0;
@@ -147,6 +148,11 @@ public class processingMethods {
 		
 		File inFile = new File(inputFile);
 		String isbn, title, author, genre, price, field, value, command = null;
+		try {
+			outFile.write("Rebuilding Data from LogFile: "+ inputFile + "\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		try {
 			//read in each command in log file
 			Scanner data = new Scanner(inFile);
@@ -228,8 +234,9 @@ public class processingMethods {
 		    String result = "";
 		    result = totalInDecimal.format(totalWithTax);
 		    receipt.write("TOTAL $" + result);
-		    
-		    
+		    receipt.write("----------------------------------------------------\n");
+		    receipt.write("THANK YOU! \n\n");
+   
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
