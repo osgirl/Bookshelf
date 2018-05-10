@@ -6,6 +6,7 @@ import java.util.Hashtable;
 
 public class BookStorage {
 	
+	//hashtable items stored by ISBN as key and book object as value
 	Hashtable<String, Book> table;
 	BufferedWriter logFile = null;
 	private int items = 0;
@@ -41,22 +42,27 @@ public class BookStorage {
 		return table.get(isbn).getTitle();
 	}
 	
+	//get author of book
 	private String retrieveAuthor(String isbn){
 		return table.get(isbn).getAuthor();
 	}
 	
+	//get genre of book
 	private String retrieveGenre(String isbn){
 		return table.get(isbn).getGenre();
 	}
 	
+	//get price of book
 	private String retrievePrice(String isbn){
 		return table.get(isbn).getPrice();
 	}
 	
+	//get items
 	public int getItems() {
 		return items;
 	}
 	
+	//set items
 	public void setItems(int i) {
 		items = i;
 	}
@@ -64,10 +70,13 @@ public class BookStorage {
 	//adding new book into storage
 	public void storeData(String isbn, String title, String author, String genre, String price){
 		items++;
+		//create new book instance
 		Book newBook = new Book(isbn, title, author, genre, price);
+		//put book in hashtable
 		table.put(isbn, newBook);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
+        	//write to log file
 			logFile.write(timestamp + "/" + "INSERT/" + isbn + "/" + title + "/" + author + "/" + genre + "/" + price + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -79,6 +88,7 @@ public class BookStorage {
 		items--;
 		//time stamp for log file
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        //get book information
         String title = retrieveTitle(isbn);
         String author = retrieveAuthor(isbn);
         String genre = retrieveGenre(isbn);
@@ -89,6 +99,7 @@ public class BookStorage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+        //remove from hashtable
 		table.remove(isbn);
 	}
 	
@@ -96,7 +107,9 @@ public class BookStorage {
 	public void modifyData(String isbn, String field, String modifiedValue){
 		//time stamp for log file
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        //get book object from hashtable
 		Book modifiedBook = table.get(isbn);
+		//field modified field to set the value
 		if(field.equals("isbn")) modifiedBook.setIsbn(modifiedValue);
 		else if(field.equals("title")) modifiedBook.setTitle(modifiedValue);
 		else if(field.equals("author")) modifiedBook.setAuthor(modifiedValue);
@@ -109,4 +122,4 @@ public class BookStorage {
 			e.printStackTrace();
 		}
 	}
-}
+} //end class BookStorage

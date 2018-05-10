@@ -77,4 +77,4 @@ public class UserStorage {
 		if(users.containsKey(username)) return true;
 		else return false;
 	}
-}
+} //end class UserStorage

@@ -29,11 +29,13 @@ public class ProcessingMethods {
 	
 	//constructor
 	public ProcessingMethods(BookStorage currentUserStorage){
+		//get the currently sign in users storage
 		this.currentUserStorage = currentUserStorage;
 	}
 	
 	//process input arguments
 	public void processArgs(String[] args){
+		//input and output file names
 		String inputFile = "";
 		String outputFile = "";
 		boolean input = false;
@@ -42,6 +44,7 @@ public class ProcessingMethods {
 			//input file
 			if(args[i].equals("-i")){
 				if(args[i+1].startsWith("-")){
+					//system will exit if not input file is given
 					System.out.println("Please enter a textfile. Exiting software now.");
 					System.exit(0);
 				}
@@ -81,6 +84,7 @@ public class ProcessingMethods {
 		//read in from input file and store in array list
 		try {
 			Scanner inputTitle = new Scanner(inFile);
+			//read all titles from input file
 			while(inputTitle.hasNext()){
 				title = inputTitle.nextLine();
 				inputs.add(title);
@@ -107,13 +111,14 @@ public class ProcessingMethods {
 		String newTitle = null;
 		for(int i=0; i<titles.size(); i++){
 			newTitle = titles.get(i).replaceAll("\\s+","+");
+			//add these titles to an array list with the new modifications
 			newTitles.add(newTitle);
 		}
 		return newTitles;
 	}
 	
 	public void processDataInputs(ArrayList<String> inputs) {
-		//process searching the titles
+		//process searching the titles individually
 		titles = new Search(currentUserStorage);
 		for(int i=0; i<inputs.size(); i++){
 			titles.titleSearch(inputs.get(i), outFile);
@@ -126,14 +131,18 @@ public class ProcessingMethods {
 	public int searchNewBook(String title, String isbn, String author, String genre) {
 		int checkSearch = 0;
 		try {
+			//write to outfile
 			outFile.write("Advanced Search on: Title: " + title + " ISBN: " + isbn + " Author: " + author + " Genre: " + genre + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//remove white spaces and adds "+" between spaces to allow searching 
 		title = title.replaceAll("\\s+","+");
+		//check to see if paramters given by user exists as a book
 		checkSearch = titles.advancedBookSearch(title, isbn);
 		if(checkSearch==1){
 			try {
+				//if this book does not exist, inform user
 				outFile.write("No book found for previous Advanced Search" + "\n");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -146,10 +155,11 @@ public class ProcessingMethods {
 	
 	
 	public void loadLogFile(String inputFile){
-		
+		//load log file for admin uses
 		File inFile = new File(inputFile);
 		String isbn, title, author, genre, price, field, value, command = null;
 		try {
+			//write to outfile
 			outFile.write("Rebuilding Data from LogFile: "+ inputFile + "\n");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -157,6 +167,7 @@ public class ProcessingMethods {
 		try {
 			//read in each command in log file
 			Scanner data = new Scanner(inFile);
+			//break up info using "/"
 			data.useDelimiter("/|\\n");
 			while(data.hasNext()){
 				command = data.next();
@@ -196,7 +207,7 @@ public class ProcessingMethods {
 		    receipt = new BufferedWriter(yourReceipt);
 			receipt.write("BOOKSHELF \n");
 			receipt.write("Sold by: Kimberly \n");
-			receipt.write("In partnership with: Barnes & Nobles \n\n");
+			receipt.write("In partnership with: Barnes & Noble \n\n");
 	        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 			receipt.write("Date and Time: " + timestamp + " \n\n");
 			double total = 0.0;
@@ -204,6 +215,7 @@ public class ProcessingMethods {
 			String price = "";
 			
 			String str;
+			//go through every item in users storage
 			Hashtable<String, Book> boughtBooks;
 			boughtBooks = currentUserStorage.getBooks();
 		    Set<String> keys = boughtBooks.keySet();
@@ -243,7 +255,7 @@ public class ProcessingMethods {
 		}
 	}
 	
-	//getters and setters
+	//getters and setters for receipt file
 	public BufferedWriter getReceipt(){
 		return receipt;
 	}
@@ -278,6 +290,7 @@ public class ProcessingMethods {
 		}
 	}
 	
+	//call function to read url of an image to be displayed on GUI
 	public BufferedImage showFeaturedItem() {
 		BufferedImage img = titles.featuredItem();
 		return img;

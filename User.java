@@ -14,6 +14,8 @@ public class User {
 	
 	//constructor
 	public User(String username, String password){
+		//book storage for user is created
+		//each user has their own book storage
 		usersBooks = new BookStorage();
 		this.username = username;
 		this.password = password;
@@ -24,6 +26,7 @@ public class User {
 		return usersBooks;
 	}
 	
+	//getter and setter for username
 	public String getUsername(){
 		return username;
 	}
@@ -31,10 +34,11 @@ public class User {
 		this.username = username;
 	}
 	
+	//getter and setter for password
 	public String getPassword(){
 		return password;
 	}
 	public void setPassword(String password){
 		this.password = password;
 	}
-}
+} //end class User

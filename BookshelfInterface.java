@@ -4,9 +4,13 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableColumnModel;
@@ -20,7 +24,8 @@ import javax.swing.table.TableColumn;
  *
  */
 
-public class GUI extends JFrame{
+
+public class BookshelfInterface extends JFrame{
 	//data members
 	private BookStorage currentUserBookStorage = null;
 	private UserStorage currentUsersStorage = null;
@@ -31,7 +36,7 @@ public class GUI extends JFrame{
 	private ProcessingMethods inputs = null;
 	
 	//constructor
-	public GUI(String[] input, UserStorage initialUsers) {
+	public BookshelfInterface(String[] input, UserStorage initialUsers) {
 		this.input = input;
 		this.currentUsersStorage = initialUsers;
 		this.users = initialUsers.getUsers();
@@ -43,11 +48,12 @@ public class GUI extends JFrame{
 	private JPanel panel = null;
 	private JPanel panelAddUser = null;
 	private JLabel username, password;
-	private JLabel uname, pword;
+	private JLabel uname, pword, cpword;
     private JTextField usernameFillin; 
     private JTextField passwordFillin;
     private JTextField unameFillin; 
     private JTextField pwordFillin;
+    private JTextField pwordFillinConfirm;
     private JButton btnLogin = null;
     private JButton btnGuest = null;
     private JButton btnExit = null;
@@ -72,7 +78,7 @@ public class GUI extends JFrame{
         btnGuest = new JButton("Login as Guest");
         btnExit = new JButton("Exit Software");
         usernameFillin = new JTextField(20); 
-        passwordFillin = new JTextField(20);
+        passwordFillin = new JPasswordField(20);
         panel.add(username);
         panel.add(usernameFillin);
         panel.add(password);
@@ -117,14 +123,18 @@ public class GUI extends JFrame{
 		panelAddUser.setBackground(Color.pink);
 		uname = new JLabel("Enter a Username: ");
 		pword = new JLabel("Enter a Password: ");
+		cpword = new JLabel("Confirm Password: ");
 		btnCancel = new JButton("Cancel");
 		btnAdd = new JButton("Create Account");
         unameFillin = new JTextField(20); 
-        pwordFillin = new JTextField(20);
+        pwordFillin = new JPasswordField(20);
+        pwordFillinConfirm = new JPasswordField(20);
 		panelAddUser.add(uname);
 		panelAddUser.add(unameFillin);
 		panelAddUser.add(pword);
 		panelAddUser.add(pwordFillin);
+		panelAddUser.add(cpword);
+		panelAddUser.add(pwordFillinConfirm);
 		panelAddUser.add(btnAdd);
 		panelAddUser.add(btnCancel);
         signin.getContentPane().add(BorderLayout.CENTER, panelAddUser);
@@ -148,21 +158,30 @@ public class GUI extends JFrame{
 	private void addUserIntoDB() {
 		//user selects to add new account
 		String newUsername = "";
-		String newPassword = "";
+		String newPassword;
+		String confirmPassword;
 		newUsername = unameFillin.getText();
 		newPassword = pwordFillin.getText();
+		confirmPassword = pwordFillinConfirm.getText();
 		if(currentUsersStorage.userExists(newUsername)){
 			//if this username already exists, inform the user
 			JOptionPane.showMessageDialog(null, "That user already exists.\n Please enter a different Username.", "Attention!", JOptionPane.INFORMATION_MESSAGE);
 			unameFillin.setText("");
 			pwordFillin.setText("");
+			pwordFillinConfirm.setText("");
+		}
+		else if (!newPassword.equals(confirmPassword)) {
+			JOptionPane.showMessageDialog(null, "Passwords do not match.", "Attention!", JOptionPane.INFORMATION_MESSAGE);
+			pwordFillin.setText("");
+			pwordFillinConfirm.setText("");
 		}
 		else {
-			//if the username is valid, add the user to the database so they can loging
+			//if the username is valid, add the user to the database so they can login
 			currentUsersStorage.addUser(newUsername, newPassword);
 			JOptionPane.showMessageDialog(null, "Username Added!", "Attention!", JOptionPane.INFORMATION_MESSAGE);
 			unameFillin.setText("");
 			pwordFillin.setText("");
+			pwordFillinConfirm.setText("");
 			panelAddUser.setVisible(false);
 			panel.setVisible(true);
 		}
@@ -222,6 +241,7 @@ public class GUI extends JFrame{
 	JButton featuredItem = null;
 	JButton advancedSearch = null;
 	JButton checkout = null;
+	JButton slideshow = null;
 	Label results = null;
 	JScrollPane scrollPane = null;
 	JTable table = null;
@@ -248,7 +268,9 @@ public class GUI extends JFrame{
         signout = new JButton("Sign Out");
         featuredItem = new JButton("Check this out!");
         advancedSearch = new JButton("Advanced Search");
+        slideshow = new JButton("View Slideshow");
         listGUI.add(featuredItem);
+        listGUI.add(slideshow);
         listGUI.add(advancedSearch);
         listGUI.add(remove);
         //only admin can modify data
@@ -311,6 +333,52 @@ public class GUI extends JFrame{
 				displayFeaturedItem(img);
 			}
 		});
+        
+        slideshow.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				playSlideshow();
+			}
+		});
+	}
+	
+	//slideshow of images
+	private void playSlideshow() {
+		//images in slide show
+		String image1 = "https://prodimage.images-bn.com/pimages/9780679805274_p0_v3_s550x406.jpg";
+		String image2 = "https://prodimage.images-bn.com/pimages/9780062820150_p0_v11_s550x406.jpg";
+		String image3 = "https://prodimage.images-bn.com/pimages/9780785156598_p0_v1_s550x406.jpg";
+		ArrayList<String> images = new ArrayList<String>();
+		images.add(image1);
+		images.add(image2);
+		images.add(image3);
+		//get url info of images
+		URL urlImg[] = new URL[3];
+		try {
+			for(int i=0; i<3; i++){
+				urlImg[i] = new URL(images.get(i));
+			}
+		} catch (MalformedURLException e1) {
+			e1.printStackTrace();
+		}
+		//read and write image
+		BufferedImage[] image = new BufferedImage[3];
+		try {
+			for(int j=0; j<3; j++){
+				image[j] = ImageIO.read(urlImg[j]);
+
+		}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} // catch
+		//change into icons
+        ImageIcon icon1 = new ImageIcon(image[0]);
+        ImageIcon icon2 = new ImageIcon(image[1]);
+        ImageIcon icon3 = new ImageIcon(image[2]);
+		//display images on joptionpanes
+        JOptionPane.showMessageDialog(null, "", "Slideshow", JOptionPane.INFORMATION_MESSAGE, icon1);
+        JOptionPane.showMessageDialog(null, "", "Slideshow", JOptionPane.INFORMATION_MESSAGE, icon2);
+        JOptionPane.showMessageDialog(null, "", "Slideshow", JOptionPane.INFORMATION_MESSAGE, icon3);
+
 	}
 	
 	//displays featured item poster
@@ -340,7 +408,7 @@ public class GUI extends JFrame{
 		login();
 	}
 	
-	//method when a user choses to remove a book 
+	//method when a user chooses to remove a book 
 	private void removeBook(){
 		int row = inputData.getSelectedRow();
 		if(row == -1) {
@@ -427,6 +495,7 @@ public class GUI extends JFrame{
     private JTextField genreFillin = null;
     private JButton searchButton = null;
     private JButton cancelButton = null;
+    private JButton clearButton = null;
 	
     //advanced search GUI
 	private void advancedSearch() {
@@ -446,6 +515,7 @@ public class GUI extends JFrame{
         authorFillin = new JTextField(20); 
         genreFillin = new JTextField(20);
         searchButton = new JButton("Search");
+        clearButton = new JButton("Clear");
         cancelButton = new JButton("Cancel");
         panel2.add(title);
         panel2.add(titleFillin);
@@ -456,6 +526,7 @@ public class GUI extends JFrame{
         panel2.add(genre);
         panel2.add(genreFillin);
         panel2.add(searchButton);
+        panel2.add(clearButton);
         panel2.add(cancelButton);
         advancedSearchGui.getContentPane().add(BorderLayout.CENTER, panel2);
         advancedSearchGui.setVisible(true);
@@ -465,7 +536,14 @@ public class GUI extends JFrame{
 			}
 		});
         
-        
+        clearButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				titleFillin.setText("");
+				isbnFillin.setText("");
+				authorFillin.setText("");
+				genreFillin.setText("");
+			}
+		});
         
         cancelButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae) {
@@ -483,7 +561,7 @@ public class GUI extends JFrame{
 		String bookIsbn = isbnFillin.getText();
 		String bookAuthor = authorFillin.getText();
 		String bookGenre = genreFillin.getText();
-		
+		//if no information is given for these fields
 		if(bookGenre.equals("")){
 			bookGenre = "N/A";
 		}
@@ -538,7 +616,8 @@ public class GUI extends JFrame{
 	    
 	    //cannot edit table values
 		table = new JTable(rows, cols){
-	    	public boolean isCellEditable(int row, int column) {return false;}
+
+			public boolean isCellEditable(int row, int column) {return false;}
 	    };
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);

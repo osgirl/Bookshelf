@@ -2,9 +2,7 @@ import java.net.*;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.imageio.ImageIO;
-
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -21,10 +19,9 @@ public class Search {
 	private String genreRegex = "";
 	private String priceRegex = "";
 	private String advancedSearchRegex = "";
-	
 	private ArrayList<String> allTitleHrefResults;
 	private BookStorage bookStorage = null;
-    BufferedWriter writer = null;
+    private BufferedWriter writer = null;
 
 	
 	public Search(BookStorage bookStorage){
@@ -37,29 +34,24 @@ public class Search {
 		authorRegex = "(\\.setTargeting\\('author', '(.*?)\')";
 		genreRegex = "(\\.setTargeting\\('cat1', '(.*?)\')";
 		priceRegex = "(Current price is (.*?),)";
+		//primary regex weeds out books of a certain title for initial searching
 		primaryRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?Author?)";
-		
-		//holds matching regex which contains information
-		//about a book
+		//holds url link for a book to later concatenate with url string
 		allTitleHrefResults = new ArrayList<String>();
 	}
 	
     public String getinfo(String itemUrl, String titleUrlFile) throws IOException {
     	//function will get url info and store it into a text file for future processing
-    	//this gets info for one title with many results
+    	//this gets info for one book title with many results
     	String itemHtml = "";
-    	String outputFile = titleUrlFile;
-    	BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
         // Display the URL address, and information about it.
     	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(itemUrl).openStream()));
 		String line = reader.readLine();
-
+		//gather all lines of html
 		while (line != null) {
-			writer.write(line + "\n");
 			itemHtml = itemHtml + line;
 			line = reader.readLine(); 
 		} // while
-		writer.close();
 		reader.close();
 		return itemHtml;
     }
@@ -114,23 +106,20 @@ public class Search {
     
     private void getBookInfo(String bookUrl) {
     	//given a title, function will scrape a new webpage to get just
-    	//the information of that one book
+    	//the information of that ONE book matched from the results of many
     	String isbn = "", title = "", author = "", genre = "", price = "";
+    	//B&N url concatenated with books search link
     	String url = itemUrl + bookUrl;
     	String bookHtml = "";
 		String line;
 		try {
 	    	BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
-	    	String outputFile = "book.txt";
-	    	BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 			line = reader.readLine();
 			while (line != null) {
-				//write book information to text file
+				//gather this books html
 				bookHtml = bookHtml + line;
-				writer.write(line + "\n");
 				line = reader.readLine(); 
 			} // while
-			writer.close();
 			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -164,6 +153,7 @@ public class Search {
     }
     
     private int getAdvancedBookInfo(String itemHtml, String isbnAS) {
+    	//given advanced search params, find exact book
 		String bookHtmlAS = findCorrectBook(itemHtml, isbnAS);
 		if(bookHtmlAS.equals("no match")){
 			return 1; //if no book is found
@@ -179,31 +169,31 @@ public class Search {
     	//this is for advanced search feature
     	String info = "";
 		advancedSearchRegex = "(<a class=\"pImageLink \".*?href=\"(.*?);.*?ean=("+isbn+")\">.*?Author?)";
-
     	Pattern pattern = Pattern.compile(advancedSearchRegex);
     	Matcher matcher = pattern.matcher(bookHtml);
     	if(matcher.find()){
         	info = matcher.group(2);
     	}
     	else{
+    		//no book matches what user searched for
     		return "no match";
     	}
     	return info;
     }
     
     public BufferedImage featuredItem() {
+    	//read image from the image url on website
     	String imageUrl = "https://prodimage.images-bn.com/pimages/9780785168508_p0_v2_s550x406.jpg";
-    		URL url = null;
+    		URL urlImg = null;
 			try {
-				url = new URL(imageUrl);
+				urlImg = new URL(imageUrl);
 			} catch (MalformedURLException e1) {
 				e1.printStackTrace();
 			}
+			//read and write image
     		BufferedImage image = null;
-    		File outputImage = new File("Image.jpg");
 			try {
-				image = ImageIO.read(url);
-				//ImageIO.write(image, "jpg", outputImage);
+				image = ImageIO.read(urlImg);
 			} catch (IOException e) {
 				e.printStackTrace();
 			} // catch
@@ -220,6 +210,7 @@ public class Search {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		//gets url extention
     	for(int i=0; i<urls.size(); i++) {
     		String[] urlType = urls.get(i).split("\\.");
     		if(urlType[urlType.length-1].equals("html") || urlType[urlType.length-1].equals("htm") || urlType[urlType.length-1].equals("txt")){
@@ -254,4 +245,4 @@ public class Search {
 		}
 
     }
-}
+} // end Search class

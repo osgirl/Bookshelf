@@ -1,11 +1,23 @@
 BOOKSHELF 
 Sold by: Kimberly 
-In partnership with: Barnes & Nobles 
+In partnership with: Barnes & Noble 
 
-Date and Time: 2018-05-08 21:10:59.427 
+Date and Time: 2018-05-09 21:28:27.689 
 
-Number of items bought: 3
+Number of items bought: 6
 
+BOOK: The Infinity Gauntlet
+AUTHOR: Jim Starlin
+ISBN: 9780785156598
+GENRE: Teen Books
+PRICE: $15.82
+------------
+BOOK: Night
+AUTHOR: Elie Wiesel
+ISBN: 9780374500016
+GENRE: Books
+PRICE: $9.34
+------------
 BOOK: The Fault in Our Stars
 AUTHOR: John Green
 ISBN: 9780142424179
@@ -24,10 +36,16 @@ ISBN: 9781595147882
 GENRE: Teen Books
 PRICE: $15.54
 ------------
+BOOK: Black Panther
+AUTHOR: Ryan Coogler
+ISBN: 0786936856354
+GENRE: Movies  TV
+PRICE: $20.99
+------------
 ----------------------------------------------------
-SUBTOTAL: $32.22
+SUBTOTAL: $78.37
 TAX 1.0825
-TOTAL $34.88
+TOTAL $84.84
 ----------------------------------------------------
 THANK YOU! 
 

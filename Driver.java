@@ -11,11 +11,11 @@ import java.net.MalformedURLException;
  */
 public class Driver {
 	
-	//storage structures for the software
-	static UserStorage users = null; //stores all users of the software
+	//stores all users of the software
+	static UserStorage users = null; 
 	
 	public static void main(String[] args) throws MalformedURLException, IOException{
 		users = new UserStorage();
-		GUI bookShelf = new GUI(args, users);
+		BookshelfInterface bookShelf = new BookshelfInterface(args, users);
 	}
 }
